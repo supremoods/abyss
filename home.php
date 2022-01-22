@@ -1,3 +1,9 @@
+<?php
+  include('phpFunc/session.php');
+  homeSession();
+  include('phpFunc/dbConnect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +30,7 @@
           <span class="material-icons"> grid_view </span>
         </button>
   
-        <a href="home.html" class="logo">
+        <a href="home.php" class="logo">
           <div>
           <img src="Assets/logoWord.png" alt="" style="height: 30px; ">
         </div>
@@ -39,12 +45,12 @@
           </div>
 
           <div class="navlinks">
-            <a href="Chat.html" class="join-link">
+            <a href="Chat.php" class="join-link">
                 <span class="material-icons">
                     textsms
                 </span>
             </a>
-            <a href="login.html" class="login-link">
+            <a href="login.php" class="login-link">
                 <span class="material-icons">
                     notifications
                 </span>
@@ -53,6 +59,26 @@
   
           <div class="avatar-sec">
             <span class="material-icons"> account_box </span>
+            <div class="account-links">
+              <ul class="link-container">
+                <?php
+                  $id = (int) $_SESSION['id'];
+
+                  $query = mysqli_query ($conn, "SELECT * FROM abyss_User WHERE id = '$id' ") or die (mysqli_error());
+                  $fetch = mysqli_fetch_array ($query);
+                  echo "
+                  <h1>" .$fetch['username']."</h1>
+                  ";
+                ?>
+                <!-- <h1><?//php $fetch['username'] ?></h1> -->
+                <li><a href="profile.php">Profile</a></li>
+                <li><a href="gallery.php">Gallery</a></li>
+                <li><a href="favorites.php">Favourites</a></li>
+                <li><a href="profile-post.php">Posts</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="phpFunc/logout.php">Logout</a></li>
+              </ul>
+            </div>
           </div>
 
           <div class="submit-btn">
@@ -71,19 +97,19 @@
         <div class="sidebar">
           <ul>
             <li class="list active">
-              <a href="home.html">
+              <a href="home.php">
                 <span class="material-icons">home</span>
                 <span class="title">Home</span>
               </a>
             </li>
             <li class="list">
-              <a href="topic.html">
+              <a href="topic.php">
                 <span class="material-icons">category</span>
                 <span class="title">Topics</span>
               </a>
             </li>
             <li class="list">
-                <a href="popular.html">
+                <a href="popular.php">
                 <span class="material-icons">whatshot</span>
                 <span class="title">Popular</span>
                 </a>
@@ -106,11 +132,11 @@
                 </div>
                 <div class="banner-links">
                     <div class="abyssals-link">
-                        <a href="home.html">Abyssals</a>
+                        <a href="home.php">Abyssals</a>
                     </div>
 
                     <div class="posts-link">
-                        <a href="post.html" class="links">Posts</a>
+                        <a href="post.php" class="links">Posts</a>
                     </div>
                 </div>
               </header>

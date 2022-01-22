@@ -1,3 +1,9 @@
+<?php
+    include('phpFunc/session.php');
+    joinSession();
+    include('phpFunc/joinFunc.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,12 +19,12 @@
     <body>
         <div class="wrapper">
             <div class="container-fluid">
-                <div class="left-content"
-                    style="background-image:url(Assets/img/visions_by_rossdraws_ddl1im1.jpg)">
+                <div class="left-content" style="background-image:url(Assets/img/visions_by_rossdraws_ddl1im1.jpg)">
                     <div class="content">
                         <div>
                             <h1 class="hD1">Join the largest art community in
                                 the world</h1>
+                                
                             <p class="pD1">Explore and discover art, become a
                                 better artist, connect with others over mutual
                                 hobbies, or buy and sell work – you can do it
@@ -33,75 +39,63 @@
                         </span>
                     </button>
                     <div class="content">
-                        <h2 class="_1ePKX">Join</h2>
-                        <p class="_20eiF">Already a member <a href="login.html">Log In</a></p>
+                        <h2 class="auth_title">Join</h2>
+                        <p class="_20eiF">Already a member <a href="login.php">Log In</a></p>
                         <div class="form-container">
-                            <form action="login.html" method="get"
-                                class="form-content">
+                            <form  method="post" class="form-content">
                                 <div>
-                                    <label class="_1CWDt" for="username"
-                                        id="username-label">
-                                        <span class="c2Aqh">Username<!-- -->
-                                        </span>
+                                    <label class="label" for="username" id="username-label">
+                                        <span class="textLable">Username</span>
                                     </label>
                                     <div class="fd-cont">
-                                        <input type="text" class="fd"
-                                         id="username" name="username" value="" required>
+                                        <input type="text" class="fd" id="username" name="username" value="" required>
                                     </div>
-                                    <span class="_2siwL"></span>
+                                    <span class="space"></span>
                                 </div>
                                 <div>
-                                    <label class="_1CWDt" for="email"
-                                        id="email-label">
-                                        <span class="c2Aqh">Add your email<!-- -->
+                                    <label class="label" for="email" id="email-label">
+                                        <span class="textLable">Add your email
                                         </span></label>
                                     <div class="fd-cont">
                                         <input type="email" class="fd" id="email" name="email" pattern=".+@gmail\.com" size="30" value="" required>
                                     </div>
-                                    <span class="_2siwL"></span>
+                                    <span class="space"></span>
                                 </div>
                                 <div>
-                                    <label class="_1CWDt" for="email"
+                                    <label class="label" for="email"
                                         id="email-label">
-                                        <span class="c2Aqh">Confirm email<!-- -->
+                                        <span class="textLable">Confirm email
                                         </span></label>
                                     <div class="fd-cont">
-                                        <input type="email" class="fd" id="email" name="email" pattern=".+@gmail\.com" size="30" value="" required>
+                                        <input type="email" class="fd" id="email" pattern=".+@gmail\.com" size="30" value="" required>
                                     </div>
-                                    <span class="_2siwL"></span>
+                                    <span class="space"></span>
                                 </div>
 
                                 <div>
-                                    <label class="_1CWDt" for="email"
-                                        id="email-label">
-                                        <span class="c2Aqh">Password<!-- -->
-                                        </span></label>
+                                    <label class="label" for="email" id="email-label">
+                                        <span class="textLable">Password</span>
+                                    </label>
                                     <div class="fd-cont">
-                                        <input type="Password" class="fd"
-                                            id="Password" name="Password"
-                                            value="">
+                                        <input type="Password" class="fd" id="password" name="password" value="">
                                     </div>
-                                    <span class="_2siwL"></span>
+                                    <span class="space"></span>
                                 </div>
 
-                                
-
-                                    <button class="_18-3h _22wwj _2Bzl8 arTRL
-                                        _3S7Tn" aria-label="Join btn"
-                                        id="loginbutton" type="submit">
-                                        <span class="Kcz-t">Join</span>
-                                    </button>
-                               
-                     
+                                <button class="btn-auth arTRL _3S7Tn" aria-label="Join btn" id="loginbutton" name="submit" type="submit">
+                                    <span class="Kcz-t">Join</span>
+                                </button>                    
                             </form>
                         </div>
                         <div class="_7INSi dW6kG">By clicking Join, I confirm that I have read and agree to the Abyss
                             <a href="#">Terms of Service</a>,  
                             <a href="#">Privacy Policy</a>, 
-                            and to receive emails and updates.</div>
+                            and to receive emails and updates.
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script src="Assets/js/auth.js"></script>
     </body>
 </html>

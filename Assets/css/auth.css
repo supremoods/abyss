@@ -34,7 +34,7 @@ body {
   height: 100%;
   min-width: 1024px;
   box-sizing: border-box;
-  background: url('/Assets/img/sisu_bg-min.png');
+  background: url('../img/sisu_bg-min.png');
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -119,7 +119,7 @@ body {
     /* padding: 52px 124px; */
 }
 
-._1ePKX {
+.auth_title {
     font-family: "Poppins", sans-serif;
     letter-spacing: .3px;
     color: var(--L8);
@@ -159,9 +159,10 @@ body {
     font-weight: 600;
 }
 
-.c2Aqh {
+.textLable{
     display: inline-flex;
-
+    cursor: pointer;
+    margin-left: 8px;
 }
 
 
@@ -199,12 +200,12 @@ body {
 }
 /* ----------------- */
 
-._2siwL {
+.space {
     height: 20px;
     display: flex;
 }
 
-._2Bzl8 {
+.btn-auth {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -215,6 +216,9 @@ body {
     text-transform: none;
     border-radius: 2px;
     white-space: nowrap;
+    padding: 0 24px;
+    min-height: 40px;
+    margin-top: 17px;
     cursor: pointer;
 }
 .arTRL {
@@ -225,12 +229,7 @@ body {
     
 }
 
-._2Bzl8._3S7Tn {
-    padding: 0 24px;
-    /* height: auto; */
-    min-height: 40px;
-    margin-top: 17px;
-}
+
 
 ._1upUc {
     font-family: "Poppins", sans-serif;
@@ -277,16 +276,12 @@ label {
     font-size: 14px;
 }
 
-._253o1 {
+.checkbox {
     display: inline-flex;
     align-items: center;
 }
 
-._3uJ5I {
-    display: inline;
-    cursor: pointer;
-    margin-left: 8px;
-}
+
 
 ._2PWxh a {
     color: var(--G16);

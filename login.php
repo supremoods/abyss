@@ -1,3 +1,9 @@
+<?php
+    include('phpFunc/session.php');
+    loginSession();
+    include('phpFunc/loginFunc.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,47 +40,43 @@
                     </span>
                 </button>
                 <div class="content">
-                    <h2 class="_1ePKX">Log In</h2>
-                    <p class="_20eiF">Become a member <a href="join.html">Join</a></p>
+                    <h2 class="auth_title">Log In</h2>
+                    <p class="_20eiF">Become a member <a href="join.php">Join</a></p>
                     <div class="form-container">
 
-                        <form action="home.html" method="get" class="form-content">
+                        <form method="post" class="form-content">
                             <div>
-                                <label class="_1CWDt" for="username" id="username-label">
-                                    <span class="c2Aqh">Username
-                                        <!-- -->
-                                    </span>
+                                <label class="label" for="username" id="username-label">
+                                    <span class="textLable">Username</span>
                                 </label>
                                 <div class="fd-cont">
                                     <input type="text" class="fd" id="username" name="username" value="" required>
                                 </div>
-                                <span class="_2siwL"></span>
+                                <span class="space"></span>
                             </div>
                             <div>
-                                <label class="_1CWDt" for="password" id="password-label">
-                                    <span class="c2Aqh">Password
-                                        <!-- -->
-                                    </span></label>
+                                <label class="label" for="password" id="password-label">
+                                    <span class="textLable">Password</span>
+                                </label>
                                 <div class="fd-cont">
                                     <input type="password" class="fd" id="password" name="password" value="" required>
                                 </div>
-                                <span class="_2siwL"></span>
+                                <span class="space"></span>
                             </div>
                             <div class="_2JMYe zpWPv">
-
                                 <div class="_2tmkX">
-                                    <span class="_253o1 _3ffdv">
-                                        <input type="checkbox" name="remember" checked=""
-                                            aria-labelledby="remember-label" required>
+                                    <span class="checkbox">
+                                        <input type="checkbox" name="remember" checked=""aria-labelledby="remember-label" required>
                                     </span>
-                                    <span class="c2Aqh _3uJ5I">Keep me
+                                    <span class="textLable">Keep me
                                         logged in</span>
                                 </div>
-                                <span class="_2siwL"></span>
+                                <span class="space"></span>
                             </div>
-                            <div class="_3X1HL">
-                                <button class=" _2Bzl8 arTRL _3S7Tn" aria-label="Log In" id="loginbutton"
-                                    type="submit"><span class="Kcz-t">Log In</span></button>
+                            <div class="forgot-Container">
+                                <button class="btn-auth arTRL _3S7Tn" aria-label="Log In" id="loginbutton" name="submit" type="submit">
+                                    <span class="Kcz-t">Log In</span>
+                                </button>
                                 <a class="_1upUc" href="/users/forgot?kind=password">Forgot
                                     your username or password?</a>
                             </div>
@@ -88,6 +90,7 @@
             </div>
         </div>
     </div>
+    <script src="Assets/js/auth.js"></script>
 </body>
 
 </html>

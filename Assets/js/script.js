@@ -36,32 +36,41 @@ let menuToggle = document.querySelector('.deck-btn');
 let sidebar = document.querySelector('.sidebar');
 let topicitem = document.getElementsByClassName('topic-gallery-item');
 let galleryItem = document.getElementsByClassName('gallery-item');
+let joinBtn = document.querySelector('.join-foot');
+let loginBtn = document.querySelector('.login-foot');
 
 menuToggle.onclick = function(){
     sidebar.classList.toggle('active');
 }
 
+joinBtn.onclick = function(){
+    window.location.href = 'join.php';
+}
+
+loginBtn.onclick = function(){
+    window.location.href = 'login.php';
+}
+
 for (var i = 0; i < topicitem.length; i++) {
     topicitem[i].onclick = function(){
-        window.location.href = 'topic_gallery.html';
+        window.location.href = 'topic_gallery.php';
     }
 }
 
 for (var i = 0; i < galleryItem.length; i++) {
     galleryItem[i].onclick = function(){
-        window.location.href = 'artdetails.html';
+        window.location.href = 'artdetails.php';
     }
 }
 
 
 let list = document.querySelectorAll('.list');
-
-for (let i=0; i<list.length; i++){
-list[i].onclick = function(){
-  let j = 0;
-  while(j < list.length){
-    list[j++].className = 'list';
-  }
-  list[i].className = 'list active';
-}
+    for (let i=0; i<list.length; i++){
+        list[i].onclick = function(){
+        let j = 0;
+        while(j < list.length){
+            list[j++].className = 'list';
+        }
+        list[i].className = 'list active';
+    }
 }

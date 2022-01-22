@@ -435,7 +435,7 @@ ul{
 	list-style: none;
 }
 .footer{
-	background-image: url('/Assets/bg-footer.png');
+	background-image: url('../img/bg-footer.png');
     background-size: cover;
     padding: 80px 0 180px 0;
     margin-left:70px;

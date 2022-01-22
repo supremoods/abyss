@@ -1,3 +1,8 @@
+<?php
+    include('phpFunc/session.php');
+    indexSession();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +29,7 @@
           <i class='bx bx-grid-alt'></i>
         </button>
   
-        <a href="home.html" class="logo">
+        <a href="home.php" class="logo">
           <div>
             <img src="Assets/logoWord.png" alt="" style="height: 24px; ">
         </div>
@@ -38,10 +43,10 @@
             </div>
           </div>
           <div class="navlinks">
-            <a href="join.html" class="join-link">
+            <a href="join.php" class="join-link">
               <span>Join</span>
             </a>
-            <a href="login.html" class="login-link">
+            <a href="login.php" class="login-link">
               <span>Log In</span>
             </a>
           </div>
@@ -59,13 +64,13 @@
         <div class="sidebar">
           <ul>
             <li class="list active">
-              <a href="home.html">
+              <a href="home.php">
                 <span class="material-icons">home</span>
                 <span class="title">Home</span>
               </a>
             </li>
             <li class="list">
-              <a href="topic.html">
+              <a href="topic.php">
                 <span class="material-icons">category</span>
                 <span class="title">Topics</span>
               </a>

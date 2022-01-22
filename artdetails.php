@@ -24,7 +24,7 @@
           <span class="material-icons"> grid_view </span>
         </button>
   
-        <a href="home.html" class="logo">
+        <a href="home.php" class="logo">
           <div>
           <img src="Assets/logoWord.png" alt="" style="height: 30px; ">
         </div>
@@ -39,12 +39,12 @@
           </div>
 
           <div class="navlinks">
-            <a href="Chat.html" class="join-link">
+            <a href="Chat.php" class="join-link">
                 <span class="material-icons">
                     textsms
                 </span>
             </a>
-            <a href="login.html" class="login-link">
+            <a href="login.php" class="login-link">
                 <span class="material-icons">
                     notifications
                 </span>
@@ -70,19 +70,19 @@
         <div class="sidebar">
           <ul>
             <li class="list active">
-              <a href="home.html">
+              <a href="home.php">
                 <span class="material-icons">home</span>
                 <span class="title">Home</span>
               </a>
             </li>
             <li class="list">
-              <a href="topic.html">
+              <a href="topic.php">
                 <span class="material-icons">category</span>
                 <span class="title">Topics</span>
               </a>
             </li>
             <li class="list">
-                <a href="popular.html">
+                <a href="popular.php">
                 <span class="material-icons">whatshot</span>
                 <span class="title">Popular</span>
                 </a>

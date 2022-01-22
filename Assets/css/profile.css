@@ -137,17 +137,55 @@
     color:var(--purple5);
 }
 
-
 .avatar-sec{
     display: flex;
     align-items:center;
+    position: relative;
     padding: 20px;
 }
-
 .avatar-sec span:hover{
     color: var(--purple5);
+    cursor:pointer;
+}
+.avatar-sec:hover .account-links{
+    opacity: 1;
+    transition: all .2s ease-in-out;
+}
+.avatar-sec .account-links{
+    position:absolute;
+    color:var(--D1);
+    top:50px;
+    right:0;
+    z-index:99;
+    opacity: 0;
+    transition: all .2s ease-in-out;
 }
 
+.avatar-sec .account-links .link-container{
+    background: var(--D8);
+    font-size: 15px;
+    width: 250px;
+    padding:20px;
+}
+
+.avatar-sec .account-links .link-container li{
+    padding:10px;
+}
+
+
+.avatar-sec .account-links .link-container h1{
+    padding:10px;
+    font-size: 18px;
+    border-bottom: 1px solid #1e1d2b2e;
+}
+
+.avatar-sec .account-links .link-container li:hover{
+    color:var(--purple5);
+}
+
+.avatar-sec .account-links .link-container li:nth-last-child(1){
+    border-top: 1px solid #1e1d2b2e;
+}
 .container{
     display: flex;
     flex-direction: column;
@@ -410,7 +448,7 @@ ul{
 	list-style: none;
 }
 .footer{
-	background-image: url('/Assets/bg-footer.png');
+	background-image: url('../img/bg-footer.png');
     background-size: cover;
     padding: 80px 0 180px 0;
 }
