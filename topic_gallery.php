@@ -144,7 +144,7 @@
                 </div>
             </div> 
             <ul class="gallery-wrapper">
-              <li class="gallery-item">
+              <li class="gallery-item" onclick="artdetails()">
                 <img src="assets/img/arts/img1.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -157,7 +157,7 @@
                   </div>
                 </div>
               </li>
-              <li class="gallery-item">
+              <li class="gallery-item" onclick="artdetails()">
                 <img src="assets/img/arts/img2.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -170,7 +170,7 @@
                   </div>
                 </div>
               </li>
-              <li class="gallery-item">
+              <li class="gallery-item" onclick="artdetails()">
                 <img src="assets/img/arts/img3.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -183,7 +183,7 @@
                   </div>
                 </div>
               </li>
-              <li class="gallery-item">
+              <li class="gallery-item" onclick="artdetails()">
                 <img src="assets/img/arts/img4.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -196,7 +196,7 @@
                   </div>
                 </div>
               </li>
-              <li class="gallery-item">
+              <li class="gallery-item" onclick="artdetails()">
                 <img src="assets/img/arts/img5.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -209,7 +209,7 @@
                   </div>
                 </div>
               </li>
-              <li class="gallery-item">
+              <li class="gallery-item" onclick="artdetails()">
                 <img src="assets/img/arts/img6.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -222,7 +222,7 @@
                   </div>
                 </div>
               </li>
-              <li class="gallery-item">
+              <li class="gallery-item" onclick="artdetails()">
                 <img src="assets/img/arts/img7.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -235,7 +235,7 @@
                   </div>
                 </div>
               </li>
-              <li class="gallery-item">
+              <li class="gallery-item" onclick="artdetails()">
                 <img src="assets/img/arts/img1.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -248,7 +248,7 @@
                   </div>
                 </div>
               </li>
-              <li class="gallery-item">
+              <li class="gallery-item" onclick="artdetails()">
                 <img src="assets/img/arts/img2.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -261,7 +261,7 @@
                   </div>
                 </div>
               </li>
-              <li class="gallery-item">
+              <li class="gallery-item" onclick="artdetails()">
                 <img src="assets/img/arts/img3.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -274,7 +274,7 @@
                   </div>
                 </div>
               </li>
-              <li class="gallery-item">
+              <li class="gallery-item" onclick="artdetails()">
                 <img src="assets/img/arts/img4.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -287,7 +287,7 @@
                   </div>
                 </div>
               </li>
-              <li class="gallery-item">
+              <li class="gallery-item" onclick="artdetails()">
                 <img src="assets/img/arts/img5.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -300,7 +300,7 @@
                   </div>
                 </div>
               </li>
-              <li class="gallery-item">
+              <li class="gallery-item" onclick="artdetails()"> 
                 <img src="assets/img/arts/img6.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -313,7 +313,7 @@
                   </div>
                 </div>
               </li>
-              <li class="gallery-item">
+              <li class="gallery-item" onclick="artdetails()">
                 <img src="assets/img/arts/img7.jpg" alt="" srcset="">
                 <div class="text">
                   <div>

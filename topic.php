@@ -23,7 +23,7 @@
   <div id="root">
     <div class="header-container">
       <div class="header">
-        <button class="deck-btn">
+        <button class="deck-btn" onclick="sidebarNav()">
           <span class="material-icons"> grid_view </span>
         </button>
   
@@ -200,7 +200,7 @@
                   <h1>All Topics</h1>
               </div>
             <ul class="gallery-wrapper">
-              <li class="topic-gallery-item">
+              <li class="topic-gallery-item" onclick="topicGallery()">
                 <img src="assets/img/topics/3d.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -208,7 +208,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item">
+              <li class="topic-gallery-item" onclick="topicGallery()">
                 <img src="assets/img/topics/adoptables.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -216,7 +216,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item">
+              <li class="topic-gallery-item" onclick="topicGallery()">
                 <img src="assets/img/topics/anime.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -224,7 +224,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item">
+              <li class="topic-gallery-item" onclick="topicGallery()">
                 <img src="assets/img/topics/anthro.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -232,7 +232,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item">
+              <li class="topic-gallery-item" onclick="topicGallery()">
                 <img src="assets/img/topics/comics.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -240,7 +240,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item">
+              <li class="topic-gallery-item" onclick="topicGallery()">
                 <img src="assets/img/topics/digital art.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -248,7 +248,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item">
+              <li class="topic-gallery-item" onclick="topicGallery()">
                 <img src="assets/img/topics/drawing and paintings.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -256,7 +256,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item">
+              <li class="topic-gallery-item" onclick="topicGallery()">
                 <img src="assets/img/topics/fan art.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -264,7 +264,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item">
+              <li class="topic-gallery-item" onclick="topicGallery()">
                 <img src="assets/img/topics/fantasy art.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -272,7 +272,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item">
+              <li class="topic-gallery-item" onclick="topicGallery()">
                 <img src="assets/img/topics/science fiction.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -280,7 +280,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item">
+              <li class="topic-gallery-item" onclick="topicGallery()">
                 <img src="assets/img/topics/sculpture.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -288,7 +288,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item">
+              <li class="topic-gallery-item" onclick="topicGallery()">
                 <img src="assets/img/topics/traditional art.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -296,20 +296,14 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item">
+              <li class="topic-gallery-item" onclick="topicGallery()">
                 <img src="assets/img/topics/tutorials.png" alt="" srcset="">
                 <div class="text">
                   <div>
                     <h1>Tutorials</h1>
                   </div>
                 </div>
-              </li>
-              
-              
-              
-
-             
-              
+              </li>  
             </ul>
           </div>
   

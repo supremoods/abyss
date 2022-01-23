@@ -12,6 +12,7 @@
   <link rel="shortcut icon" href="Assets/logo.png" type="image/x-icon">
   <link rel="stylesheet" href="Assets/css/root.css" />
   <link rel="stylesheet" href="Assets/css/posts.css" />
+  <link rel="stylesheet" href="Assets/css/modal.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -23,7 +24,7 @@
   <div id="root">
     <div class="header-container">
       <div class="header">
-        <button class="deck-btn">
+        <button class="deck-btn" onclick="sidebarNav()">
           <span class="material-icons"> grid_view </span>
         </button>
   
@@ -83,8 +84,8 @@
             <p>Submit</p>
             <div class="submit-container">
               <div class="submit-links">
-                <button class="btn-abyssals">Abyssals</button>
-                <button class="btn-status-header">Status Update</button>
+                <button class="btn-abyssals" onclick="abyssalModal()">Abyssals</button>
+                <button class="btn-status-header" onclick="statusModal()">Status Update</button>
               </div>
             </div>
           </div>
@@ -159,12 +160,12 @@
                             <span class="material-icons"> account_box </span>
                           </div>
                           <div class="post-input">
-                            <input type="text" class="input-post-btn" placeholder="What's going on, <?php echo $fetch['username'] ?> ?" >
+                            <input type="text" class="input-post-btn" onclick="statusModal()"placeholder="What's going on, <?php echo $fetch['username'] ?> ?" >
                           </div>
                         </div>
                         <div class="post-btn-grp">
                           <div class="btn-submit">
-                            <button class="btn-status">STATUS UPDATE</button>
+                            <button class="btn-status" onclick="statusModal()">STATUS UPDATE</button>
                           </div>
                         </div>
                       </div>
@@ -375,15 +376,15 @@ Also, Metal Gear Solid 3 holds up pretty well. I'm having great exprience even i
           </div>
           <div class="right-section">
               <div class="close-btn">
-                <button><i class='bx bx-x closeBtn'></i></button>
+                <button><i class='bx bx-x closeBtn' onclick="statusModalClose()"></i></button>
               </div>
           </div>
         </div>
         <div class="modal-content">
           <div class="title-content">
             <div class="cover-image">
-              <!-- <img src="Assets/img/sisu_bg-min.png" > -->
-              <img src="Assets/icons/1200px-Picture_icon_BLACK.svg.png" >
+              <img src="Assets/img/sisu_bg-min.png" >
+     
             </div>
             <div class="status-title">
               <textarea type="text" name="status-title" placeholder="Add your title here"></textarea>
@@ -426,8 +427,8 @@ Also, Metal Gear Solid 3 holds up pretty well. I'm having great exprience even i
             </div>
           </div>
           <div class="right-section">
-              <div class="close-btn">
-                <button><i class='bx bx-x closeBtn'></i></button>
+              <div class="abyssals-close-btn">
+                <button><i class='bx bx-x closeBtn' onclick="abyssalModalClose()"></i></button>
               </div>
           </div>
         </div>
@@ -466,7 +467,7 @@ Also, Metal Gear Solid 3 holds up pretty well. I'm having great exprience even i
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="Assets/js/post.js"></script>
+  <script src="Assets/js/script.js"></script>
 </body>
 
 </html>
