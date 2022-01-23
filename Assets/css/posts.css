@@ -16,6 +16,7 @@
     color: var(--D8);
     height:100%;
     max-width: 100%;
+    
 }
 
 .header-container{
@@ -149,13 +150,11 @@
     position: relative;
     padding: 20px;
 }
-.avatar-sec span:hover{
-    color: var(--purple5);
+.avatar-sec img:hover{
     cursor:pointer;
 }
 .avatar-sec:hover .account-links{
-    opacity: 1;
-    transition: all .2s ease-in-out;
+    visibility: visible;
 }
 .avatar-sec .account-links{
     position:absolute;
@@ -163,8 +162,7 @@
     top:50px;
     right:0;
     z-index:99;
-    opacity: 0;
-    transition: all .2s ease-in-out;
+    visibility: hidden;
 }
 
 .avatar-sec .account-links .link-container{
@@ -384,8 +382,11 @@
 
 .post-ccx .post-cvx-grp .post-input input::placeholder{
     color: var(--D8);
-  
     font-size: 12px;
+}
+
+.post-ccx .post-cvx-grp .post-input .input-post-btn:focus{
+    outline: none !important;
 }
 
 .post-ccx .post-btn-grp{
@@ -819,6 +820,207 @@ ul{
 }
 
 
+.modal-status{
+    position:fixed;
+    z-index: 99;
+    width: 100%;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    visibility: hidden;
+    background: #1d1b22b4;
+    
+}
+.modal-status.modal{
+    visibility: visible;
+}
+
+
+
+.modal-status .modal-status-wrapper {
+    position: relative;
+    background:#fff;
+    color:var(--D1);
+    margin:10em 10em;
+    /* width:170vh;
+    height:90vh; */
+
+}
+.modal-header{
+    padding:20px;
+
+}
+
+.modal-status-wrapper .modal-header{
+    display:flex;
+    border-bottom: 1px solid #1e1d2b2e;
+}
+.modal-header .left-section .title h1{
+    font-size: 18px;
+}
+.modal-header .left-section .title p{
+    font-size: 14px;
+    padding-right:10px;
+}
+.modal-header .left-section .title div{
+    display:flex;
+}
+.modal-header .left-section .title button{
+    background: none;
+    border: none;
+    font-weight: 700;
+    display:flex;
+    align-items: center;
+}
+
+.modal-header .left-section .title button i{
+    font-size: 22px;
+}
+
+
+.modal-header .left-section{
+    flex-grow: 1;
+}
+
+.modal-header .right-section .close-btn button{
+    background: none;
+    border: none;
+    font-size:20px;
+}   
+
+.modal-content .title-content{
+    position: relative;
+    height:40vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.modal-content .title-content .cover-image img{
+   object-fit: cover;
+   height: 100%;
+    width:100%;
+}
+
+.modal-content .title-content .status-title{
+    position: absolute;
+    left:50%;
+    top:50%;
+
+    transform: translate(-50%,-50%);
+    
+}
+
+.modal-content .title-content .status-title textarea{
+    background:none;
+    border:none;
+    font-size: 40px;
+    font-weight: 800;
+    height:200px;
+    color:var(--D8);
+}
+
+.modal-content .title-content .status-title textarea:focus{
+    outline: none !important;
+}
+
+
+
+.modal-content .title-content .status-title textarea::placeholder{
+    color:var(--D8);
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.modal-content .title-content .add-img-btn{
+    position: absolute;
+    right:0;
+    bottom:0;
+    padding: 2em;
+}
+
+.modal-content .title-content .add-img-btn button{
+    background: none;
+    border: 2px solid var(--purple5);
+    border-radius: 20px;
+    font-size: 18px;
+    color:var(--purple5);
+    padding:15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items:center;
+}
+
+.modal-content .title-content .add-img-btn button span{
+
+    display: flex;
+    align-items:center;
+}
+.modal-content .title-content .add-img-btn button:hover{
+    color:var(--D8);
+    background: var(--purple5);
+}
+
+.modal-content .title-content .add-img-btn button i{
+    font-size:23px;
+}
+
+
+.modal-content .status-description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:30px 20px;
+    background:rgb(248, 248, 248);
+
+
+}
+
+.modal-content .status-description .desc-container textarea:focus{
+    outline: none !important;
+}
+
+.modal-content .status-description .desc-container textarea{
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: var(--D1);
+    font-weight: 600;
+ 
+}
+
+.modal-content .status-description .desc-container textarea::placeholder{
+    font-size: 18px;
+    color: var(--D1);
+    font-weight: 600;
+}
+
+
+.modal-status-wrapper .modal-footer{
+    position:relative;
+    display:flex;
+    justify-content: end; 
+    align-items: center;
+    object-fit: fill;
+    height:68px;
+    padding: 0 2em;
+
+}
+
+.modal-status-wrapper .modal-footer .submit-btn button{
+    border:none;
+    background: var(--purple5);
+    font-size:14px;
+    color:var(--D8);
+    padding:10px 20px;
+    font-weight: 600;
+
+}
+
+
+
 /*responsive*/
 @media(max-width: 767px){
   .footer-col{
@@ -839,11 +1041,18 @@ ul{
   }
 }
 @media(max-width: 574px){
-  .footer-col{
-    width: 100%;
-}
+    .footer-col{
+        width: 100%;
+    }
 }
 
+@media only screen and (max-width: 1384px){
+    .modal-status .modal-status-wrapper {
+        width:150vh;
+        height:90vh;
+    
+    }
+}
 
 
 @media only screen and (max-width: 768px){

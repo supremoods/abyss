@@ -2,6 +2,10 @@
     scrollbar-width: thin;
     scrollbar-color:var(--purple5) #272533;
 }
+
+*.modal{
+    overflow: hidden;
+}
 :root{
     --gray1: #fff;
     --gray2: #f8f8f8;

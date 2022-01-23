@@ -58,7 +58,7 @@
           </div>
   
           <div class="avatar-sec">
-            <span class="material-icons"> account_box </span>
+            <img src="Assets/img/icons/user-rectangle-solid-24 (2).png" alt="">
             <div class="account-links">
               <ul class="link-container">
                 <?php
@@ -83,9 +83,14 @@
 
           <div class="submit-btn">
             <p>Submit</p>
+            <div class="submit-container">
+              <div class="submit-links">
+                <button class="btn-abyssals">Abyssals</button>
+                <button class="btn-status">Status Update</button>
+                <button class="btn-journal">Journal</button>
+              </div>
+            </div>
           </div>
-
-
         </div>
       </div>
     </div>

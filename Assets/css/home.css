@@ -139,13 +139,11 @@
     position: relative;
     padding: 20px;
 }
-.avatar-sec span:hover{
-    color: var(--purple5);
+.avatar-sec img:hover{
     cursor:pointer;
 }
 .avatar-sec:hover .account-links{
-    opacity: 1;
-    transition: all .2s ease-in-out;
+    visibility: visible;
 }
 .avatar-sec .account-links{
     position:absolute;
@@ -153,12 +151,8 @@
     top:50px;
     right:0;
     z-index:99;
-    opacity: 0;
-    transition: all .2s ease-in-out;
+    visibility: hidden;
 }
-
-
-
 
 .avatar-sec .account-links .link-container{
     background: var(--D8);
@@ -189,8 +183,11 @@
 
 
 .header .submit-btn{
-    padding:0 60px;
+    position: relative;
+    padding:15px 60px;
+    height:100%;
     border-left: 1px solid var(--D8);
+    cursor: pointer;
 }
 .header .submit-btn p{
     font-size:14px;
@@ -198,6 +195,38 @@
     color: var(--purple5);
 }
 
+
+.submit-btn .submit-container{
+    position: absolute;
+    background: var(--D8);
+    width:173px;
+    padding:20px;
+    right:0;
+    top:45px;
+    z-index: 99;
+    visibility: hidden;
+}
+
+.submit-btn:hover .submit-container{
+    visibility: visible;
+} 
+.submit-btn .submit-container .submit-links{
+    display: flex;
+    flex-direction: column;
+}
+
+.submit-btn .submit-container .submit-links button{
+    text-align:left;
+    border:none;
+    background: none;
+    font-size: 15px;
+    padding:10px;
+    cursor: pointer;
+}
+
+.submit-btn .submit-container .submit-links button:hover{
+    color:var(--purple5);
+}
 .container{
     display: flex;
     flex-direction: column;

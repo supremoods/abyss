@@ -155,13 +155,12 @@
                             <span class="material-icons"> account_box </span>
                           </div>
                           <div class="post-input">
-                            <input type="text" name="" id="" placeholder="What's going on, supremood?">
+                            <input type="text" class="input-post-btn" placeholder="What's going on, <?php echo $fetch['username'] ?> ?" >
                           </div>
                         </div>
                         <div class="post-btn-grp">
                           <div class="btn-submit">
-                            <button>STATUS UPDATE</button>
-                            <button>JOURNAL</button>
+                            <button class="btn-status">STATUS UPDATE</button>
                           </div>
                         </div>
                       </div>
@@ -186,7 +185,7 @@
                         </div>
 
                         <div class="post-title">
-                          <img src="assets/img/arts/img5.jpg" >
+                          <img src="Assets/img/sisu_bg-min.png" >
                           <div class="title">
                             <h1>New year new stuff</h1>
                           </div>
@@ -247,82 +246,6 @@ Also, Metal Gear Solid 3 holds up pretty well. I'm having great exprience even i
                           </div>
                         </div>
                       </div>
-
-
-                      <div class="post-data">
-                        <div class="post-header">
-                          <div class="profile-img">
-                            <span class="material-icons"> account_box </span>
-                          </div>
-                          <div class="post-name-time">
-                            <div class="post-name">
-                              <p>Supremood</p>
-                            </div>
-                            <div class="post-time">
-                              <p>2 days ago</p>
-                            </div>
-                          </div>
-                          <div class="post-menu-btn">
-                            <span class="material-icons"> more_horiz </span>
-                          </div>
-                        </div>
-
-                        <div class="post-title">
-                          <img src="assets/img/arts/img1.jpg" >
-                          <div class="title">
-                            <h1>COMMISSIONS OPEN </h1>
-                          </div>
-                        </div>
-                        <div class="post-description">
-                          <pre>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, a laudantium. Velit illum, eaque porro harum obcaecati ratione fugit mollitia dignissimos eius architecto nemo ab eum, veniam asperiores nam quidem.
-
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo earum, reprehenderit id autem corrupti harum, consequatur eaque sequi ex molestias incidunt, maxime nobis illum ducimus vitae. Ad, consectetur animi. Neque.
-                          </pre>
-                        </div>
-
-                        <div class="post-btns">
-                          <div class="btns-left">
-                            <div class="btn-fav">
-                              <span class="material-icons">star_outline</span>
-                              <p>Add to Favourites</p>
-                            </div>
-                            <div class="btn-comment">
-                              <span class="material-icons">chat_bubble_outline</span>
-                              <p>Comment</p>
-                            </div>
-                            <div class="btn-share">
-                              <span class="material-icons">share</span>
-                              <p>Share</p>
-                            </div>
-                          </div>
-
-                          <div class="counts-right">
-                            <div class="counts">
-                              <div class="count-fav">
-                                <span class="material-icons">star</span>
-                                <p>30</p>
-                              </div>
-                              <div class="count-comment">
-                                <span class="material-icons">chat_bubble</span>
-                                <p>30</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="comment-section">
-                          <div class="comment">
-                            <div class="profile-img">
-                              <span class="material-icons"> account_box </span>
-                            </div>
-                            <div class="input-comment">
-                              <input class="input-cmnt" type="text" placeholder="Add a new comment">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
                     </div>
 
                     <div class="ads-area">
@@ -427,13 +350,61 @@ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo earum, repre
         </div>
      </footer>
     </main>
+
+    <div class="modal-status">
+      <div class="modal-status-wrapper">
+        <div class="modal-header">
+          <div class="left-section">
+            <div class="title">
+              <h1>Submit Status</h1>
+              <div>
+                <p>Who can see it? </p>
+                <button><span> Everyone</span><i class='bx bx-chevron-right'></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="right-section">
+              <div class="close-btn">
+                <button><i class='bx bx-x closeBtn'></i></button>
+              </div>
+          </div>
+        </div>
+        <div class="modal-content">
+          <div class="title-content">
+            <div class="cover-image">
+              <img src="Assets/img/sisu_bg-min.png" >
+            </div>
+            <div class="status-title">
+              <textarea type="text" name="status-title" placeholder="Add your title here"></textarea>
+            </div>
+            <div class="add-img-btn">
+              <button>
+                <span> <i class='bx bx-image-add'></i>ADD COVER IMAGE</span>
+              </button>
+            </div>
+          </div>
+          <div class="status-description">
+            <div class="desc-container">
+              <textarea name="status-desc" id="status-desc" cols="49" rows="10" placeholder="Start typing your main text here"></textarea>
+            </div>
+          </div>
+ 
+        </div>
+        <div class="modal-footer">
+            <div class="submit-btn">
+              <button name="submit" id="submit" type="submit">Submit</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="Assets/js/script.js"></script>
+  <script src="Assets/js/post.js"></script>
 </body>
 
 </html>

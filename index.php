@@ -51,9 +51,9 @@
             </a>
           </div>
   
-          <div class="avatar-sec">
+          <!-- <div class="avatar-sec">
             <img src="Assets/img/icons/user-rectangle-solid-24 (2).png" alt="">
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
