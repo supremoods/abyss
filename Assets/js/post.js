@@ -2,7 +2,7 @@ let menuToggle = document.querySelector('.deck-btn');
 let sidebar = document.querySelector('.sidebar');
 let statusUpdate = document.querySelector('.btn-status');
 let modal = document.querySelector('.modal-status');
-
+let statusUpdate2 = document.querySelector('.btn-status-header');
 let closeBtn = document.querySelector('.closeBtn');
 
 let statusUpdate1 = document.querySelector('.input-post-btn');
@@ -16,6 +16,10 @@ statusUpdate.onclick = function(){
     disableScroll()
 }
 statusUpdate1.onclick = function(){
+    modal.classList.toggle('modal');
+    disableScroll()
+}
+statusUpdate2.onclick = function(){
     modal.classList.toggle('modal');
     disableScroll()
 }
