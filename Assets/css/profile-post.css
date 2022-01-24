@@ -34,14 +34,51 @@
     height: 54px;
     background-color: var(--L8);
 }
+
 .header .submit-btn{
-    padding:0 60px;
+    position: relative;
+    padding:15px 60px;
+    height:100%;
     border-left: 1px solid var(--D8);
+    cursor: pointer;
 }
 .header .submit-btn p{
     font-size:14px;
     font-weight: 700;
     color: var(--purple5);
+}
+
+
+.submit-btn .submit-container{
+    position: absolute;
+    background: var(--D8);
+    width:173px;
+    padding:20px;
+    right:0;
+    top:45px;
+    z-index: 99;
+    visibility: hidden;
+}
+
+.submit-btn:hover .submit-container{
+    visibility: visible;
+} 
+.submit-btn .submit-container .submit-links{
+    display: flex;
+    flex-direction: column;
+}
+
+.submit-btn .submit-container .submit-links button{
+    text-align:left;
+    border:none;
+    background: none;
+    font-size: 15px;
+    padding:10px;
+    cursor: pointer;
+}
+
+.submit-btn .submit-container .submit-links button:hover{
+    color:var(--purple5);
 }
 .deck-btn{
     box-sizing: border-box;

@@ -11,6 +11,7 @@
   <title>Abyss | Topics</title>
   <link rel="stylesheet" href="Assets/css/root.css" />
   <link rel="stylesheet" href="Assets/css/topic.css" />
+  <link rel="stylesheet" href="Assets/css/modal.css" />
   <link rel="shortcut icon" href="Assets/logo.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
@@ -40,17 +41,17 @@
               <span class="material-icons"> search </span>
             </div>
           </div>
-
+          
           <div class="navlinks">
-            <a href="Chat.php" class="join-link">
-                <span class="material-icons">
-                    textsms
-                </span>
+            <a href="chat.php" class="join-link">
+              <span class="material-icons">
+                textsms
+              </span>
             </a>
-            <a href="login.php" class="login-link">
-                <span class="material-icons">
-                    notifications
-                </span>
+            <a href="#" class="login-link">
+              <span class="material-icons">
+                notifications
+              </span>
             </a>
           </div>
   
@@ -79,8 +80,17 @@
             </div>
           </div>
 
-        </div>
+          <div class="submit-btn">
+            <p>Submit</p>
+            <div class="submit-container">
+              <div class="submit-links">
+                <button class="btn-abyssals" onclick="abyssalModal()">Abyssals</button>
+                <button class="btn-status-header" onclick="statusModal()">Status Update</button>
+              </div>
+            </div>
+          </div>
 
+        </div>
       </div>
     </div>
     
@@ -348,6 +358,117 @@
       </footer>
       
     </main>
+
+        
+ 
+    <!-- modal notif -->
+    <div class="modal-status">
+      <div class="modal-status-wrapper">
+        <div class="modal-header">
+          <div class="left-section">
+            <div class="title">
+              <h1>Submit Status</h1>
+              <div>
+                <p>Who can see it? </p>
+                <select id="privacy">
+                  <option value="everyone">Everyone</option>
+                  <option value="friends">Friends</option>
+                  <option value="only_me">Only me</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="right-section">
+              <div class="close-btn">
+                <button><i class='bx bx-x closeBtn' onclick="statusModalClose()"></i></button>
+              </div>
+          </div>
+        </div>
+        <div class="modal-content">
+          <div class="title-content">
+            <div class="cover-image">
+              <img src="Assets/img/sisu_bg-min.png" >
+     
+            </div>
+            <div class="status-title">
+              <textarea type="text" name="status-title" placeholder="Add your title here"></textarea>
+            </div>
+            <div class="add-img-btn">
+              <button>
+                <span> <i class='bx bx-image-add'></i>Add cover image</span>
+              </button>
+            </div>
+          </div>
+          <div class="status-description">
+            <div class="desc-container">
+              <textarea name="status-desc" id="status-desc" cols="49" rows="10" placeholder="Start typing your main text here"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="submit-btn">
+          <p>Submit</p>
+          <div class="submit-container">
+            <div class="submit-links">
+              <button class="btn-abyssals" onclick="abyssalModal()">Abyssals</button>
+              <button class="btn-status-header" onclick="statusModal()">Status Update</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="modal-abyssals">
+      <div class="modal-abyssals-wrapper">
+        <div class="modal-abyssals-header">
+          <div class="left-section">
+            <div class="title">
+              <h1>Submit Abyssal</h1>
+              <div>
+                <p>Who can see it? </p>
+                <select id="privacy">
+                  <option value="everyone">Everyone</option>
+                  <option value="friends">Friends</option>
+                  <option value="only_me">Only me</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="right-section">
+              <div class="abyssals-close-btn">
+                <button><i class='bx bx-x closeBtn' onclick="abyssalModalClose()"></i></button>
+              </div>
+          </div>
+        </div>
+        <div class="modal-abyssals-content">
+          <div class="title-content">
+            <div class="cover-image">
+              <img src="Assets/img/sisu_bg-min.png" >
+            </div>
+            <div class="abyssals-title">
+              <textarea type="text" name="abyssals-title" placeholder="Add your title here"></textarea>
+            </div>
+            <div class="add-img-btn">
+              <button>
+                <span><i class='bx bx-image-add'></i>Add Abyssal</span>
+              </button>
+            </div>
+          </div>
+          <div class="abyssals-description">
+            <div class="desc-container">
+              <textarea name="abyssals-desc" id="abyssals-desc" cols="49" rows="10" placeholder="Start typing your main text here"></textarea>
+            </div>
+          </div>
+ 
+        </div>
+        <div class="modal-abyssals-footer">
+            <div class="submit-btn">
+              <button name="submit" id="submit" type="submit">Submit</button>
+            </div>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>

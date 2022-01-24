@@ -102,7 +102,7 @@
       <div class="main-content">
         <div class="art-details-section">
             <div class="art-stage-wrapper">
-                <div class="gal-back-btns hov">
+                <div class="gal-back-btns hov" onclick="backGallery()">
                     <i class='bx bx-chevron-left' ></i>
                     <p>gallery</p>
                 </div>

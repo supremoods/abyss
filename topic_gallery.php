@@ -23,7 +23,7 @@
   <div id="root">
     <div class="header-container">
       <div class="header">
-        <button class="deck-btn">
+        <button class="deck-btn" onclick="sidebarNav()">
           <span class="material-icons"> grid_view </span>
         </button>
   
@@ -59,6 +59,7 @@
             <div class="account-links">
               <ul class="link-container">
                 <?php
+                  session_start();
                   $id = (int) $_SESSION['id'];
 
                   $query = mysqli_query ($conn, "SELECT * FROM abyss_User WHERE id = '$id' ") or die (mysqli_error());

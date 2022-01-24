@@ -178,6 +178,7 @@
     color:var(--purple5);
 }
 
+
 .avatar-sec{
     display: flex;
     align-items:center;
@@ -198,6 +199,7 @@
     z-index:99;
     visibility: hidden;
 }
+
 .avatar-sec .account-links .link-container{
     background: var(--D8);
     font-size: 15px;
@@ -207,6 +209,7 @@
 
 .avatar-sec .account-links .link-container li{
     padding:10px;
+    list-style: none;
 }
 
 
@@ -223,8 +226,6 @@
 .avatar-sec .account-links .link-container li:nth-last-child(1){
     border-top: 1px solid #1e1d2b2e;
 }
-
-
 
 .sidebar-container{
     position: fixed;

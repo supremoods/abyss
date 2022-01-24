@@ -42,16 +42,17 @@
             </div>
           </div>
 
+
           <div class="navlinks">
-            <a href="Chat.php" class="join-link">
-                <span class="material-icons">
-                    textsms
-                </span>
+            <a href="chat.php" class="join-link">
+              <span class="material-icons">
+                textsms
+              </span>
             </a>
-            <a href="login.php" class="login-link">
-                <span class="material-icons">
-                    notifications
-                </span>
+            <a href="#" class="login-link">
+              <span class="material-icons">
+                notifications
+              </span>
             </a>
           </div>
   

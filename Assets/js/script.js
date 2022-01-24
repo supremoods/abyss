@@ -124,3 +124,11 @@ function disableScroll() {
 function enableScroll() {
     window.onscroll = function() {};
 }
+
+
+
+
+
+function backGallery(){
+    window.location.href = 'home.php';
+}
