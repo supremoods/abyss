@@ -21,9 +21,8 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
 </head>
-</head>
 
-<body>
+<body class="body-root">
   <div id="root">
     <div class="header-container">
       <div class="header">
@@ -67,11 +66,8 @@
 
                   $query = mysqli_query ($conn, "SELECT * FROM abyss_User WHERE id = '$id' ") or die (mysqli_error());
                   $fetch = mysqli_fetch_array ($query);
-                  echo "
-                  <h1>" .$fetch['username']."</h1>
-                  ";
                 ?>
-                <!-- <h1><?//php $fetch['username'] ?></h1> -->
+                <h1><?php echo $fetch['username'] ?></h1>
                 <li><a href="profile.php">Profile</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
                 <li><a href="favorites.php">Favourites</a></li>
@@ -230,175 +226,7 @@
                   </div>
                 </div>
               </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img2.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>The war is over, my knight. You can go home.</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by AizelKon</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img3.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Portrait 03</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by NIRASATAN</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img4.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>MATRIX 4 - HARBOR</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by Leifheanzo</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img5.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Look At Me</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by ZialerZ</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img6.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Shou</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by ZialerZ</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img7.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Cosmic emptiness</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by Gabrix89</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img1.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Nightmare</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by AlvaroCardozoW</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img2.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>The war is over, my knight. You can go home.</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by AizelKon</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img3.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Portrait 03</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by NIRASATAN</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img4.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>MATRIX 4 - HARBOR</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by Leifheanzo</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img5.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Look At Me</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by ZialerZ</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img6.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Shou</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by ZialerZ</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img7.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Cosmic emptiness</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by Gabrix89</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
+              
               
             </ul>
           </div>
@@ -506,7 +334,7 @@
               <h1>Submit Abyssal</h1>
               <div>
                 <p>Who can see it? </p>
-                <select id="privacy">
+                <select id="privacy" name="privacy">
                   <option value="everyone">Everyone</option>
                   <option value="friends">Friends</option>
                   <option value="only_me">Only me</option>

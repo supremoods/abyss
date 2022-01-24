@@ -19,9 +19,8 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 </head>
-</head>
 
-<body>
+<body class="body-root">
   <div id="root">
     <div class="header-container">
       <div class="header">
@@ -66,10 +65,8 @@
 
                   $query = mysqli_query ($conn, "SELECT * FROM abyss_User WHERE id = '$id' ") or die (mysqli_error());
                   $fetch = mysqli_fetch_array ($query);
-                  echo "
-                  <h1>" .$fetch['username']."</h1>
-                  ";
                 ?>
+                <h1><?php echo $fetch['username'] ?></h1>
                 <li><a href="profile.php">Profile</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
                 <li><a href="favorites.php">Favourites</a></li>
@@ -89,7 +86,6 @@
               </div>
             </div>
           </div>
-
 
         </div>
       </div>
@@ -128,8 +124,12 @@
         <div class="heading-container">
 
           <div class="profile-name">
-            <div class="user-icon">
-              <i class='bx bxs-user'></i>
+            <div class="user-icon" >
+              <img src="Assets/img/icons/avatar.png" alt="">
+              <div class="upload-profile" onclick="modalProfile()">
+                <i class='bx bx-refresh'></i>
+                <span>change</span>
+              </div>
             </div>
 
             <div class="users-info">
@@ -168,8 +168,6 @@
             </div>
           </div>
         </div>
-
-
       
       <!-- footer section -->
       <footer class="footer">
@@ -312,6 +310,30 @@
             <div class="submit-btn">
               <button name="submit" id="submit" type="submit">Submit</button>
             </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-upload-profile">
+      <div class="modal-upload-wrapper">
+        <div class="modal-header-profile">
+          <div class="title-header">
+            <h1>Upload Avatar</h1>
+          </div>
+          <div class="close-profile-btn" onclick="closeModalProfile()">
+            <i class='bx bx-x' ></i>
+          </div>
+        </div>
+        <div class="modal-image-section">
+          <img class="avatar-profile" src="" alt="" srcset="">
+          <div class="uploadbtn-container">
+            <button class="uploadBtn" onclick="defaultBtnActive()">Choose a file</button>  
+            <input id="default-btn" type="file" onclick="getImage()" hidden>
+          </div>
+        </div>
+        <div class="modal-footer-btn">
+          <button class="cancel-btn" onclick="closeModalProfile()">Cancel</button>
+          <button id="confirmEnable" class="confirm-btn" >Confirm</button>
         </div>
       </div>
     </div>

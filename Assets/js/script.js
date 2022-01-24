@@ -59,6 +59,9 @@ function artdetails(){
 
 function sidebarNav(){
     let sidebar = document.querySelector('.sidebar'); 
+    let body = document.querySelector('.body-root')
+
+    body.classList.toggle('active');
     sidebar.classList.toggle('active');
  
 }
@@ -81,54 +84,92 @@ function login(){
 
 function statusModal(){
     let modal = document.querySelector('.modal-status');
-
+    let body = document.querySelector('.body-root')
+    
     modal.classList.toggle('modal');
-    disableScroll()
+    body.classList.toggle('modal');
+
 }
 
 
 function abyssalModal(){
     let modal_A = document.querySelector('.modal-abyssals');
+    let body = document.querySelector('.body-root')
 
     modal_A.classList.toggle('modal_A');
-    disableScroll()
+    body.classList.toggle('modal');
 }
 
 function statusModalClose(){
     let modal = document.querySelector('.modal-status');
-
+    let body = document.querySelector('.body-root')
+    
     modal.classList.toggle('modal');
-    enableScroll()
+    body.classList.toggle('modal');
 }
 
 
 function abyssalModalClose(){
     let modal_A = document.querySelector('.modal-abyssals');
+    let body = document.querySelector('.body-root')
 
     modal_A.classList.toggle('modal_A');
-    enableScroll()
+    body.classList.toggle('modal');
 }
-
-
-function disableScroll() {
-    // Get the current page scroll position
-    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-  
-        // if any scroll is attempted, set this to the previous value
-        window.onscroll = function() {
-            window.scrollTo(scrollLeft, scrollTop);
-        };
-}
-  
-function enableScroll() {
-    window.onscroll = function() {};
-}
-
-
-
 
 
 function backGallery(){
     window.location.href = 'home.php';
+}
+
+function modalProfile(){
+    let profileModal = document.querySelector('.modal-upload-profile');
+    let body = document.querySelector('.body-root')
+
+    profileModal.classList.toggle('modal');
+    body.classList.toggle('modal');
+
+}
+
+function closeModalProfile(){
+    let profileModal = document.querySelector('.modal-upload-profile');
+    let body = document.querySelector('.body-root');
+    let confirnmBtn = document.querySelector('.confirm-btn');
+    
+    profileModal.classList.toggle('modal');
+    body.classList.toggle('modal');
+    confirnmBtn.classList.toggle('modal');
+
+    img.src = "";
+    document.getElementById("confirmEnable").disabled = true;
+}
+
+
+
+
+const img = document.querySelector(".avatar-profile");
+const defaultBtn = document.querySelector("#default-btn");
+let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+
+function defaultBtnActive(){
+  
+    defaultBtn.click();
+    
+}
+
+function getImage(){
+    defaultBtn.addEventListener("change", function(){
+        const file = this.files[0];
+        if(file){
+          const reader = new FileReader();
+          reader.onload = function(){
+            const result = reader.result;
+            img.src = result;
+          }
+          document.getElementById("confirmEnable").disabled = false;
+
+          reader.readAsDataURL(file);
+        } 
+      });
+     
 }

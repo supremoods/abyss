@@ -20,7 +20,7 @@
 </head>
 </head>
 
-<body>
+<body class="body-root">
   <div id="root">
     <div class="header-container">
       <div class="header">
@@ -41,7 +41,7 @@
               <span class="material-icons"> search </span>
             </div>
           </div>
-          
+
           <div class="navlinks">
             <a href="chat.php" class="join-link">
               <span class="material-icons">

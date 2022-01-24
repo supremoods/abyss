@@ -21,7 +21,7 @@
 </head>
 </head>
 
-<body>
+<body class="body-root">
   <div id="root">
     <div class="header-container">
       <div class="header">
@@ -129,8 +129,12 @@
         <div class="heading-container">
 
           <div class="profile-name">
-            <div class="user-icon">
-              <i class='bx bxs-user'></i>
+            <div class="user-icon" >
+              <img src="Assets/img/icons/avatar.png" alt="">
+              <div class="upload-profile" onclick="modalProfile()">
+                <i class='bx bx-refresh'></i>
+                <span>change</span>
+              </div>
             </div>
 
             <div class="users-info">
@@ -369,7 +373,29 @@
         </div>
       </div>
     </div>
-
+    <div class="modal-upload-profile">
+      <div class="modal-upload-wrapper">
+        <div class="modal-header-profile">
+          <div class="title-header">
+            <h1>Upload Avatar</h1>
+          </div>
+          <div class="close-profile-btn" onclick="closeModalProfile()">
+            <i class='bx bx-x' ></i>
+          </div>
+        </div>
+        <div class="modal-image-section">
+          <img class="avatar-profile" src="" alt="" srcset="">
+          <div class="uploadbtn-container">
+            <button class="uploadBtn" onclick="defaultBtnActive()">Choose a file</button>  
+            <input id="default-btn" type="file" onclick="getImage()" hidden>
+          </div>
+        </div>
+        <div class="modal-footer-btn">
+          <button class="cancel-btn" onclick="closeModalProfile()">Cancel</button>
+          <button id="confirmEnable" class="confirm-btn" >Confirm</button>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>

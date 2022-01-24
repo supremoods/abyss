@@ -1,3 +1,6 @@
+<?php
+  include('phpFunc/dbConnect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +20,7 @@
 </head>
 </head>
 
-<body>
+<body class="body-root">
   <div id="root">
     <div class="header-container">
       <div class="header">
@@ -53,7 +56,28 @@
           </div>
   
           <div class="avatar-sec">
-            <span class="material-icons"> account_box </span>
+            <img src="Assets/img/icons/user-rectangle-solid-24 (2).png" alt="">
+            <div class="account-links">
+              <ul class="link-container">
+                <?php
+                  session_start();
+                  $id = (int) $_SESSION['id'];
+
+                  $query = mysqli_query ($conn, "SELECT * FROM abyss_User WHERE id = '$id' ") or die (mysqli_error());
+                  $fetch = mysqli_fetch_array ($query);
+                  echo "
+                  <h1>" .$fetch['username']."</h1>
+                  ";
+                ?>
+                <!-- <h1><?//php $fetch['username'] ?></h1> -->
+                <li><a href="profile.php">Profile</a></li>
+                <li><a href="gallery.php">Gallery</a></li>
+                <li><a href="favorites.php">Favourites</a></li>
+                <li><a href="profile-post.php">Posts</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="phpFunc/logout.php">Logout</a></li>
+              </ul>
+            </div>
           </div>
           
           <div class="submit-btn">

@@ -254,6 +254,10 @@
 .sidebar.active{
     width: 250px;
 }
+
+.body-root.active{
+    overflow: hidden;
+}
 .sidebar ul{
     position: absolute;
     top: 0;

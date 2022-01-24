@@ -23,7 +23,7 @@
 </head>
 
 
-<body>
+<body class="body-root">
   <div id="root">
     <div class="header-container">
       <div class="header">
