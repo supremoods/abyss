@@ -327,55 +327,58 @@
     </div>
 
     <div class="modal-abyssals">
-      <div class="modal-abyssals-wrapper">
-        <div class="modal-abyssals-header">
-          <div class="left-section">
-            <div class="title">
-              <h1>Submit Abyssal</h1>
-              <div>
-                <p>Who can see it? </p>
-                <select id="privacy" name="privacy">
-                  <option value="everyone">Everyone</option>
-                  <option value="friends">Friends</option>
-                  <option value="only_me">Only me</option>
-                </select>
+      <form method="post" enctype="multipart/form-data" id="uploadImg">
+        <div class="modal-abyssals-wrapper">
+          <div class="modal-abyssals-header">
+            <div class="left-section">
+              <div class="title">
+                <h1>Submit Abyssal</h1>
+                <div>
+                  <p>Who can see it? </p>
+                  
+                  <select id="privacy" name="privacy">
+                    <option value="everyone">Everyone</option>
+                    <option value="friends">Friends</option>
+                    <option value="only_me">Only me</option>
+                  </select>
+                </div>
               </div>
             </div>
+            <div class="right-section">
+                <div class="abyssals-close-btn">
+                  <button><i class='bx bx-x closeBtn' onclick="abyssalModalClose()"></i></button>
+                </div>
+            </div>
           </div>
-          <div class="right-section">
-              <div class="abyssals-close-btn">
-                <button><i class='bx bx-x closeBtn' onclick="abyssalModalClose()"></i></button>
+          <div class="modal-abyssals-content">
+              <div class="title-content">
+                <div class="cover-image">
+                  <img class="abyssal-art" src="Assets/img/sisu_bg-min.png" >
+                </div>
+                <div class="abyssals-title">
+                  <textarea type="text" name="abyssals-title" placeholder="Add your title here"></textarea>
+                </div>
+                <div class="add-img-btn">
+                  <div onclick="abyssalBtnActive()">
+                    <span><i class='bx bx-image-add'></i>Add Abyssal</span>
+                  </div>
+                  <input id="add-abyysals-btn" name="abyssal_art_image" type="file" onclick="getAbyssalImage()" hidden>
+                </div>
               </div>
+              <div class="abyssals-description">
+                <div class="desc-container">
+                  <textarea name="abyssals-desc" id="abyssals-desc" cols="49" rows="10" placeholder="Start typing your main text here"></textarea>
+                </div>
+              </div> 
+          </div>
+          <div class="modal-abyssals-footer">
+              <div class="submit-btn">
+                <button name="submit" id="submit_Abyssals" type="submit">Submit</button>
+              </div>
+        
           </div>
         </div>
-        <div class="modal-abyssals-content">
-          <div class="title-content">
-            <div class="cover-image">
-              <img src="Assets/img/sisu_bg-min.png" >
-            </div>
-            <div class="abyssals-title">
-              <textarea type="text" name="abyssals-title" placeholder="Add your title here"></textarea>
-            </div>
-            <div class="add-img-btn">
-              <button>
-                <span><i class='bx bx-image-add'></i>Add Abyssal</span>
-              </button>
-            </div>
-          </div>
-          <div class="abyssals-description">
-            <div class="desc-container">
-              <textarea name="abyssals-desc" id="abyssals-desc" cols="49" rows="10" placeholder="Start typing your main text here"></textarea>
-            </div>
-          </div>
- 
-        </div>
-        <div class="modal-abyssals-footer">
-            <div class="submit-btn">
-              <button name="submit" id="submit" type="submit">Submit</button>
-            </div>
-        </div>
-      </div>
-      
+      </form>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

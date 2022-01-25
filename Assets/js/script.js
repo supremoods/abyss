@@ -173,3 +173,52 @@ function getImage(){
       });
      
 }
+
+
+const imgAbyssal = document.querySelector(".abyssal-art");
+const abyssalBtn = document.querySelector("#add-abyysals-btn");
+
+function abyssalBtnActive(){
+    abyssalBtn.click();
+}
+
+function getAbyssalImage(){
+    abyssalBtn.addEventListener("change", function(){
+        const file = this.files[0];
+        if(file){
+          const reader = new FileReader();
+          reader.onload = function(){
+            const result = reader.result;
+            imgAbyssal.src = result;
+          }
+
+          reader.readAsDataURL(file);
+        } 
+      });
+     
+}
+
+
+
+// uplaod image ajax
+
+    $(document).ready(function(){
+
+        $("#uploadImg").on("submit",function(e){
+            e.preventDefault();
+            var form_data = new FormData(this);     
+            $.ajax({
+                url : "./phpFunc/uploadImage.php",
+                method: "POST",
+                data: form_data,
+                dataType: "JSON",
+                processData:false,
+                contentType:false,
+                succes:function(data){
+                    console.log(data.output);
+
+                    alert(data.output);
+                }     
+            });
+        });
+    });
