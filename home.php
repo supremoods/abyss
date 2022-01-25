@@ -346,7 +346,7 @@
             </div>
             <div class="right-section">
                 <div class="abyssals-close-btn">
-                  <button><i class='bx bx-x closeBtn' onclick="abyssalModalClose()"></i></button>
+                  <div><i class='bx bx-x closeBtn' onclick="abyssalModalClose()"></i></div>
                 </div>
             </div>
           </div>
@@ -373,9 +373,8 @@
           </div>
           <div class="modal-abyssals-footer">
               <div class="submit-btn">
-                <button name="submit" id="submit_Abyssals" type="submit">Submit</button>
+                <button name="AbyssalSubmit" id="submit_Abyssals" type="submit">Submit</button>
               </div>
-        
           </div>
         </div>
       </form>

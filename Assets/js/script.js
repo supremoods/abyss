@@ -205,6 +205,7 @@ function getAbyssalImage(){
     $(document).ready(function(){
 
         $("#uploadImg").on("submit",function(e){
+
             e.preventDefault();
             var form_data = new FormData(this);     
             $.ajax({
@@ -214,11 +215,12 @@ function getAbyssalImage(){
                 dataType: "JSON",
                 processData:false,
                 contentType:false,
-                succes:function(data){
+                success:function(data){
                     console.log(data.output);
-
                     alert(data.output);
+
                 }     
             });
+            abyssalModalClose()
         });
     });
