@@ -213,21 +213,9 @@
           <!-- gallery -->
           <div class="gallery">
             <ul class="gallery-wrapper">
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img1.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Nightmare</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by AlvaroCardozoW</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              
-              
+              <?php
+                include('phpFunc/loadAbyssals.php');
+              ?>
             </ul>
           </div>
   
@@ -274,56 +262,58 @@
     </main>
     
     <!-- modal notif -->
-    <div class="modal-status">
-      <div class="modal-status-wrapper">
-        <div class="modal-header">
-          <div class="left-section">
-            <div class="title">
-              <h1>Submit Status</h1>
-              <div>
-                <p>Who can see it? </p>
-                <select id="privacy">
-                  <option value="everyone">Everyone</option>
-                  <option value="friends">Friends</option>
-                  <option value="only_me">Only me</option>
-                </select>
+    <div class="modal-post">
+      <form method="post" enctype="multipart/form-data" id="uploadStatus">
+        <div class="modal-post-wrapper">
+          <div class="modal-post-header">
+            <div class="left-section">
+              <div class="title">
+                <h1>Update Status</h1>
+                <div>
+                  <p>Who can see it? </p>
+                  
+                  <select id="privacy" name="privacy">
+                    <option value="everyone">Everyone</option>
+                    <option value="friends">Friends</option>
+                    <option value="only_me">Only me</option>
+                  </select>
+                </div>
               </div>
             </div>
+            <div class="right-section">
+                <div class="post-close-btn">
+                  <div><i class='bx bx-x closeBtn' onclick="statusModalClose()"></i></div>
+                </div>
+            </div>
           </div>
-          <div class="right-section">
-              <div class="close-btn">
-                <button><i class='bx bx-x closeBtn' onclick="statusModalClose()"></i></button>
+          <div class="modal-post-content">
+              <div class="title-content">
+                <div class="cover-image">
+                  <img class="post-art" src="Assets/img/sisu_bg-min.png" >
+                </div>
+                <div class="post-title">
+                  <textarea type="text" name="post-title" placeholder="Add your title here"></textarea>
+                </div>
+                <div class="add-img-btn">
+                  <div onclick="postBtnActive()">
+                    <span><i class='bx bx-image-add'></i>Add Cover Image</span>
+                  </div>
+                  <input id="add-post-btn" name="post_art_image" type="file" onclick="getPostImage()" hidden>
+                </div>
+              </div>
+              <div class="post-description">
+                <div class="desc-container">
+                  <textarea name="post-desc" id="post-desc" cols="49" rows="10" placeholder="Start typing your main text here"></textarea>
+                </div>
+              </div> 
+          </div>
+          <div class="modal-post-footer">
+              <div class="submit-btn">
+                <button name="postubmit" id="submit_post" type="submit">Submit</button>
               </div>
           </div>
         </div>
-        <div class="modal-content">
-          <div class="title-content">
-            <div class="cover-image">
-              <img src="Assets/img/sisu_bg-min.png" >
-     
-            </div>
-            <div class="status-title">
-              <textarea type="text" name="status-title" placeholder="Add your title here"></textarea>
-            </div>
-            <div class="add-img-btn">
-              <button>
-                <span> <i class='bx bx-image-add'></i>Add cover image</span>
-              </button>
-            </div>
-          </div>
-          <div class="status-description">
-            <div class="desc-container">
-              <textarea name="status-desc" id="status-desc" cols="49" rows="10" placeholder="Start typing your main text here"></textarea>
-            </div>
-          </div>
- 
-        </div>
-        <div class="modal-footer">
-            <div class="submit-btn">
-              <button name="submit" id="submit" type="submit">Submit</button>
-            </div>
-        </div>
-      </div>
+      </form>
     </div>
 
     <div class="modal-abyssals">

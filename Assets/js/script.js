@@ -83,7 +83,7 @@ function login(){
 }
 
 function statusModal(){
-    let modal = document.querySelector('.modal-status');
+    let modal = document.querySelector('.modal-post');
     let body = document.querySelector('.body-root')
     
     modal.classList.toggle('modal');
@@ -101,7 +101,7 @@ function abyssalModal(){
 }
 
 function statusModalClose(){
-    let modal = document.querySelector('.modal-status');
+    let modal = document.querySelector('.modal-post');
     let body = document.querySelector('.body-root')
     
     modal.classList.toggle('modal');
@@ -176,11 +176,18 @@ function getImage(){
 
 
 const imgAbyssal = document.querySelector(".abyssal-art");
+const postAbyssal = document.querySelector(".post-art");
 const abyssalBtn = document.querySelector("#add-abyysals-btn");
+const postBtn = document.querySelector("#add-post-btn");
 
 function abyssalBtnActive(){
     abyssalBtn.click();
 }
+
+function postBtnActive(){
+    postBtn.click();
+}
+
 
 function getAbyssalImage(){
     abyssalBtn.addEventListener("change", function(){
@@ -199,13 +206,29 @@ function getAbyssalImage(){
 }
 
 
+function getPostImage(){
+    postBtn.addEventListener("change", function(){
+        const file = this.files[0];
+        if(file){
+          const reader = new FileReader();
+          reader.onload = function(){
+            const result = reader.result;
+            postAbyssal.src = result;
+          }
+
+          reader.readAsDataURL(file);
+        } 
+      });
+     
+}
+
+
+
 
 // uplaod image ajax
 
     $(document).ready(function(){
-
         $("#uploadImg").on("submit",function(e){
-
             e.preventDefault();
             var form_data = new FormData(this);     
             $.ajax({
@@ -218,6 +241,33 @@ function getAbyssalImage(){
                 success:function(data){
                     console.log(data.output);
                     alert(data.output);
+                    $('.gallery-wrapper').empty();
+                    $('.gallery-wrapper').load("./phpFunc/loadAbyssals.php");
+                }     
+            });
+            abyssalModalClose()
+        });
+    });
+
+    
+    $(document).ready(function(){
+
+        $("#uploadStatus").on("submit",function(e){
+
+            e.preventDefault();
+            var form_data = new FormData(this);     
+            $.ajax({
+                url : "./phpFunc/uploadStatus.php",
+                method: "POST",
+                data: form_data,
+                dataType: "JSON",
+                processData:false,
+                contentType:false,
+                success:function(data){
+                    console.log(data.output);
+                    alert(data.output);
+                    $('.gallery-wrapper').empty();
+                    $('.gallery-wrapper').load("./phpFunc/loadAbyssals.php");
 
                 }     
             });
