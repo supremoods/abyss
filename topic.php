@@ -362,113 +362,114 @@
         
  
     <!-- modal notif -->
-    <div class="modal-status">
-      <div class="modal-status-wrapper">
-        <div class="modal-header">
-          <div class="left-section">
-            <div class="title">
-              <h1>Submit Status</h1>
-              <div>
-                <p>Who can see it? </p>
-                <select id="privacy">
-                  <option value="everyone">Everyone</option>
-                  <option value="friends">Friends</option>
-                  <option value="only_me">Only me</option>
-                </select>
+    <div class="modal-post">
+      <form method="post" enctype="multipart/form-data" id="uploadStatus">
+        <div class="modal-post-wrapper">
+          <div class="modal-post-header">
+            <div class="left-section">
+              <div class="title">
+                <h1>Update Status</h1>
+                <div>
+                  <p>Who can see it? </p>
+                  
+                  <select id="privacy" name="privacy">
+                    <option value="everyone">Everyone</option>
+                    <option value="friends">Friends</option>
+                    <option value="only_me">Only me</option>
+                  </select>
+                </div>
               </div>
             </div>
+            <div class="right-section">
+                <div class="post-close-btn">
+                  <div><i class='bx bx-x closeBtn' onclick="statusModalClose()"></i></div>
+                </div>
+            </div>
           </div>
-          <div class="right-section">
-              <div class="close-btn">
-                <button><i class='bx bx-x closeBtn' onclick="statusModalClose()"></i></button>
+          <div class="modal-post-content">
+              <div class="title-content">
+                <div class="cover-image">
+                  <img class="post-art" src="Assets/img/sisu_bg-min.png" >
+                </div>
+                <div class="post-title">
+                  <textarea id="post-title" type="text" name="post-title" placeholder="Add your title here"></textarea>
+                </div>
+                <div class="add-img-btn">
+                  <div onclick="postBtnActive()">
+                    <span><i class='bx bx-image-add'></i>Add Cover Image</span>
+                  </div>
+                  <input id="add-post-btn" name="post_art_image" type="file" onclick="getPostImage()" hidden>
+                </div>
+              </div>
+              <div class="post-description">
+                <div class="desc-container">
+                  <textarea name="post-desc" id="post-desc" cols="49" rows="10" placeholder="Start typing your main text here"></textarea>
+                </div>
+              </div> 
+          </div>
+          <div class="modal-post-footer">
+              <div class="submit-btn">
+                <button name="postubmit" id="submit_post" type="submit">Submit</button>
               </div>
           </div>
         </div>
-        <div class="modal-content">
-          <div class="title-content">
-            <div class="cover-image">
-              <img src="Assets/img/sisu_bg-min.png" >
-     
-            </div>
-            <div class="status-title">
-              <textarea type="text" name="status-title" placeholder="Add your title here"></textarea>
-            </div>
-            <div class="add-img-btn">
-              <button>
-                <span> <i class='bx bx-image-add'></i>Add cover image</span>
-              </button>
-            </div>
-          </div>
-          <div class="status-description">
-            <div class="desc-container">
-              <textarea name="status-desc" id="status-desc" cols="49" rows="10" placeholder="Start typing your main text here"></textarea>
-            </div>
-          </div>
-        </div>
-
-        <div class="submit-btn">
-          <p>Submit</p>
-          <div class="submit-container">
-            <div class="submit-links">
-              <button class="btn-abyssals" onclick="abyssalModal()">Abyssals</button>
-              <button class="btn-status-header" onclick="statusModal()">Status Update</button>
-            </div>
-          </div>
-        </div>
-
-      </div>
+      </form>
     </div>
 
     <div class="modal-abyssals">
-      <div class="modal-abyssals-wrapper">
-        <div class="modal-abyssals-header">
-          <div class="left-section">
-            <div class="title">
-              <h1>Submit Abyssal</h1>
-              <div>
-                <p>Who can see it? </p>
-                <select id="privacy">
-                  <option value="everyone">Everyone</option>
-                  <option value="friends">Friends</option>
-                  <option value="only_me">Only me</option>
-                </select>
+      <form method="post" enctype="multipart/form-data" id="uploadImg">
+        <div class="modal-abyssals-wrapper">
+          <div class="modal-abyssals-header">
+            <div class="left-section">
+              <div class="title">
+                <h1>Submit Abyssal</h1>
+                <div>
+                  <p>Who can see it? </p>
+                  
+                  <select id="privacy" name="privacy">
+                    <option value="everyone">Everyone</option>
+                    <option value="friends">Friends</option>
+                    <option value="only_me">Only me</option>
+                  </select>
+                </div>
               </div>
             </div>
+            <div class="right-section">
+                <div class="abyssals-close-btn">
+                  <div><i class='bx bx-x closeBtn' onclick="abyssalModalClose()"></i></div>
+                </div>
+            </div>
           </div>
-          <div class="right-section">
-              <div class="abyssals-close-btn">
-                <button><i class='bx bx-x closeBtn' onclick="abyssalModalClose()"></i></button>
+          <div class="modal-abyssals-content">
+              <div class="title-content">
+                <div class="cover-image">
+                  <img class="abyssal-art" src="Assets/img/sisu_bg-min.png" >
+                </div>
+                <div class="abyssals-title">
+                  <textarea type="text" name="abyssals-title" placeholder="Add your title here" required></textarea>
+                </div>
+                <div class="add-img-btn">
+                  <div onclick="abyssalBtnActive()">
+                    <span><i class='bx bx-image-add'></i>Add Abyssal</span>
+                  </div>
+                  <input id="add-abyysals-btn" name="abyssal_art_image" type="file" onclick="getAbyssalImage()" hidden required>
+                </div>
+              </div>
+              <div class="abyssals-description">
+                <div class="desc-container">
+                  <textarea name="abyssals-desc" id="abyssals-desc" cols="49" rows="10" placeholder="Start typing your main text here" required></textarea>
+                </div>
+              </div> 
+          </div>
+          <div class="modal-abyssals-footer">
+              <div class="submit-btn">
+                <button name="AbyssalSubmit" id="submit_Abyssals" type="submit">Submit</button>
               </div>
           </div>
         </div>
-        <div class="modal-abyssals-content">
-          <div class="title-content">
-            <div class="cover-image">
-              <img src="Assets/img/sisu_bg-min.png" >
-            </div>
-            <div class="abyssals-title">
-              <textarea type="text" name="abyssals-title" placeholder="Add your title here"></textarea>
-            </div>
-            <div class="add-img-btn">
-              <button>
-                <span><i class='bx bx-image-add'></i>Add Abyssal</span>
-              </button>
-            </div>
-          </div>
-          <div class="abyssals-description">
-            <div class="desc-container">
-              <textarea name="abyssals-desc" id="abyssals-desc" cols="49" rows="10" placeholder="Start typing your main text here"></textarea>
-            </div>
-          </div>
- 
-        </div>
-        <div class="modal-abyssals-footer">
-            <div class="submit-btn">
-              <button name="submit" id="submit" type="submit">Submit</button>
-            </div>
-        </div>
-      </div>
+      </form>
     </div>
+    
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>

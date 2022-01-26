@@ -463,6 +463,9 @@
     font-size: 18px;
 }
 
+.art-description{
+    padding:30px 0;
+}
 .art-description pre{
     color: var(--D7);
     font-size:14px;

@@ -14,6 +14,7 @@
 
         exit();
     }
+
     session_start();
     $id = (int) $_SESSION['id'];
 
@@ -22,11 +23,12 @@
     $privacy =  $_POST['privacy'];
     $title =  $_POST['abyssals-title'];
     $desc =  $_POST['abyssals-desc'];
+    $category = $_POST['category'];
     $output = "";
+    $today = date("F j, Y");  
 
-
-    $query = "INSERT INTO art_abyssals(id, art_id, abyssal_art, title, description, privacy, count_comment, count_fav)
-    VALUES ($id,null,'$file','$title','$desc','$privacy',0,0)";
+    $query = "INSERT INTO art_abyssals(id, art_id, abyssal_art, title, description, category, privacy, count_comment, count_fav, abyssals_date)
+    VALUES ($id,null,'$file','$title','$desc','$category','$privacy',0,0,$today)";
 
     $cmd = mysqli_query($conn,$query); 
 
@@ -36,7 +38,8 @@
      
 
     }else{
-        $output = "failed";
+        exit();
+        $output = $cmd;
     }
 
     $response = array(

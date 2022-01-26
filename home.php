@@ -324,12 +324,29 @@
               <div class="title">
                 <h1>Submit Abyssal</h1>
                 <div>
-                  <p>Who can see it? </p>
-                  
+                  <p>Who can see it? </p>   
                   <select id="privacy" name="privacy">
                     <option value="everyone">Everyone</option>
                     <option value="friends">Friends</option>
                     <option value="only_me">Only me</option>
+                  </select>
+                </div>
+                <div>
+                  <p>Category</p>                  
+                  <select id="category" name="category">
+                    <option value="3D">3D</option>
+                    <option value="Adoptables">Adoptables</option>
+                    <option value="Anime and Manga">Anime and Manga</option>
+                    <option value="Anthro">Anthro</option>
+                    <option value="Comics">Comics</option>
+                    <option value="Digital Art">Digital Art</option>
+                    <option value="Drawing and Paintings">Drawing and Paintings</option>
+                    <option value="Fan Art">Fan Art</option>
+                    <option value="Game Art">Game Art</option>
+                    <option value="Science and Fiction">Science and Fiction</option>
+                    <option value="Sculpture">Sculpture</option>
+                    <option value="Traditional Arts">Traditional Arts</option>
+                    <option value="Tutorials">Tutorials</option>
                   </select>
                 </div>
               </div>

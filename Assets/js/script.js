@@ -52,8 +52,9 @@ function topicGallery(){
 }
 
 
-function artdetails(){
-    window.location.href = 'artdetails.php';
+function artdetails(temp){
+    alert(temp);
+    window.location.href = 'artdetails.php?abyssalsId='+temp;
 }
 
 

@@ -152,101 +152,13 @@
                     </div>           
                 </div>
             </div>
-        </section>
+          </section>
           
           <div class="gallery">
             <ul class="gallery-wrapper">
-              <li class="gallery-item">
-                <img src="assets/img/arts/img1.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Nightmare</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by AlvaroCardozoW</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item">
-                <img src="assets/img/arts/img2.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>The war is over, my knight. You can go home.</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by AizelKon</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item">
-                <img src="assets/img/arts/img3.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Portrait 03</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by NIRASATAN</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item">
-                <img src="assets/img/arts/img4.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>MATRIX 4 - HARBOR</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by Leifheanzo</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item">
-                <img src="assets/img/arts/img5.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Look At Me</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by ZialerZ</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item">
-                <img src="assets/img/arts/img6.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Shou</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by ZialerZ</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item">
-                <img src="assets/img/arts/img7.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Cosmic emptiness</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by Gabrix89</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
+              <?php
+                include('phpFunc/loadAbyssals.php');
+              ?>
             </ul>
           </div>
         </div>

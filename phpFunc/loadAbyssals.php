@@ -14,7 +14,7 @@
             $fetch2 = mysqli_fetch_array($cmd2);
 
             echo '
-                <li class="gallery-item" onclick="artdetails()">
+                <li data-id="'.$fetch['art_id'].'" class="gallery-item" onclick="artdetails(this.dataset.id)">
                 <img src="./Assets/img/arts/'.$fetch['abyssal_art'].'" alt="" srcset="">
                 <div class="text">
                     <div>

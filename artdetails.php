@@ -121,7 +121,19 @@
           </ul>
         </div>
       </div>
+      <?php
+          $art_id = $_GET['abyssalsId'];
 
+          $query = "SELECT * FROM art_abyssals WHERE  art_id= '$art_id ' ";
+
+          $cmd= mysqli_query($conn, $query);
+          $fetch = mysqli_fetch_array($cmd);
+
+          $userName = $fetch['id'];  
+          $query2 = "SELECT * FROM abyss_user WHERE id = '$userName'";
+          $cmd2 = mysqli_query($conn,$query2); 
+          $fetch2 = mysqli_fetch_array($cmd2);
+      ?>
       <!-- main content -->
       <div class="main-content">
         <div class="art-details-section">
@@ -134,7 +146,7 @@
                     <i class='bx bx-chevron-left' ></i>
                 </div>
                 <div class="art-stage-img">
-                    <img src="assets/img/arts/img8.png" alt="">
+                    <img src="Assets/img/arts/<?php echo $fetch['abyssal_art']?>" alt="">
                 </div>
                 <div class="next-btns hov">
                     <i class='bx bx-chevron-right' ></i>
@@ -161,22 +173,22 @@
                         <img src="assets/avatar/avatar1.png" alt="">
                     </div>
                     <div class="art-details">
-                        <h1>Uncharted Horizon</h1>
-                        <p>by byrotek</p>
+                        <h1><?php echo $fetch['title'] ?></h1>
+                        <p>by <?php echo $fetch2['username'] ?></p>
                     </div>
                     <div class="date-pub">
-                        <p>Published: Nov 18, 2021</p>
+                        <p>Published:  <?php echo $fetch['abyssals_date'] ?></p>
                     </div>
                 </div>
 
-                <div class="socialCounts">
+                <div class="socialCounts">  
                     <div class="fav-count">
                         <i class='bx bxs-star' ></i>
-                        <p><span>480</span> Favorites</p>
+                        <p><span><?php echo $fetch['count_comment']?></span> Favorites</p>
                     </div>
                     <div class="comment-count">
                         <i class='bx bxs-comment' ></i>
-                        <p><span>25</span> Comments</p>
+                        <p><span><?php echo $fetch['count_fav'] ?></span> Comments</p>
                     </div>
                     <div class="views-count">
                         <span class="material-icons">visibility</span>
@@ -185,17 +197,7 @@
                 </div>
 
                 <div class="art-description">
-                    <pre>Hello to everyone! I'm glad to introduce my new artwork - Uncharted Horizon. :)  
-
-It is a commercial project of the landscape for Dregn Durant (@ Yasuhiro88ch). He is the absolute owner of the copyright for this work.
-
-This work is available on my Patreon for personal use only, in 4:3-8K and 16:9-8K versions.
-
-On DeviantArt, this artwork is available for personal use only! Distributing this artwork commercially or with any intent for monetary goals is prohibited! Reproducing, editing, copying, publishing, or uploading this artwork in any way without the permission of Dregn Durant (@ Yasuhiro88ch) is forbidden!
-
-Thank you for watching!
-
-                    </pre>
+                    <pre><?php echo $fetch['description'] ?></pre>
                 </div>
 
                 <div class="comment-section">
@@ -252,107 +254,129 @@ Thank you for watching!
       
     </main>
     <!-- modal notif -->
-    <div class="modal-status">
-      <div class="modal-status-wrapper">
-        <div class="modal-header">
-          <div class="left-section">
-            <div class="title">
-              <h1>Submit Status</h1>
-              <div>
-                <p>Who can see it? </p>
-                <select id="privacy">
-                  <option value="everyone">Everyone</option>
-                  <option value="friends">Friends</option>
-                  <option value="only_me">Only me</option>
-                </select>
+    <div class="modal-post">
+      <form method="post" enctype="multipart/form-data" id="uploadStatus">
+        <div class="modal-post-wrapper">
+          <div class="modal-post-header">
+            <div class="left-section">
+              <div class="title">
+                <h1>Update Status</h1>
+                <div>
+                  <p>Who can see it? </p>
+                  
+                  <select id="privacy" name="privacy">
+                    <option value="everyone">Everyone</option>
+                    <option value="friends">Friends</option>
+                    <option value="only_me">Only me</option>
+                  </select>
+                </div>
               </div>
             </div>
+            <div class="right-section">
+                <div class="post-close-btn">
+                  <div><i class='bx bx-x closeBtn' onclick="statusModalClose()"></i></div>
+                </div>
+            </div>
           </div>
-          <div class="right-section">
-              <div class="close-btn">
-                <button><i class='bx bx-x closeBtn' onclick="statusModalClose()"></i></button>
+          <div class="modal-post-content">
+              <div class="title-content">
+                <div class="cover-image">
+                  <img class="post-art" src="Assets/img/sisu_bg-min.png" >
+                </div>
+                <div class="post-title">
+                  <textarea type="text" name="post-title" placeholder="Add your title here"></textarea>
+                </div>
+                <div class="add-img-btn">
+                  <div onclick="postBtnActive()">
+                    <span><i class='bx bx-image-add'></i>Add Cover Image</span>
+                  </div>
+                  <input id="add-post-btn" name="post_art_image" type="file" onclick="getPostImage()" hidden>
+                </div>
+              </div>
+              <div class="post-description">
+                <div class="desc-container">
+                  <textarea name="post-desc" id="post-desc" cols="49" rows="10" placeholder="Start typing your main text here"></textarea>
+                </div>
+              </div> 
+          </div>
+          <div class="modal-post-footer">
+              <div class="submit-btn">
+                <button name="postubmit" id="submit_post" type="submit">Submit</button>
               </div>
           </div>
         </div>
-        <div class="modal-content">
-          <div class="title-content">
-            <div class="cover-image">
-              <img src="Assets/img/sisu_bg-min.png" >
-     
-            </div>
-            <div class="status-title">
-              <textarea type="text" name="status-title" placeholder="Add your title here"></textarea>
-            </div>
-            <div class="add-img-btn">
-              <button>
-                <span> <i class='bx bx-image-add'></i>Add cover image</span>
-              </button>
-            </div>
-          </div>
-          <div class="status-description">
-            <div class="desc-container">
-              <textarea name="status-desc" id="status-desc" cols="49" rows="10" placeholder="Start typing your main text here"></textarea>
-            </div>
-          </div>
- 
-        </div>
-        <div class="modal-footer">
-            <div class="submit-btn">
-              <button name="submit" id="submit" type="submit">Submit</button>
-            </div>
-        </div>
-      </div>
+      </form>
     </div>
 
     <div class="modal-abyssals">
-      <div class="modal-abyssals-wrapper">
-        <div class="modal-abyssals-header">
-          <div class="left-section">
-            <div class="title">
-              <h1>Submit Abyssal</h1>
-              <div>
-                <p>Who can see it? </p>
-                <select id="privacy">
-                  <option value="everyone">Everyone</option>
-                  <option value="friends">Friends</option>
-                  <option value="only_me">Only me</option>
-                </select>
+      <form method="post" enctype="multipart/form-data" id="uploadImg">
+        <div class="modal-abyssals-wrapper">
+          <div class="modal-abyssals-header">
+            <div class="left-section">
+              <div class="title">
+                <h1>Submit Abyssal</h1>
+                <div>
+                  <p>Who can see it? </p>   
+                  <select id="privacy" name="privacy">
+                    <option value="everyone">Everyone</option>
+                    <option value="friends">Friends</option>
+                    <option value="only_me">Only me</option>
+                  </select>
+                </div>
+                <div>
+                  <p>Category</p>                  
+                  <select id="category" name="category">
+                    <option value="3D">3D</option>
+                    <option value="Adoptables">Adoptables</option>
+                    <option value="Anime and Manga">Anime and Manga</option>
+                    <option value="Anthro">Anthro</option>
+                    <option value="Comics">Comics</option>
+                    <option value="Digital Art">Digital Art</option>
+                    <option value="Drawing and Paintings">Drawing and Paintings</option>
+                    <option value="Fan Art">Fan Art</option>
+                    <option value="Game Art">Game Art</option>
+                    <option value="Science and Fiction">Science and Fiction</option>
+                    <option value="Sculpture">Sculpture</option>
+                    <option value="Traditional Arts">Traditional Arts</option>
+                    <option value="Tutorials">Tutorials</option>
+                  </select>
+                </div>
               </div>
             </div>
+            <div class="right-section">
+                <div class="abyssals-close-btn">
+                  <div><i class='bx bx-x closeBtn' onclick="abyssalModalClose()"></i></div>
+                </div>
+            </div>
           </div>
-          <div class="right-section">
-              <div class="abyssals-close-btn">
-                <button><i class='bx bx-x closeBtn' onclick="abyssalModalClose()"></i></button>
+          <div class="modal-abyssals-content">
+              <div class="title-content">
+                <div class="cover-image">
+                  <img class="abyssal-art" src="Assets/img/sisu_bg-min.png" >
+                </div>
+                <div class="abyssals-title">
+                  <textarea type="text" name="abyssals-title" placeholder="Add your title here"></textarea>
+                </div>
+                <div class="add-img-btn">
+                  <div onclick="abyssalBtnActive()">
+                    <span><i class='bx bx-image-add'></i>Add Abyssal</span>
+                  </div>
+                  <input id="add-abyysals-btn" name="abyssal_art_image" type="file" onclick="getAbyssalImage()" hidden>
+                </div>
+              </div>
+              <div class="abyssals-description">
+                <div class="desc-container">
+                  <textarea name="abyssals-desc" id="abyssals-desc" cols="49" rows="10" placeholder="Start typing your main text here"></textarea>
+                </div>
+              </div> 
+          </div>
+          <div class="modal-abyssals-footer">
+              <div class="submit-btn">
+                <button name="AbyssalSubmit" id="submit_Abyssals" type="submit">Submit</button>
               </div>
           </div>
         </div>
-        <div class="modal-abyssals-content">
-          <div class="title-content">
-            <div class="cover-image">
-              <img src="Assets/img/sisu_bg-min.png" >
-            </div>
-            <div class="abyssals-title">
-              <textarea type="text" name="abyssals-title" placeholder="Add your title here"></textarea>
-            </div>
-            <div class="add-img-btn">
-              <button>
-                <span><i class='bx bx-image-add'></i>Add Abyssal</span>
-              </button>
-            </div>
-          </div>
-          <div class="abyssals-description">
-            <div class="desc-container">
-              <textarea name="abyssals-desc" id="abyssals-desc" cols="49" rows="10" placeholder="Start typing your main text here"></textarea>
-            </div>
-          </div>
- 
-        </div>
-        <div class="modal-abyssals-footer">
-            <div class="submit-btn">
-              <button name="submit" id="submit" type="submit">Submit</button>
-            </div>
-        </div>
-      </div>
+      </form>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

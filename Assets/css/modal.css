@@ -22,7 +22,7 @@
 }
 
 .modal-post.modal{
-    transform: scale(1.3);
+    transform: scale(1);
 }
 
 .modal-post-wrapper{
@@ -200,7 +200,7 @@
 }
 
 .modal-abyssals.modal_A{
-    transform: scale(1.3);
+    transform: scale(1);
 }
 
 .modal-abyssals-wrapper{

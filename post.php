@@ -366,18 +366,18 @@
                   <img class="abyssal-art" src="Assets/img/sisu_bg-min.png" >
                 </div>
                 <div class="abyssals-title">
-                  <textarea type="text" name="abyssals-title" placeholder="Add your title here"></textarea>
+                  <textarea type="text" name="abyssals-title" placeholder="Add your title here" required></textarea>
                 </div>
                 <div class="add-img-btn">
                   <div onclick="abyssalBtnActive()">
                     <span><i class='bx bx-image-add'></i>Add Abyssal</span>
                   </div>
-                  <input id="add-abyysals-btn" name="abyssal_art_image" type="file" onclick="getAbyssalImage()" hidden>
+                  <input id="add-abyysals-btn" name="abyssal_art_image" type="file" onclick="getAbyssalImage()" hidden required>
                 </div>
               </div>
               <div class="abyssals-description">
                 <div class="desc-container">
-                  <textarea name="abyssals-desc" id="abyssals-desc" cols="49" rows="10" placeholder="Start typing your main text here"></textarea>
+                  <textarea name="abyssals-desc" id="abyssals-desc" cols="49" rows="10" placeholder="Start typing your main text here" required></textarea>
                 </div>
               </div> 
           </div>
