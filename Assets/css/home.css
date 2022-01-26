@@ -353,6 +353,7 @@
 
 .gallery .gallery-wrapper{
     display: flex;
+    flex-direction:row-reverse;
     flex-wrap: wrap;
     margin-top: 0px;
     align-items: center;

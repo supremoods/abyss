@@ -14,6 +14,7 @@
             $fetch2 = mysqli_fetch_array($cmd2);
 
             echo '
+            <div class="post-data">
                 <div class="post-header">
                     <div class="profile-img">
                         <span class="material-icons"> account_box </span>
@@ -32,15 +33,14 @@
                 </div>
                 
                 <div class="post-title">
-                    <img src="Assets/img/sisu_bg-min.png">
+                    <img src="./Assets/img/post/'.$fetch['cover_image'].'">
                     <div class="title">
-                        <h1>New year new stuff</h1>
+                        <h1>'.$fetch['title'].'</h1>
                     </div>
                 </div>
-                <div class="post-description">
-                    <pre>
 
-                    </pre>
+                <div class="post-description-cc">
+                    <pre>'.$fetch['post_description'].'</pre>
                 </div>
                 
                 <div class="post-btns">
@@ -63,11 +63,11 @@
                         <div class="counts">
                             <div class="count-fav">
                                 <span class="material-icons">star</span>
-                                <p>30</p>
+                                <p>'.$fetch['count_fav'].'</p>
                             </div>
                             <div class="count-comment">
                                 <span class="material-icons">chat_bubble</span>
-                                <p>30</p>
+                                <p>'.$fetch['count_comment'].'</p>
                             </div>
                         </div>
                     </div>
@@ -82,7 +82,8 @@
                             <input class="input-cmnt" type="text" placeholder="Add a new comment">
                         </div>
                     </div>
-                </div>                   
+                </div>    
+            </div>               
         ';
         }
     }

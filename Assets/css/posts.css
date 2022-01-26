@@ -459,11 +459,16 @@
     color:var(--purple5);
 }
 
-
+.post-data-wrapper{
+    display:flex;
+    flex-direction: column-reverse;
+}
 .post-data .post-header{
     display:flex;
     padding:15px;
 }
+
+
 
 .post-data .post-header .profile-img {
     padding-right: 10px;
@@ -625,13 +630,13 @@
 }
 
 
-.post-description{
+.post-description-cc{
   
     padding:15px;
     
 }
 
-.post-description pre{
+.post-description-cc pre{
     font-size:14px;
     overflow-x: auto;
     white-space: pre-wrap;

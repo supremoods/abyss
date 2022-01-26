@@ -170,10 +170,12 @@
                         </div>
                       </div>
 
-
-                      <div class="post-data">
-                        
+                      <div class="post-data-wrapper">
+                        <?php
+                          include('phpFunc/loadStatus.php');
+                        ?>
                       </div>
+
                     </div>
 
                     <div class="ads-area">
@@ -310,7 +312,7 @@
                   <img class="post-art" src="Assets/img/sisu_bg-min.png" >
                 </div>
                 <div class="post-title">
-                  <textarea type="text" name="post-title" placeholder="Add your title here"></textarea>
+                  <textarea id="post-title" type="text" name="post-title" placeholder="Add your title here"></textarea>
                 </div>
                 <div class="add-img-btn">
                   <div onclick="postBtnActive()">

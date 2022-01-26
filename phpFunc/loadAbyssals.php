@@ -15,7 +15,7 @@
 
             echo '
                 <li class="gallery-item" onclick="artdetails()">
-                <img src="./phpFunc/'.$fetch['abyssal_art'].'" alt="" srcset="">
+                <img src="./Assets/img/arts/'.$fetch['abyssal_art'].'" alt="" srcset="">
                 <div class="text">
                     <div>
                         <h3>'.$fetch['title'].'</h3>

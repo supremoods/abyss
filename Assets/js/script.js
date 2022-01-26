@@ -101,11 +101,18 @@ function abyssalModal(){
 }
 
 function statusModalClose(){
+    const coverImage = document.querySelector(".post-art");
     let modal = document.querySelector('.modal-post');
     let body = document.querySelector('.body-root')
     
     modal.classList.toggle('modal');
     body.classList.toggle('modal');
+
+    coverImage.src = "Assets/img/sisu_bg-min.png"; 
+    document.getElementById('add-post-btn').value = '';
+    document.getElementById('post-title').value = '';
+    document.getElementById('post-desc').value = '';
+
 }
 
 
@@ -266,11 +273,12 @@ function getPostImage(){
                 success:function(data){
                     console.log(data.output);
                     alert(data.output);
-                    $('.gallery-wrapper').empty();
-                    $('.gallery-wrapper').load("./phpFunc/loadAbyssals.php");
+                    $('.post-data-wrapper').empty();
+                    $('.post-data-wrapper').load("./phpFunc/loadStatus.php");
 
                 }     
             });
-            abyssalModalClose()
+            statusModalClose()
+
         });
     });
