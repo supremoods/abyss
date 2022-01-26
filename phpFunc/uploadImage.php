@@ -28,7 +28,7 @@
     $today = date("F j, Y");  
 
     $query = "INSERT INTO art_abyssals(id, art_id, abyssal_art, title, description, category, privacy, count_comment, count_fav, abyssals_date)
-    VALUES ($id,null,'$file','$title','$desc','$category','$privacy',0,0,$today)";
+    VALUES ($id,null,'$file','$title','$desc','$category','$privacy',0,0,'$today')";
 
     $cmd = mysqli_query($conn,$query); 
 
@@ -38,7 +38,6 @@
      
 
     }else{
-        exit();
         $output = $cmd;
     }
 

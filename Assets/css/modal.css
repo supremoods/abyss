@@ -52,7 +52,7 @@
     background: none;
     border:none;
     cursor: pointer;
-}
+}   
 .modal-post-wrapper .modal-post-header .right-section .closeBtn{
     font-size: 18px;
 
@@ -72,7 +72,7 @@
     object-fit: cover;
     max-height: 100%;
     max-width: 100%;
-    filter: brightness(70%);
+    filter: brightness(60%);
 }
 
 .modal-post-content .title-content .post-title{
@@ -250,6 +250,7 @@
     object-fit: cover;
     max-height: 100%;
     max-width: 100%;
+    filter:brightness(40%);
 }
 
 .modal-abyssals-content .title-content .abyssals-title{

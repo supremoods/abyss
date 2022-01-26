@@ -69,7 +69,6 @@
                   <h1>" .$fetch['username']."</h1>
                   ";
                 ?>
-                <!-- <h1><?//php $fetch['username'] ?></h1> -->
                 <li><a href="profile.php">Profile</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
                 <li><a href="favorites.php">Favourites</a></li>
