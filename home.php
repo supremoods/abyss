@@ -158,49 +158,49 @@
             <div class="max-width">
                 <h2 class="title">Explore <span><a href="http://">Topics</a></span></h2>
                 <div class="carousel owl-carousel">
-                    <div class="card">
+                    <div class="card"  data-id="Digital Art" onclick="topicGallery(this.dataset.id)">
                         <div class="box">
                             <img src="Assets/img/digitalArt.jpg" alt="">
                             <div class="text">Digital Art</div>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card" data-id="Digital Art" onclick="topicGallery(this.dataset.id)">
                         <div class="box">
                             <img src="Assets/img/comics.jpg" alt="">
                             <div class="text">Comics</div>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card" data-id="Digital Art" onclick="topicGallery(this.dataset.id)">
                         <div class="box">
                             <img src="Assets/img/fantasy.jpg" alt="">
                             <div class="text">Fantasy</div>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card" data-id="Digital Art" onclick="topicGallery(this.dataset.id)">
                         <div class="box">
                             <img src="Assets/img/gameArt.jpg" alt="">
                             <div class="text">Game Art</div>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card" data-id="Digital Art" onclick="topicGallery(this.dataset.id)">
                         <div class="box">
                             <img src="Assets/img/scienceFiction.jpg" alt="">
                             <div class="text">Science Fiction</div>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card" data-id="Digital Art" onclick="topicGallery(this.dataset.id)">
                       <div class="box">
                           <img src="Assets/img/poetry.jpg" alt="">
                           <div class="text">Poetry</div>
                       </div>
                     </div>
-                    <div class="card">
+                    <div class="card" data-id="Digital Art" onclick="topicGallery(this.dataset.id)">
                       <div class="box">
                           <img src="Assets/img/wallpaper.jpg" alt="">
                           <div class="text">Wallpaper</div>
                       </div>
                     </div>
-                    <div class="card">
+                    <div class="card" data-id="Digital Art" onclick="topicGallery(this.dataset.id)">
                       <div class="box">
                           <img src="Assets/img/Traditional art.jpg" alt="">
                           <div class="text">Traditional Art</div>

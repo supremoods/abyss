@@ -150,51 +150,51 @@
           <!-- carousel -->
           <section class="teams" id="teams">
             <div class="max-width">
-                <h2 class="title">Top <span><a href="http://">Topics</a></span></h2>
+                <h2 class="title">Explore <span><a href="http://">Topics</a></span></h2>
                 <div class="carousel owl-carousel">
-                    <div class="card">
+                    <div class="card"  data-id="Digital Art" onclick="topicGallery(this.dataset.id)">
                         <div class="box">
-                            <img src="Assets/img/digitalArt.jpg" alt="">
+                            <img src="assets/img/topics/digital art.jpg" alt="" srcset="">
                             <div class="text">Digital Art</div>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card" data-id="Comics" onclick="topicGallery(this.dataset.id)">
                         <div class="box">
-                            <img src="Assets/img/comics.jpg" alt="">
+                            <img src="assets/img/topics/comics.jpg" alt="" srcset="">
                             <div class="text">Comics</div>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card" data-id="3D" onclick="topicGallery(this.dataset.id)">
                         <div class="box">
                             <img src="Assets/img/fantasy.jpg" alt="">
-                            <div class="text">Fantasy</div>
+                            <div class="text">3D</div>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card" data-id="Game Art" onclick="topicGallery(this.dataset.id)">
                         <div class="box">
-                            <img src="Assets/img/gameArt.jpg" alt="">
+                            <img src="assets/img/topics/fantasy art.jpg" alt="" srcset="">
                             <div class="text">Game Art</div>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card" data-id="Science Fiction" onclick="topicGallery(this.dataset.id)">
                         <div class="box">
-                            <img src="Assets/img/scienceFiction.jpg" alt="">
+                            <img src="assets/img/topics/science fiction.jpg" alt="" srcset="">
                             <div class="text">Science Fiction</div>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card" data-id="Sculpture" onclick="topicGallery(this.dataset.id)">
                       <div class="box">
-                          <img src="Assets/img/poetry.jpg" alt="">
-                          <div class="text">Poetry</div>
+                      <img src="assets/img/topics/sculpture.jpg" alt="" srcset="">
+                          <div class="text">Sculpture</div>
                       </div>
                     </div>
-                    <div class="card">
+                    <div class="card" data-id="Anthro" onclick="topicGallery(this.dataset.id)">
                       <div class="box">
                           <img src="Assets/img/wallpaper.jpg" alt="">
-                          <div class="text">Wallpaper</div>
+                          <div class="text">Anthro</div>
                       </div>
                     </div>
-                    <div class="card">
+                    <div class="card" data-id="Traditional Art" onclick="topicGallery(this.dataset.id)">
                       <div class="box">
                           <img src="Assets/img/Traditional art.jpg" alt="">
                           <div class="text">Traditional Art</div>

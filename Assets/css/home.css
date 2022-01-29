@@ -474,6 +474,7 @@
     background: #222;
     text-align: center;
     overflow: hidden;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 .teams .carousel .card:hover{
