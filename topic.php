@@ -210,7 +210,7 @@
                   <h1>All Topics</h1>
               </div>
             <ul class="gallery-wrapper">
-              <li class="topic-gallery-item" onclick="topicGallery()">
+              <li data-id="3D" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
                 <img src="assets/img/topics/3d.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -218,7 +218,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item" onclick="topicGallery()">
+              <li data-id="Adoptables" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
                 <img src="assets/img/topics/adoptables.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -226,7 +226,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item" onclick="topicGallery()">
+              <li data-id="Anime and Manga" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
                 <img src="assets/img/topics/anime.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -234,7 +234,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item" onclick="topicGallery()">
+              <li data-id="Anthro" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
                 <img src="assets/img/topics/anthro.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -242,7 +242,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item" onclick="topicGallery()">
+              <li data-id="Comics" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
                 <img src="assets/img/topics/comics.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -250,7 +250,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item" onclick="topicGallery()">
+              <li data-id="Digital Art" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
                 <img src="assets/img/topics/digital art.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -258,7 +258,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item" onclick="topicGallery()">
+              <li data-id="Drawing and Paintings" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
                 <img src="assets/img/topics/drawing and paintings.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -266,7 +266,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item" onclick="topicGallery()">
+              <li data-id="Fan Art" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
                 <img src="assets/img/topics/fan art.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -274,7 +274,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item" onclick="topicGallery()">
+              <li data-id="Game Art" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
                 <img src="assets/img/topics/fantasy art.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -282,7 +282,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item" onclick="topicGallery()">
+              <li data-id="Science and Fiction" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
                 <img src="assets/img/topics/science fiction.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -290,7 +290,7 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item" onclick="topicGallery()">
+              <li data-id="Sculpture" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
                 <img src="assets/img/topics/sculpture.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -298,15 +298,15 @@
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item" onclick="topicGallery()">
+              <li data-id="Traditional Art" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
                 <img src="assets/img/topics/traditional art.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
-                    <h1>Traditional Art<</h1>
+                    <h1>Traditional Art</h1>
                   </div>
                 </div>
               </li>
-              <li class="topic-gallery-item" onclick="topicGallery()">
+              <li data-id="Tutorials" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
                 <img src="assets/img/topics/tutorials.png" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -361,8 +361,8 @@
 
         
  
-    <!-- modal notif -->
-    <div class="modal-post">
+     <!-- modal notif -->
+     <div class="modal-post">
       <form method="post" enctype="multipart/form-data" id="uploadStatus">
         <div class="modal-post-wrapper">
           <div class="modal-post-header">
@@ -392,7 +392,7 @@
                   <img class="post-art" src="Assets/img/sisu_bg-min.png" >
                 </div>
                 <div class="post-title">
-                  <textarea id="post-title" type="text" name="post-title" placeholder="Add your title here"></textarea>
+                  <textarea type="text" name="post-title" placeholder="Add your title here"></textarea>
                 </div>
                 <div class="add-img-btn">
                   <div onclick="postBtnActive()">
@@ -424,12 +424,29 @@
               <div class="title">
                 <h1>Submit Abyssal</h1>
                 <div>
-                  <p>Who can see it? </p>
-                  
+                  <p>Who can see it? </p>   
                   <select id="privacy" name="privacy">
                     <option value="everyone">Everyone</option>
                     <option value="friends">Friends</option>
                     <option value="only_me">Only me</option>
+                  </select>
+                </div>
+                <div>
+                  <p>Category</p>                  
+                  <select id="category" name="category">
+                    <option value="3D">3D</option>
+                    <option value="Adoptables">Adoptables</option>
+                    <option value="Anime and Manga">Anime and Manga</option>
+                    <option value="Anthro">Anthro</option>
+                    <option value="Comics">Comics</option>
+                    <option value="Digital Art">Digital Art</option>
+                    <option value="Drawings and Paintings">Drawings and Paintings</option>
+                    <option value="Fan Art">Fan Art</option>
+                    <option value="Game Art">Game Art</option>
+                    <option value="Science Fiction">Science Fiction</option>
+                    <option value="Sculpture">Sculpture</option>
+                    <option value="Traditional Arts">Traditional Arts</option>
+                    <option value="Tutorials">Tutorials</option>
                   </select>
                 </div>
               </div>
@@ -446,18 +463,18 @@
                   <img class="abyssal-art" src="Assets/img/sisu_bg-min.png" >
                 </div>
                 <div class="abyssals-title">
-                  <textarea type="text" name="abyssals-title" placeholder="Add your title here" required></textarea>
+                  <textarea type="text" name="abyssals-title" placeholder="Add your title here"></textarea>
                 </div>
                 <div class="add-img-btn">
                   <div onclick="abyssalBtnActive()">
                     <span><i class='bx bx-image-add'></i>Add Abyssal</span>
                   </div>
-                  <input id="add-abyysals-btn" name="abyssal_art_image" type="file" onclick="getAbyssalImage()" hidden required>
+                  <input id="add-abyysals-btn" name="abyssal_art_image" type="file" onclick="getAbyssalImage()" hidden>
                 </div>
               </div>
               <div class="abyssals-description">
                 <div class="desc-container">
-                  <textarea name="abyssals-desc" id="abyssals-desc" cols="49" rows="10" placeholder="Start typing your main text here" required></textarea>
+                  <textarea name="abyssals-desc" id="abyssals-desc" cols="49" rows="10" placeholder="Start typing your main text here"></textarea>
                 </div>
               </div> 
           </div>
@@ -469,7 +486,6 @@
         </div>
       </form>
     </div>
-    
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>

@@ -340,10 +340,10 @@
                     <option value="Anthro">Anthro</option>
                     <option value="Comics">Comics</option>
                     <option value="Digital Art">Digital Art</option>
-                    <option value="Drawing and Paintings">Drawing and Paintings</option>
+                    <option value="Drawings and Paintings">Drawings and Paintings</option>
                     <option value="Fan Art">Fan Art</option>
                     <option value="Game Art">Game Art</option>
-                    <option value="Science and Fiction">Science and Fiction</option>
+                    <option value="Science Fiction">Science Fiction</option>
                     <option value="Sculpture">Sculpture</option>
                     <option value="Traditional Arts">Traditional Arts</option>
                     <option value="Tutorials">Tutorials</option>

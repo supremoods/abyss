@@ -312,7 +312,7 @@
                   <img class="post-art" src="Assets/img/sisu_bg-min.png" >
                 </div>
                 <div class="post-title">
-                  <textarea id="post-title" type="text" name="post-title" placeholder="Add your title here"></textarea>
+                  <textarea type="text" name="post-title" placeholder="Add your title here"></textarea>
                 </div>
                 <div class="add-img-btn">
                   <div onclick="postBtnActive()">
@@ -344,12 +344,29 @@
               <div class="title">
                 <h1>Submit Abyssal</h1>
                 <div>
-                  <p>Who can see it? </p>
-                  
+                  <p>Who can see it? </p>   
                   <select id="privacy" name="privacy">
                     <option value="everyone">Everyone</option>
                     <option value="friends">Friends</option>
                     <option value="only_me">Only me</option>
+                  </select>
+                </div>
+                <div>
+                  <p>Category</p>                  
+                  <select id="category" name="category">
+                    <option value="3D">3D</option>
+                    <option value="Adoptables">Adoptables</option>
+                    <option value="Anime and Manga">Anime and Manga</option>
+                    <option value="Anthro">Anthro</option>
+                    <option value="Comics">Comics</option>
+                    <option value="Digital Art">Digital Art</option>
+                    <option value="Drawings and Paintings">Drawings and Paintings</option>
+                    <option value="Fan Art">Fan Art</option>
+                    <option value="Game Art">Game Art</option>
+                    <option value="Science Fiction">Science Fiction</option>
+                    <option value="Sculpture">Sculpture</option>
+                    <option value="Traditional Arts">Traditional Arts</option>
+                    <option value="Tutorials">Tutorials</option>
                   </select>
                 </div>
               </div>
@@ -366,18 +383,18 @@
                   <img class="abyssal-art" src="Assets/img/sisu_bg-min.png" >
                 </div>
                 <div class="abyssals-title">
-                  <textarea type="text" name="abyssals-title" placeholder="Add your title here" required></textarea>
+                  <textarea type="text" name="abyssals-title" placeholder="Add your title here"></textarea>
                 </div>
                 <div class="add-img-btn">
                   <div onclick="abyssalBtnActive()">
                     <span><i class='bx bx-image-add'></i>Add Abyssal</span>
                   </div>
-                  <input id="add-abyysals-btn" name="abyssal_art_image" type="file" onclick="getAbyssalImage()" hidden required>
+                  <input id="add-abyysals-btn" name="abyssal_art_image" type="file" onclick="getAbyssalImage()" hidden>
                 </div>
               </div>
               <div class="abyssals-description">
                 <div class="desc-container">
-                  <textarea name="abyssals-desc" id="abyssals-desc" cols="49" rows="10" placeholder="Start typing your main text here" required></textarea>
+                  <textarea name="abyssals-desc" id="abyssals-desc" cols="49" rows="10" placeholder="Start typing your main text here"></textarea>
                 </div>
               </div> 
           </div>

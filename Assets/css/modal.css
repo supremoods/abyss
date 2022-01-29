@@ -131,7 +131,7 @@
 }
 
 .modal-post-content .post-description .desc-container{
-    width: 827px;
+    width: 100%;
     height:150px;
     display: flex;
     justify-content:center;
@@ -309,7 +309,7 @@
 }
 
 .modal-abyssals-content .abyssals-description .desc-container{
-    width: 827px;
+    width: 100%;
     height:150px;
     display: flex;
     justify-content:center;
@@ -511,4 +511,13 @@
     background: var(--purple5);
     color:var(--D8);
     border:none;
+}
+
+.title div{
+    margin-bottom: 5px;
+}
+#category{
+    margin-left: 20px;
+    border: none;
+    font-size: 12px;
 }

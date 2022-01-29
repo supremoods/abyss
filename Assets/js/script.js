@@ -47,15 +47,15 @@ let list = document.querySelectorAll('.list');
         }
     }
 
-function topicGallery(){
-    window.location.href = 'topic_gallery.php';
+function topicGallery(temp){
+    window.location.href = 'topic_gallery.php?topic='+temp;
 }
 
 
 function artdetails(temp){
-    alert(temp);
     window.location.href = 'artdetails.php?abyssalsId='+temp;
 }
+
 
 
 function sidebarNav(){
