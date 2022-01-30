@@ -1,5 +1,7 @@
 <?php
   include('phpFunc/dbConnect.php');
+  include('phpFunc/session.php');
+  artDetailsSession();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -132,6 +134,30 @@
           $query2 = "SELECT * FROM abyss_user WHERE id = '$userName'";
           $cmd2 = mysqli_query($conn,$query2); 
           $fetch2 = mysqli_fetch_array($cmd2);
+
+          $query3 = "SELECT * FROM art_abyssals ";
+
+          $count = 0;
+          $place = 0;
+
+          $cmd3= mysqli_query($conn, $query3);
+          if(mysqli_num_rows($cmd3) > 0){
+            
+            while( $fetch3 = mysqli_fetch_array($cmd3)){
+              $array[$count] = $fetch3['art_id'];
+              if($art_id == $fetch3['art_id']){
+                $prevIndex = $count-1;
+                  if($prevIndex < 0){
+                    $prevIndex = 0;
+                  }
+                $nextIndex = $count+1;
+                
+              }
+              $count++;
+            }
+          }
+         
+         
       ?>
       <!-- main content -->
       <div class="main-content">
@@ -142,13 +168,13 @@
                     <p>gallery</p>
                 </div>
                 <div class="prev-btns hov">
-                    <i class='bx bx-chevron-left' ></i>
+                    <i data-id="<?php echo $array[$prevIndex] ?>" class='bx bx-chevron-left' onclick="prevSlide(this.dataset.id)"></i>
                 </div>
                 <div class="art-stage-img">
                     <img src="Assets/img/arts/<?php echo $fetch['abyssal_art']?>" alt="">
                 </div>
                 <div class="next-btns hov">
-                    <i class='bx bx-chevron-right' ></i>
+                    <i data-id="<?php echo $array[$nextIndex] ?>" class='bx bx-chevron-right' onclick="nextSlide(this.dataset.id)"></i>
                 </div>
 
             </div>

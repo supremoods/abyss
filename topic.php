@@ -194,7 +194,7 @@
                           <div class="text">Anthro</div>
                       </div>
                     </div>
-                    <div class="card" data-id="Traditional Art" onclick="topicGallery(this.dataset.id)">
+                    <div class="card" data-id="Traditional Arts" onclick="topicGallery(this.dataset.id)">
                       <div class="box">
                           <img src="Assets/img/Traditional art.jpg" alt="">
                           <div class="text">Traditional Art</div>
@@ -258,7 +258,7 @@
                   </div>
                 </div>
               </li>
-              <li data-id="Drawing and Paintings" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
+              <li data-id="Drawings and Paintings" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
                 <img src="assets/img/topics/drawing and paintings.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -282,7 +282,7 @@
                   </div>
                 </div>
               </li>
-              <li data-id="Science and Fiction" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
+              <li data-id="Science Fiction" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
                 <img src="assets/img/topics/science fiction.jpg" alt="" srcset="">
                 <div class="text">
                   <div>
@@ -298,7 +298,7 @@
                   </div>
                 </div>
               </li>
-              <li data-id="Traditional Art" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
+              <li data-id="Traditional Arts" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
                 <img src="assets/img/topics/traditional art.jpg" alt="" srcset="">
                 <div class="text">
                   <div>

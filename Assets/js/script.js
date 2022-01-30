@@ -57,7 +57,14 @@ function artdetails(temp){
 }
 
 
+function prevSlide(temp){
+   
+    window.location.href = 'artdetails.php?abyssalsId='+temp;
+}
 
+function nextSlide(temp){
+    window.location.href = 'artdetails.php?abyssalsId='+temp;
+}
 function sidebarNav(){
     let sidebar = document.querySelector('.sidebar'); 
     let body = document.querySelector('.body-root')

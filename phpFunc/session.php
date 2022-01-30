@@ -29,6 +29,15 @@
         }
     }
 
+
+    function artDetailsSession(){
+        if(!ISSET($_SESSION['id'])){
+            header ("location: login.php");
+        }
+    }
+
+        
+
         
 
 

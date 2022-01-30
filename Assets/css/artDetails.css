@@ -468,7 +468,7 @@
 }
 .art-description pre{
     color: var(--D7);
-    font-size:14px;
+    font-size:18px;
     overflow-x: auto;
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;
