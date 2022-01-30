@@ -145,8 +145,19 @@ function modalProfile(){
 
     profileModal.classList.toggle('modal');
     body.classList.toggle('modal');
+}
+
+function modalCoverImage(){
+
+    let coverProfileModal = document.querySelector('.modal-coverProfile-profile');
+    let body = document.querySelector('.body-root')
+
+    coverProfileModal.classList.toggle('modal');
+    body.classList.toggle('modal');
+
 
 }
+
 
 function closeModalProfile(){
     let profileModal = document.querySelector('.modal-upload-profile');
@@ -162,10 +173,24 @@ function closeModalProfile(){
 }
 
 
+function closeModalCoverProfile(){
+    let profileModal = document.querySelector('.modal-coverProfile-profile');
+    let body = document.querySelector('.body-root');
+    let confirnmBtn = document.querySelector('.confirm-btn');
+    
+    profileModal.classList.toggle('modal');
+    body.classList.toggle('modal');
+    confirnmBtn.classList.toggle('modal');
+
+    img.src = "";
+    document.getElementById("confirmEnable").disabled = true;
+}
+
+
 
 
 const img = document.querySelector(".avatar-profile");
-const defaultBtn = document.querySelector("#default-btn");
+const defaultBtn = document.querySelector("#profileImg");
 let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
 
 function profileAvatar(){
@@ -180,6 +205,32 @@ function getImage(){
           reader.onload = function(){
             const result = reader.result;
             img.src = result;
+          }
+          document.getElementById("confirmEnable").disabled = false;
+
+          reader.readAsDataURL(file);
+        } 
+      });
+     
+}
+
+
+const coverImg = document.querySelector(".avatar-coverProfile");
+const coverProfileBtn = document.querySelector("#coverProfileImg");
+
+
+function coverProfileAvatar(){
+    coverProfileBtn.click();
+}
+
+function getCoverImage(){
+    coverProfileBtn.addEventListener("change", function(){
+        const file = this.files[0];
+        if(file){
+          const reader = new FileReader();
+          reader.onload = function(){
+            const result = reader.result;
+            coverImg.src = result;
           }
           document.getElementById("confirmEnable").disabled = false;
 
@@ -307,6 +358,31 @@ function getPostImage(){
                 }     
             });
             closeModalProfile();
+
+        });
+    });
+
+
+    
+    $(document).ready(function(){
+        $("#coverProfileAvatar").on("submit",function(e){
+            e.preventDefault();
+            var form_data = new FormData(this);     
+            $.ajax({
+                url : "./phpFunc/uploadCoverProfile.php",
+                method: "POST",
+                data: form_data,
+                dataType: "JSON",
+                processData:false,
+                contentType:false,
+                success:function(data){
+                    console.log(data.output);
+                    alert(data.output);
+                    $('.loadCoverImage').empty();
+                    $('.loadCoverImage').load("./phpFunc/loadCoverProfile.php");
+                }     
+            });
+            closeModalCoverProfile();
 
         });
     });
