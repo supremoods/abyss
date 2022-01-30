@@ -33,8 +33,6 @@ $('.carousel').owlCarousel({
 });
 
 
-
-
 let list = document.querySelectorAll('.list');
 
     for (let i=0; i<list.length; i++){
@@ -170,10 +168,8 @@ const img = document.querySelector(".avatar-profile");
 const defaultBtn = document.querySelector("#default-btn");
 let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
 
-function defaultBtnActive(){
-  
+function profileAvatar(){
     defaultBtn.click();
-    
 }
 
 function getImage(){
@@ -267,7 +263,6 @@ function getPostImage(){
 
     
     $(document).ready(function(){
-
         $("#uploadStatus").on("submit",function(e){
 
             e.preventDefault();
@@ -288,6 +283,30 @@ function getPostImage(){
                 }     
             });
             statusModalClose()
+
+        });
+    });
+
+
+    $(document).ready(function(){
+        $("#uploadAvatar").on("submit",function(e){
+            e.preventDefault();
+            var form_data = new FormData(this);     
+            $.ajax({
+                url : "./phpFunc/uploadAvatar.php",
+                method: "POST",
+                data: form_data,
+                dataType: "JSON",
+                processData:false,
+                contentType:false,
+                success:function(data){
+                    console.log(data.output);
+                    alert(data.output);
+                    $('.user-container').empty();
+                    $('.user-container').load("./phpFunc/loadAvatar.php");
+                }     
+            });
+            closeModalProfile();
 
         });
     });
