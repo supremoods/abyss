@@ -11,7 +11,7 @@
     
     echo '
     <div class="heading-container"
-    style="background-image: linear-gradient(rgba(248, 122, 221, 0.151), rgba(18, 12, 27, 1)),url(./Assets/img/coverProfile/'.$fetch['profileImage'].');">
+    style="background-image: linear-gradient(rgba(248, 122, 221, 0.151), rgba(18, 12, 27, 1)),url(./Assets/img/coverProfile/'.$fetch['coverProfile'].');">
 
         <div class="profile-name">
             <div class="user-icon">

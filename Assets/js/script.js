@@ -58,6 +58,15 @@ function artFav(temp){
     $('.gallery-wrapper').load("./phpFunc/favUpdate.php",{'id': temp});
 }
 
+function artFavTopics(temp, topic){
+
+    $('.gallery-wrapper').load("./phpFunc/favUpdateTopic.php",{
+        'id': temp,
+        'topic': topic
+    });
+}
+
+
 
 function prevSlide(temp){
    
@@ -289,6 +298,8 @@ function getPostImage(){
 }
 
 // uplaod image ajax
+        
+
 
     $(document).ready(function(){
         $("#uploadImg").on("submit",function(e){
@@ -363,13 +374,12 @@ function getPostImage(){
     });
 
 
-    
     $(document).ready(function(){
         $("#coverProfileAvatar").on("submit",function(e){
             e.preventDefault();
             var form_data = new FormData(this);     
             $.ajax({
-                url : "./phpFunc/uploadCoverProfile.php",
+                url : "./phpFunc/uploadCoverImage.php",
                 method: "POST",
                 data: form_data,
                 dataType: "JSON",

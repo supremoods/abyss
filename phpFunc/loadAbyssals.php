@@ -1,5 +1,6 @@
 <?php
     include('dbConnect.php');
+    
 
     $query = "SELECT * FROM art_abyssals";
 

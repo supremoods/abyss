@@ -17,7 +17,7 @@
     $id = (int) $_SESSION['id'];
 
     $file = $_FILES['coverProfileImg']['name'];
-    $path = "../Assets/img/profile/".basename($file);
+    $path = "../Assets/img/coverProfile/".basename($file);
     $output = "";
 
     $query = "UPDATE abyss_user SET coverProfile = '$file' WHERE id = $id";
