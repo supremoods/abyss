@@ -62,7 +62,6 @@
             <div class="account-links">
               <ul class="link-container">
                 <?php
-                  session_start();
                   $id = (int) $_SESSION['id'];
 
                   $query = mysqli_query ($conn, "SELECT * FROM abyss_User WHERE id = '$id' ") or die (mysqli_error());
@@ -141,6 +140,14 @@
           $place = 0;
 
           $cmd3= mysqli_query($conn, $query3);
+
+          $query4 = "SELECT COUNT(*) FROM art_abyssals ";
+          $cmd4= mysqli_query($conn, $query4);
+          $fetch4 = mysqli_fetch_array($cmd4);
+
+          $rowCounts =  $fetch4['COUNT(*)'];
+
+       //   echo '<script>alert('.$rowCounts.');</script>';
           if(mysqli_num_rows($cmd3) > 0){
             
             while( $fetch3 = mysqli_fetch_array($cmd3)){
@@ -151,7 +158,9 @@
                     $prevIndex = 0;
                   }
                 $nextIndex = $count+1;
-                
+                if($nextIndex == $rowCounts){
+                   $nextIndex = $rowCounts - 1;
+                }
               }
               $count++;
             }

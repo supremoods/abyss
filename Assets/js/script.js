@@ -56,6 +56,12 @@ function artdetails(temp){
     window.location.href = 'artdetails.php?abyssalsId='+temp;
 }
 
+function artFav(temp){
+    // window.location.href = 'artdetails.php?abyssalsId='+temp;
+    $('.gallery-wrapper').load("./phpFunc/favUpdate.php",{'id': temp});
+
+}
+
 
 function prevSlide(temp){
    
@@ -236,9 +242,6 @@ function getPostImage(){
       });
      
 }
-
-
-
 
 // uplaod image ajax
 

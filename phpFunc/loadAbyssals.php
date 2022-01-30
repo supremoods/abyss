@@ -26,7 +26,7 @@
                     </div>
                     <div>
                         <p>by '.$fetch2['username'].'</p>
-                        <p class="highlight" >'.$fetch['count_fav'].'<span class="material-icons">star_outline</span></p>
+                        <p class="highlight" data-id="'.$fetch['art_id'].'"  onclick="artFav(this.dataset.id)" >'.$fetch['count_fav'].'<span class="material-icons">star_outline</span></p>
                     </div>
                 </div>
                 </li>                 
