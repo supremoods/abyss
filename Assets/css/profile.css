@@ -441,9 +441,37 @@
 }
 
 
-.feature-gallery-name, .watchers-name, .watching-name, .about-name{
+.right-area .about-user .about-name{
     font-size: 18px;
+    display:flex;
+    justify-content: space-between;
 }
+
+.right-area .about-user .about-name:hover .about-modal{
+    opacity: 1;
+    transition: all .3s ease-in-out;
+}
+.about-user .about-name .about-modal:hover{
+    color:var(--purple5);
+    transition: all .2s ease-in-out;
+}
+
+.about-user .about-name .about-modal{
+    display: flex;
+    justify-content:center;
+    align-items: center; 
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.about-user .about-name .about-modal p{
+    font-size: 14px;
+}
+.about-user .about-name .about-modal i{
+    font-size: 25px;
+}
+
 .watchers, .watching{
     margin-top: 4.5em;
 }

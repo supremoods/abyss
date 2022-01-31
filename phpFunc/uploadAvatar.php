@@ -11,6 +11,7 @@
     if(mysqli_connect_errno()){
 
         exit();
+        
     }
 
     session_start();

@@ -119,6 +119,14 @@ function abyssalModal(){
     body.classList.toggle('modal');
 }
 
+function aboutModal(){
+    let modal = document.querySelector('.modal-about');
+    let body = document.querySelector('.body-root')
+
+    modal.classList.toggle('modal');
+    body.classList.toggle('modal');
+}
+
 function statusModalClose(){
     const coverImage = document.querySelector(".post-art");
     let modal = document.querySelector('.modal-post');
@@ -143,6 +151,13 @@ function abyssalModalClose(){
     body.classList.toggle('modal');
 }
 
+function aboutModalClose(){
+    let modal = document.querySelector('.modal-about');
+    let body = document.querySelector('.body-root')
+
+    modal.classList.toggle('modal');
+    body.classList.toggle('modal');
+}
 
 function backGallery(){
     window.location.href = 'home.php';
@@ -352,6 +367,7 @@ function getPostImage(){
 
     $(document).ready(function(){
         $("#uploadAvatar").on("submit",function(e){
+
             e.preventDefault();
             var form_data = new FormData(this);     
             $.ajax({
@@ -393,6 +409,30 @@ function getPostImage(){
                 }     
             });
             closeModalCoverProfile();
+
+        });
+    });
+
+
+    $(document).ready(function(){
+        $("#updateProfile").on("submit",function(e){
+            
+            e.preventDefault();
+            var form_data = new FormData(this);     
+            $.ajax({
+                url : "./phpFunc/updateProfile.php",
+                method: "POST",
+                data: form_data,
+                dataType: "JSON",
+                processData:false,
+                contentType:false,
+                success:function(data){
+                    console.log(data.output);
+                    alert(data.output);
+                    $('.about-box').load("./phpFunc/loadProfile.php");
+                }     
+            });
+            aboutModalClose();
 
         });
     });

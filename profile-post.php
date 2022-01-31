@@ -129,32 +129,36 @@
 
             <!-- main content -->
             <div class="main-content">
-                <div class="heading-container">
+                <div class="loadCoverImage">
+                    <div class="heading-container"
+                        style="background-image: linear-gradient(rgba(248, 122, 221, 0.151), rgba(18, 12, 27, 1)),url(Assets/img/coverProfile/<?php echo $fetch['coverProfile'] ?>)">
 
-                    <div class="profile-name">
-                        <div class="user-icon">
-                            <img src="Assets/img/icons/avatar.png" alt="">
-                            <div class="upload-profile" onclick="modalProfile()">
-                                <i class='bx bx-refresh'></i>
-                                <span>change</span>
+                        <div class="profile-name">
+                            <div class="user-icon">
+                                <div class="user-container">
+                                    <img src="./Assets/img/profile/<?php echo $fetch['profileImage'] ?>" alt="">
+                                </div>
+                                <div class="upload-profile" onclick="modalProfile()">
+                                    <i class="bx bx-refresh"></i>
+                                    <span>change</span>
+                                </div>
+                            </div>
+
+                            <div class="users-info">
+                                <h1 id="user-name">
+                                    <?php echo $fetch['username'] ?>
+                                </h1>
+                                <h1 id="user-status">0 Watchers | 1 Page view | 0 Abys </h1>
                             </div>
                         </div>
 
-                        <div class="users-info">
-                            <h1 id="user-name">
-                                <?php echo $fetch['username'] ?>
-                            </h1>
-                            <h1 id="user-status">0 Watchers | 1 Page view | 0 Abys </h1>
+                        <div class="profile-btn" onclick="modalCoverImage()">
+                            <a href="#" class="btn">
+                                <i class="bx bx-image-add"></i>
+                                <h1 id="cover-text">ADD COVER IMAGE</h1>
+                            </a>
                         </div>
                     </div>
-
-                    <div class="profile-btn">
-                        <a href="#" class="btn">
-                            <i class='bx bx-image-add'></i>
-                            <h1 id="cover-text">ADD COVER IMAGE</h1>
-                        </a>
-                    </div>
-
                 </div>
 
                 <div class="navigation">
@@ -238,10 +242,8 @@
                         </div>
                     </div>
                 </footer>
-
         </main>
 
-        <!-- modal notif -->
         <div class="modal-post">
             <form method="post" enctype="multipart/form-data" id="uploadStatus">
                 <div class="modal-post-wrapper">
@@ -297,7 +299,6 @@
                 </div>
             </form>
         </div>
-
         <div class="modal-abyssals">
             <form method="post" enctype="multipart/form-data" id="uploadImg">
                 <div class="modal-abyssals-wrapper">
@@ -371,7 +372,6 @@
                 </div>
             </form>
         </div>
-
         <div class="modal-upload-profile">
             <form method="post" enctype="multipart/form-data" id="uploadAvatar">
                 <div class="modal-upload-wrapper">
@@ -387,11 +387,38 @@
                         <img class="avatar-profile" src="" alt="" srcset="">
                         <div class="uploadbtn-container">
                             <div class="uploadBtn" onclick="profileAvatar()">Choose a file</div>
-                            <input id="default-btn" name="profileImg" type="file" onclick="getImage()" hidden>
+                            <input id="profileImg" name="profileImg" type="file" onclick="getImage()" hidden>
                         </div>
                     </div>
                     <div class="modal-footer-btn">
-                        <button class="cancel-btn" onclick="closeModalProfile()">Cancel</button>
+                        <div class="cancel-btn" onclick="closeModalProfile()">Cancel</div>
+                        <button id="confirmEnable" name="confirmEnable" type="submit"
+                            class="confirm-btn">Confirm</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-coverProfile-profile">
+            <form method="post" enctype="multipart/form-data" id="coverProfileAvatar">
+                <div class="modal-coverProfile-wrapper">
+                    <div class="modal-header-profile">
+                        <div class="title-header">
+                            <h1>Upload Cover Photo</h1>
+                        </div>
+                        <div class="close-profile-btn" onclick="closeModalCoverProfile()">
+                            <i class='bx bx-x'></i>
+                        </div>
+                    </div>
+                    <div class="modal-image-section">
+                        <img class="avatar-coverProfile" src="" alt="" srcset="">
+                        <div class="coverProfilebtn-container">
+                            <div class="coverProfileBtn" onclick="coverProfileAvatar()">Choose a file</div>
+                            <input id="coverProfileImg" name="coverProfileImg" type="file" onclick="getCoverImage()"
+                                hidden>
+                        </div>
+                    </div>
+                    <div class="modal-footer-btn">
+                        <div class="cancel-btn" onclick="closeModalCoverProfile()">Cancel</div>
                         <button id="confirmEnable" name="confirmEnable" type="submit"
                             class="confirm-btn">Confirm</button>
                     </div>
