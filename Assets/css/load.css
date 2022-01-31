@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap");
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(359deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+  }
+}
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(359deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+
+svg * {
+  transform-origin: 50% 50%;
+}
+
+#loader{
+  position:fixed;
+  top:0;
+  margin: 0;
+  background-color:var(--D1);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Raleway", sans-serif;
+  z-index: 111;
+  transition: all .3s ease-out;
+}
+
+.circle {
+  -webkit-animation: rotation 8s infinite linear;
+}
+.circle_s {
+  -webkit-animation: rotation 4s infinite linear;
+}/*# sourceMappingURL=load.css.map */

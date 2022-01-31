@@ -434,5 +434,10 @@ function getPostImage(){
             });
             aboutModalClose();
 
+  
         });
     });
+
+    $(window).on('load', function(){
+        $('#loader').hide();
+    })

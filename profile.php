@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="Assets/css/root.css" />
     <link rel="stylesheet" href="Assets/css/profile.css" />
     <link rel="stylesheet" href="Assets/css/modal.css" />
+    <link rel="stylesheet" href="Assets/css/load.css" />
     <link rel="shortcut icon" href="Assets/logo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
@@ -818,24 +819,27 @@
                 </div>
             </form>
         </div>
-        <svg width="140" height="140" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g>
-            <line x1="59.9833" y1="140.333" x2="219.978" y2="139" stroke="#000" stroke-width="4"/>
-            <circle cx="60" cy="140" r="5" fill="#000"/>
-            <circle cx="220" cy="139" r="5" fill="#000"/>
-            </g>
-            <path class="circle" d="M109.957 122.655L140 105.309L170.043 122.655V157.345L140 174.691L109.957 157.345V122.655Z" stroke="#000" stroke-width="4"/>
-            <circle class="circle" cx="140" cy="140" r="13" stroke="#f5d77b" stroke-width="4"/>
-            <circle class="circle" cx="110" cy="192" r="13" stroke="#f7a78f" stroke-width="4"/>
-            <circle class="circle circle_s" cx="85" cy="232" r="8" stroke="#82c7c5" stroke-width="4"/>
-            <circle class="circle" cx="170" cy="88" r="13" stroke="#82c7c5" stroke-width="4"/>
-            <circle class="circle circle_s" cx="110" cy="192" r="5" fill="#f7a78f"/>
-            <circle class="circle circle_s" cx="185" cy="61" r="5" fill="#f5d77b"/>
-        </svg>
+                                     
 
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <div id="loader">
+        <svg width="140" height="140" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                <line x1="59.9833" y1="140.333" x2="219.978" y2="139" stroke="#7579ff" stroke-width="4"/>
+                <circle cx="60" cy="140" r="5" fill="#7579ff"/>
+                <circle cx="220" cy="139" r="5" fill="#7579ff"/>
+                </g>
+                <path class="circle" d="M109.957 122.655L140 105.309L170.043 122.655V157.345L140 174.691L109.957 157.345V122.655Z" stroke="#7579ff" stroke-width="4"/>
+                <circle class="circle" cx="140" cy="140" r="13" stroke="#f5d77b" stroke-width="4"/>
+                <circle class="circle" cx="110" cy="192" r="13" stroke="#f7a78f" stroke-width="4"/>
+                <circle class="circle circle_s" cx="85" cy="232" r="8" stroke="#7579ff" stroke-width="4"/>
+                <circle class="circle" cx="170" cy="88" r="13" stroke="#7579ff" stroke-width="4"/>
+                <circle class="circle circle_s" cx="110" cy="192" r="5" fill="#f7a78f"/>
+                <circle class="circle circle_s" cx="185" cy="61" r="5" fill="#f5d77b"/>
+        </svg>
+    </div>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
