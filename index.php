@@ -13,6 +13,7 @@
   <title>Abyss</title>
   <link rel="stylesheet" href="Assets/css/root.css" />
   <link rel="stylesheet" href="Assets/css/style.css" />
+  <link rel="stylesheet" href="Assets/css/load.css" />
   <link rel="shortcut icon" href="Assets/logo.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
