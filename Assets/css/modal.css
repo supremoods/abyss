@@ -48,6 +48,8 @@
     font-size: 14px;
 }
 
+
+
 .modal-post-wrapper .modal-post-header .right-section .post-close-btn div{
     background: none;
     border:none;
@@ -225,6 +227,21 @@
     display: flex;
     font-size: 14px;
 }
+
+.modal-abyssals-wrapper .modal-abyssals-header .left-section .headerInput{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.modal-abyssals-wrapper .modal-abyssals-header .left-section .headerInput .featContainer label{
+    padding-left: 10px;
+}
+
+.modal-abyssals-wrapper .modal-abyssals-header .left-section .headerInput .featContainer input[type="checkbox"]{
+    cursor: pointer;
+}
+
 
 .modal-abyssals-wrapper .modal-abyssals-header .right-section .abyssals-close-btn div{
     background: none;

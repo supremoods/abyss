@@ -13,11 +13,17 @@
         <p>'.$fetch['checkArtist'].' // '.$fetch['Level'].' // '.$fetch['Specialty'].'</p>
 
         <div class="about-info">
-            <i class="bx bxs-cake"></i>
-            <p>'.$fetch['birthDay'].'</p>
-            <i class="bx bx-map"></i>
-            <p>'.$fetch['Location'].'</p>
+            <div>
+                <i class="bx bxs-cake"></i>
+                <p>'.$fetch['birthDay'].'</p>
+            </div>
+            <div>
+                <i class="bx bx-map"></i>
+                <p>'.$fetch['Location'].'</p>
+            </div>
         </div>
+
+        <p>'.$fetch['Pronouns'].' </p>
     ';
 
 
