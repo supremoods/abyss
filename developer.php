@@ -128,7 +128,14 @@
           <div class="about-container">
             <div class="about-wrapper">
               <div class="about-content">
-               <h1>About Abyss</h1>
+                <div class="logo-title">
+                  <img class="logoAbyss" src="Assets/img/logo/logo.png" alt="" srcset="">
+                  <div class="about-abyss">
+                    <h1>BOUT</h1>
+                    <h1>BYSS</h1>
+                  </div>
+                </div>  
+
                 <div class="about-description">
                   <pre>We are the starting point for art, but it is just the beginning. We're a community for everyone's creative side to grow and heighten their own sense of taste, but that's not all. 
                
@@ -195,7 +202,6 @@ We give a never-ending source of amusement and motivation. This is the first pla
 
                   </div>  
 
-              
               </div>
 
             </div>

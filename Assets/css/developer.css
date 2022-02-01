@@ -287,26 +287,6 @@
     text-decoration: none;
     color: #fff;
 }
-/* 
-.sidebar ul li a .material-icons
-{
-    position: relative;
-    display: block;
-    min-width: 60px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-}
-
-
-.sidebar ul li a .title{
-    position: relative;
-    display: block;
-    padding-Left: 10px;
-    height: 60px;
-    line-height: 60px;
-    white-space: normal;
-} */
 
 
 .sidebar ul li a .material-icons
@@ -328,16 +308,34 @@
     line-height: 50px;
     white-space: normal;
 }
+.logo-title{
+    display: flex;
+    align-items: center;
+    font-size:7em;
+    padding-bottom:20px;
+}
+.logo-title .logoAbyss{
+    height: 190px;
+    width:190px;
+
+}
+
+.logo-title .about-abyss h1{
+   line-height:100px;
+   font-style: italic;
+}
+
+.logo-title .about-abyss{
+    padding:0 10px;
+    line-height:100px;
+ }
 
 .main-content .about-container{
     display: flex;
     align-items: flex-start;
     justify-content: center;
     background-color: var(--D1);
-    /* background: url('../img/sisu_bg-min.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; */
+
 }
 
 .main-content .about-container .about-wrapper{
@@ -349,12 +347,10 @@
     text-justify: inter-word;
     color: var(--D8);
     background-color: var(--D1);
-    padding: 3em;
+    padding: 6em;
 }
 
-.main-content .about-container .about-wrapper .about-content h1{
-    font-size: 30px;
-}
+
 .about-description pre{
     overflow-x: auto;
     white-space: pre-wrap;
@@ -362,7 +358,7 @@
     white-space: -pre-wrap;
     white-space: -o-pre-wrap;
     word-wrap: break-word;
-    font-size: 14px;
+    font-size: 16px;
     padding-top: 10px;
 }
 
@@ -525,3 +521,29 @@ ul{
 
 
 
+/*responsive*/
+@media(max-width: 767px){
+    .footer-col{
+     
+      width: 50%;
+      margin-bottom: 30px;
+  }
+  }
+  
+  @media(max-width: 767px){
+      #logo-footer{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    #social{
+      width: 100%;
+      padding: 0 75px;
+    }
+  }
+  @media(max-width: 574px){
+    .footer-col{
+      width: 100%;
+  }
+  }
+  
+  
