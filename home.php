@@ -332,23 +332,29 @@
                     <option value="only_me">Only me</option>
                   </select>
                 </div>
-                <div>
-                  <p>Category</p>                  
-                  <select id="category" name="category">
-                    <option value="3D">3D</option>
-                    <option value="Adoptables">Adoptables</option>
-                    <option value="Anime and Manga">Anime and Manga</option>
-                    <option value="Anthro">Anthro</option>
-                    <option value="Comics">Comics</option>
-                    <option value="Digital Art">Digital Art</option>
-                    <option value="Drawings and Paintings">Drawings and Paintings</option>
-                    <option value="Fan Art">Fan Art</option>
-                    <option value="Game Art">Game Art</option>
-                    <option value="Science Fiction">Science Fiction</option>
-                    <option value="Sculpture">Sculpture</option>
-                    <option value="Traditional Arts">Traditional Arts</option>
-                    <option value="Tutorials">Tutorials</option>
-                  </select>
+                <div class = "headerInput">
+                  <div>
+                    <p>Category</p>                  
+                    <select id="category" name="category">
+                      <option value="3D">3D</option>
+                      <option value="Adoptables">Adoptables</option>
+                      <option value="Anime and Manga">Anime and Manga</option>
+                      <option value="Anthro">Anthro</option>
+                      <option value="Comics">Comics</option>
+                      <option value="Digital Art">Digital Art</option>
+                      <option value="Drawings and Paintings">Drawings and Paintings</option>
+                      <option value="Fan Art">Fan Art</option>
+                      <option value="Game Art">Game Art</option>
+                      <option value="Science Fiction">Science Fiction</option>
+                      <option value="Sculpture">Sculpture</option>
+                      <option value="Traditional Arts">Traditional Arts</option>
+                      <option value="Tutorials">Tutorials</option>
+                    </select>
+                  </div>
+                  <div class = "featContainer">             
+                    <input type="checkbox" name="featArt" value="feat">
+                    <label for="featArt">Featured</label>
+                  </div>
                 </div>
               </div>
             </div>

@@ -22,11 +22,12 @@
     $title =  $_POST['abyssals-title'];
     $desc =  $_POST['abyssals-desc'];
     $category = $_POST['category'];
+    $feat = $_POST['featArt'];
     $output = "";
     $today = date("F j, Y");  
 
-    $query = "INSERT INTO art_abyssals(id, art_id, abyssal_art, title, description, category, privacy, count_comment, count_fav, abyssals_date)
-    VALUES ($id,null,'$file','$title','$desc','$category','$privacy',0,0,'$today')";
+    $query = "INSERT INTO art_abyssals(id, art_id, abyssal_art, title, description, category, privacy, count_comment, count_fav, abyssals_date, featured_gallery)
+    VALUES ($id,null,'$file','$title','$desc','$category','$privacy',0,0,'$today','$feat')";
 
     $cmd = mysqli_query($conn,$query); 
 

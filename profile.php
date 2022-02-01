@@ -99,7 +99,6 @@
             </div>
         </div>
 
-
         <main class="container">
             <!-- sidebar navigation -->
             <div class="sidebar-container">
@@ -173,48 +172,49 @@
                         </ul>
                     </div>
                 </div>
-
+                <?php
+                    $query = "SELECT * FROM art_abyssals WHERE id = $id";
+                    $cmd = mysqli_query($conn,$query); 
+                ?>
                 <div class="profile-col">
                     <div class="profile-content">
-
                         <div class="left-area">
-                            <div class="feature-gallery">
+                            <div class="feature-gallery cards">
                                 <div class="feature-gallery-name">
                                     <h1>Feature Gallery</h1>
                                 </div>
-                                <div class="gallery-box">
-                                    <h1>Submit your first Abyssal!</h1>
+                                <div class="gallery-box box">
+                                    <ul class="feature-gallery-wrapper">
+
+                                    <?php
+                                            if(mysqli_num_rows($cmd) > 0){
+                                                while($fetch = mysqli_fetch_array($cmd)){
+                                                
+                                                    $userName = $fetch['id'];  
+                                                    $query2 = "SELECT * FROM abyss_user WHERE id = '$userName'";
+                                                    $cmd2 = mysqli_query($conn,$query2); 
+                                                    $fetch2 = mysqli_fetch_array($cmd2);
+
+                                                    echo '
+                                                    <li class="feature-gallery-item">
+                                                        <img src="assets/img/arts/'.$fetch['abyssal_art'].'" alt="" srcset="">
+                                                    </li>              
+                                                ';
+                                                }
+                                            }                                         
+                                         ?>
+                                    </ul>
+                                    <!-- <h1>Submit your first Abyssal!</h1>
                                     <p>Get your art out there for people see.</p>
-                                    <a href="#">Submit</a>
+                                    <a href="#">Submit</a> -->
                                 </div>
                             </div>
 
-                            <div class="watchers">
-                                <div class="watchers-name">
-                                    <h1>Watchers</h1>
-                                </div>
-                                <div class="watchers-box">
-                                    <h1>Grow Your Audience</h1>
-                                    <p>Reach out to other abyssals to get people watching you.</p>
-                                    <a href="#">Browse</a>
-                                </div>
-                            </div>
-
-                            <div class="watching">
-                                <div class="watching-name">
-                                    <h1>Watching</h1>
-                                </div>
-                                <div class="watching-box">
-                                    <h1>Start Watching</h1>
-                                    <p>Keep your eye on the abyssals you love.</p>
-                                    <a href="#">Browse</a>
-                                </div>
-                            </div>
 
                         </div>
 
                         <div class="right-area">
-                            <div class="about-user">
+                            <div class="about-user cards">
                                 <div class="about-name">
                                     <div class="about-title">
                                         <h1>About</h1>
@@ -224,21 +224,29 @@
                                         <p>edit</p>
                                     </div>
                                 </div>
-
-                                <div class="about-box">
+                                <?php
+                                    $query = mysqli_query ($conn, "SELECT * FROM abyss_User WHERE id = '$id' ") or die (mysqli_error());
+                                    $fetch = mysqli_fetch_array ($query);                                    
+                                ?>                            
+                                <div class="about-box box">
                                     <p><?php echo $fetch['checkArtist']?> // <?php echo $fetch['Level']?>  // <?php echo $fetch['Specialty']?></p>
 
                                     <div class="about-info">
-                                        <i class='bx bxs-cake'></i>
-                                        <p><?php echo $fetch['birthDay']?></p>
-                                        <i class='bx bx-map'></i>
-                                        <p><?php echo $fetch['Location']?></p>
+                                        <div>
+                                            <i class='bx bxs-cake'></i>
+                                            <p><?php echo $fetch['birthDay']?></p>
+                                        </div>
+                                        <div>
+                                            <i class='bx bx-map'></i>
+                                            <p><?php echo $fetch['Location']?></p>
+                                        </div>
                                     </div>
+
+                                    <p><?php echo $fetch['Pronouns']?></p>
                                 </div>
 
                             </div>
                         </div>
-
                     </div>
                 </div>
 
@@ -343,73 +351,76 @@
         <div class="modal-abyssals">
             <form method="post" enctype="multipart/form-data" id="uploadImg">
                 <div class="modal-abyssals-wrapper">
-                    <div class="modal-abyssals-header">
-                        <div class="left-section">
-                            <div class="title">
-                                <h1>Submit Abyssal</h1>
-                                <div>
-                                    <p>Who can see it? </p>
-                                    <select id="privacy" name="privacy">
-                                        <option value="everyone">Everyone</option>
-                                        <option value="friends">Friends</option>
-                                        <option value="only_me">Only me</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <p>Category</p>
-                                    <select id="category" name="category">
-                                        <option value="3D">3D</option>
-                                        <option value="Adoptables">Adoptables</option>
-                                        <option value="Anime and Manga">Anime and Manga</option>
-                                        <option value="Anthro">Anthro</option>
-                                        <option value="Comics">Comics</option>
-                                        <option value="Digital Art">Digital Art</option>
-                                        <option value="Drawings and Paintings">Drawings and Paintings</option>
-                                        <option value="Fan Art">Fan Art</option>
-                                        <option value="Game Art">Game Art</option>
-                                        <option value="Science Fiction">Science Fiction</option>
-                                        <option value="Sculpture">Sculpture</option>
-                                        <option value="Traditional Arts">Traditional Arts</option>
-                                        <option value="Tutorials">Tutorials</option>
-                                    </select>
-                                </div>
-                            </div>
+                <div class="modal-abyssals-header">
+                    <div class="left-section">
+                    <div class="title">
+                        <h1>Submit Abyssal</h1>
+                        <div>
+                        <p>Who can see it? </p>   
+                        <select id="privacy" name="privacy">
+                            <option value="everyone">Everyone</option>
+                            <option value="friends">Friends</option>
+                            <option value="only_me">Only me</option>
+                        </select>
                         </div>
-                        <div class="right-section">
-                            <div class="abyssals-close-btn">
-                                <div><i class='bx bx-x closeBtn' onclick="abyssalModalClose()"></i></div>
-                            </div>
+                        <div class = "headerInput">
+                        <div>
+                            <p>Category</p>                  
+                            <select id="category" name="category">
+                            <option value="3D">3D</option>
+                            <option value="Adoptables">Adoptables</option>
+                            <option value="Anime and Manga">Anime and Manga</option>
+                            <option value="Anthro">Anthro</option>
+                            <option value="Comics">Comics</option>
+                            <option value="Digital Art">Digital Art</option>
+                            <option value="Drawings and Paintings">Drawings and Paintings</option>
+                            <option value="Fan Art">Fan Art</option>
+                            <option value="Game Art">Game Art</option>
+                            <option value="Science Fiction">Science Fiction</option>
+                            <option value="Sculpture">Sculpture</option>
+                            <option value="Traditional Arts">Traditional Arts</option>
+                            <option value="Tutorials">Tutorials</option>
+                            </select>
                         </div>
-                    </div>
-                    <div class="modal-abyssals-content">
-                        <div class="title-content">
-                            <div class="cover-image">
-                                <img class="abyssal-art" src="Assets/img/sisu_bg-min.png">
-                            </div>
-                            <div class="abyssals-title">
-                                <textarea type="text" name="abyssals-title"
-                                    placeholder="Add your title here"></textarea>
-                            </div>
-                            <div class="add-img-btn">
-                                <div onclick="abyssalBtnActive()">
-                                    <span><i class='bx bx-image-add'></i>Add Abyssal</span>
-                                </div>
-                                <input id="add-abyysals-btn" name="abyssal_art_image" type="file"
-                                    onclick="getAbyssalImage()" hidden>
-                            </div>
+                        <div class = "featContainer">             
+                            <input type="checkbox" name="featArt" value="feat">
+                            <label for="featArt">Featured</label>
                         </div>
-                        <div class="abyssals-description">
-                            <div class="desc-container">
-                                <textarea name="abyssals-desc" id="abyssals-desc" cols="49" rows="10"
-                                    placeholder="Start typing your main text here"></textarea>
-                            </div>
                         </div>
                     </div>
-                    <div class="modal-abyssals-footer">
-                        <div class="submit-btn">
-                            <button name="AbyssalSubmit" id="submit_Abyssals" type="submit">Submit</button>
+                    </div>
+                    <div class="right-section">
+                        <div class="abyssals-close-btn">
+                        <div><i class='bx bx-x closeBtn' onclick="abyssalModalClose()"></i></div>
                         </div>
                     </div>
+                </div>
+                <div class="modal-abyssals-content">
+                    <div class="title-content">
+                        <div class="cover-image">
+                        <img class="abyssal-art" src="Assets/img/sisu_bg-min.png" >
+                        </div>
+                        <div class="abyssals-title">
+                        <textarea type="text" name="abyssals-title" placeholder="Add your title here"></textarea>
+                        </div>
+                        <div class="add-img-btn">
+                        <div onclick="abyssalBtnActive()">
+                            <span><i class='bx bx-image-add'></i>Add Abyssal</span>
+                        </div>
+                        <input id="add-abyysals-btn" name="abyssal_art_image" type="file" onclick="getAbyssalImage()" hidden>
+                        </div>
+                    </div>
+                    <div class="abyssals-description">
+                        <div class="desc-container">
+                        <textarea name="abyssals-desc" id="abyssals-desc" cols="49" rows="10" placeholder="Start typing your main text here"></textarea>
+                        </div>
+                    </div> 
+                </div>
+                <div class="modal-abyssals-footer">
+                    <div class="submit-btn">
+                        <button name="AbyssalSubmit" id="submit_Abyssals" type="submit">Submit</button>
+                    </div>
+                </div>
                 </div>
             </form>
         </div>
@@ -818,10 +829,9 @@
                     </div>
                 </div>
             </form>
-        </div>
-                                     
-
+        </div>                                 
     </div>
+
     <div id="loader">
         <svg width="140" height="140" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g>

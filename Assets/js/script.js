@@ -332,6 +332,7 @@ function getPostImage(){
                     alert(data.output);
                     $('.gallery-wrapper').empty();
                     $('.gallery-wrapper').load("./phpFunc/loadAbyssals.php");
+                    $('.feature-gallery-wrapper').load("./phpFunc/loadFeat.php");
                 }     
             });
             abyssalModalClose()

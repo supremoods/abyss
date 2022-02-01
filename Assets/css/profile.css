@@ -426,113 +426,113 @@
     font-weight: bold;
     color: var(--gray4);
 }
+
 .profile-col{
+    width:100%;
+    padding:80px;
+}
+
+.profile-col .profile-content{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profile-col .profile-content .left-area,
+.profile-col .profile-content .right-area{
+    width:854px;
+    padding: 10px;
+
+}
+
+.profile-col .profile-content .left-area .cards,
+.profile-col .profile-content .right-area .cards{
+    width: 100%;
+    margin-bottom: 50px;
+    
+}
+
+.profile-col .profile-content .left-area .cards .box{
+    padding:20px 0;
+}
+
+
+.profile-col .profile-content .right-area .cards .box{
+    background: var(--L8--light);
+    margin: 20px 0;
+    padding:20px;
+}
+
+.profile-col .profile-content .left-area .cards .box{
     position: relative;
-    height: 100%;
-    background-color: var(--gray9);
-    margin: 80px 80px;
-    justify-content:space-around;
 }
 
-.profile-content{
-    display: grid;   
-    grid-template-columns:50% 50%;
-    grid-column-gap: 60px ;
-   
-}
-
-
-.right-area .about-user .about-name{
-    font-size: 18px;
-    display:flex;
-    justify-content: space-between;
-}
-
-.right-area .about-user .about-name:hover .about-modal{
-    opacity: 1;
-    transition: all .3s ease-in-out;
-}
-.about-user .about-name .about-modal:hover{
-    color:var(--purple5);
-    transition: all .2s ease-in-out;
-}
-
-.about-user .about-name .about-modal{
-    display: flex;
+.profile-col .profile-content .left-area .cards .box .feature-gallery-wrapper{
+    display: inline-flex;
+    flex-wrap: wrap;
     justify-content:center;
-    align-items: center; 
-    opacity: 0;
+    gap:10px;
+
+}
+
+
+.profile-col .profile-content .left-area .cards .box .feature-gallery-wrapper .feature-gallery-item{
+    position: relative;
+    height:250px;
+}
+
+.profile-col .profile-content .left-area .cards .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.profile-col .profile-content .right-area .about-name,
+.profile-col .profile-content .right-area .about-box .about-info, 
+.profile-col .profile-content .right-area .about-name .about-modal{
+    display:flex;
+}
+
+.profile-col .profile-content .right-area .about-name {
+    justify-content: space-between;
+    
+}
+
+.profile-col .profile-content .right-area .about-box {
+    font-size:14px;
+}
+.profile-col .profile-content .right-area .about-box .about-info{
+    padding-top:20px;
+    display: flex;
+
+    align-items: center;
+}
+
+.profile-col .profile-content .right-area .about-box .about-info div{
+    display:flex;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    align-items: center;
+}
+
+.profile-col .profile-content .right-area .about-box .about-info div p{
+    padding: 0 10px;
+}
+
+.profile-col .profile-content .right-area .about-modal{
+    display: flex;
+    align-items: center;
+    opacity:0;
     transition: all .3s ease-in-out;
-    cursor: pointer;
+    cursor:pointer;
 }
 
-.about-user .about-name .about-modal p{
-    font-size: 14px;
-}
-.about-user .about-name .about-modal i{
-    font-size: 25px;
-}
-
-.watchers, .watching{
-    margin-top: 4.5em;
-}
-.about-user{
-    margin-right: 60px;
-}
-
-.gallery-box, .watchers-box, .watching-box, .about-box{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 2em 2em 1.5em 2em;
-    margin-top: .5em;
-    border-radius: 4px;
-    background-color: var(--L8--light);
-}
-.about-box{
-    padding: .7em 2em 1.5em .7em;
-    align-items: flex-start;
-}
-.about-box p{
-    margin: 1em;
-}
-.about-info{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.bx-map{
-    margin-left: 2em;
-}
-.bxs-cake{
-    margin-left: 1em;
-}
-
-.gallery-box h1, .watchers-box h1, .watching-box h1, .about-box h1{
-    margin: 1em;
-    font-size: 20px;
+.profile-col .profile-content .right-area .about-name:hover .about-modal {
+    opacity:1;
 }
 
 
-.gallery-box p, .watchers-box p, .watching-box p{
-    color: var(--gray4);
-    margin-bottom: 1em;
-}
-.gallery-box a, .watchers-box a, .watching-box a{
-    border: white 1px solid;
-    margin: 1em;
-    padding: .3em 1.5em;
-    font-size: 13px;
-    font-weight: bold;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-.gallery-box a:hover, .watchers-box a:hover, .watching-box a:hover{
-    background-color: var(--gray2);
-    color: var(--gray9);
+.profile-col .profile-content .right-area .about-name .about-modal:hover {
+    color:var(--purple5);
 }
 
 .footer-container{
