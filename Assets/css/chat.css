@@ -178,13 +178,14 @@
     color:var(--purple5);
 }
 
-
 .avatar-sec{
     display: flex;
     align-items:center;
     position: relative;
     padding: 20px;
+
 }
+
 .avatar-sec img:hover{
     cursor:pointer;
 }

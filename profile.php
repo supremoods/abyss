@@ -74,7 +74,7 @@
                                     ";
             
                                 ?>
-                                <!-- <h1><?//php $fetch['username'] ?></h1> -->
+
                                 <li><a href="profile.php">Profile</a></li>
                                 <li><a href="gallery.php">Gallery</a></li>
                                 <li><a href="favorites.php">Favourites</a></li>
@@ -131,7 +131,6 @@
                 <div class="loadCoverImage">
                     <div class="heading-container"
                         style="background-image: linear-gradient(rgba(248, 122, 221, 0.151), rgba(18, 12, 27, 1)),url(Assets/img/coverProfile/<?php echo $fetch['coverProfile'] ?>)">
-
                         <div class="profile-name">
                             <div class="user-icon">
                                 <div class="user-container">
