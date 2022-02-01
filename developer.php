@@ -186,8 +186,13 @@ We give a never-ending source of amusement and motivation. This is the first pla
                       </div>
 
                       <div class="cards">
-                       <h1>Hello</h1>
+                        <div class="card-img">
+                          <img src="Assets/img/Kath.png" alt="Santiago, Kathleen">
+                          <h1>Santiago, Kathleen</h1>
+                          <p>Researcher / Web Developer</p>
+                        </div>
                       </div>
+
                   </div>  
 
               
