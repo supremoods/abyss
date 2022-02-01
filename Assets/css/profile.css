@@ -483,22 +483,19 @@
     height:300px;
     background: var(--L8--light);
 
-
 }
+
+
 
 .gallery-box .submit-feat .featModal{
     display: flex;
     align-items: center;
-    opacity: 0;
+    opacity: 1;
     transition: all .3s ease-in-out;
     cursor: pointer;
     padding:10px;
 }
 
-.gallery-box .submit-feat .featModal{
-    opacity: 1;
-
-}
 
 
 .gallery-box .submit-feat .featModal:hover{

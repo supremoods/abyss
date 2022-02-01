@@ -6,15 +6,7 @@
     $query = "SELECT * FROM art_abyssals WHERE id = $id AND featured_gallery = 'feat'";
     $cmd = mysqli_query($conn,$query); 
     
-    if(mysqli_num_rows($cmd) == 0){
-        echo'
-        <div class="submit-feat">
-            <h1>Submit your first Abyssal!</h1>
-            <p>Get your art out there for people see.</p>
-            <a href="#">Submit</a>
-        </div>
-        ';
-    }
+
 
     if(mysqli_num_rows($cmd) > 0){
         while($fetch = mysqli_fetch_array($cmd)){

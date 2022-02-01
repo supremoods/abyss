@@ -1,20 +1,16 @@
 <?php
     include('dbConnect.php');
-    
 
-    $query = "SELECT * FROM art_abyssals";
+    $artId = $_REQUEST['id'];
+    $query = "DELETE FROM art_abyssals WHERE art_id = $artId";
+    $cmd = mysqli_query($conn,$query); 
 
+    session_start();
+    $id = (int) $_SESSION['id'];
+    $query = "SELECT * FROM art_abyssals WHERE id = $id";
     $cmd = mysqli_query($conn,$query); 
     
-    if(mysqli_num_rows($cmd) == 0){
-        echo   "
-            <script>submitFeatShow()</script>
-        ";
-    }else{
-        echo   "
-            <script>submitFeatHide()</script>
-        ";
-    }
+
 
     if(mysqli_num_rows($cmd) > 0){
         while($fetch = mysqli_fetch_array($cmd)){
@@ -25,8 +21,13 @@
             $fetch2 = mysqli_fetch_array($cmd2);
 
             echo '
-                <li class="gallery-item" >
-                <img src="./Assets/img/arts/'.$fetch['abyssal_art'].'" data-id="'.$fetch['art_id'].'"  onclick="artdetails(this.dataset.id)">
+            <li class="feature-gallery-item">
+                <img src="assets/img/arts/'.$fetch['abyssal_art'].'" alt="" srcset="">
+                <div class="delete-btn" data-id="'.$fetch['art_id'].'" onclick="removeAbyssals(this.dataset.id)">
+                    <div>
+                        <i class="bx bx-trash" ></i>
+                    </div>
+                </div>
                 <div class="text">
                     <div>
                         <h3>'.$fetch['title'].'</h3>
@@ -37,13 +38,9 @@
                         <p class="highlight" data-id="'.$fetch['art_id'].'"  onclick="artFav(this.dataset.id)" >'.$fetch['count_fav'].'<span class="material-icons">star_outline</span></p>
                     </div>
                 </div>
-                </li>                 
+            </li>              
         ';
         }
     }
 
-    
-
-
 ?>
-

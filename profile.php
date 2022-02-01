@@ -184,31 +184,40 @@
                                     <div class="featTitle">
                                         <h1>Feature Gallery</h1>
                                     </div>
-                                    <div class="featModal" onclick="abyssalModal()">
-                                        <i class='bx bx-image-add'></i>
-                                        <p>ADD</p>
+                                    <div id="featLoad">
+                                        <?php
+                                            if(mysqli_num_rows($cmd) != 0){
+                                                echo   '
+                                                <div class="featModal" onclick="abyssalModal()">
+                                                    <i class="bx bx-image-add"></i>
+                                                    <p>ADD</p>
+                                                </div>
+                                                ';
+                                            }
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="gallery-box box">
-                                    <div class="submit-feat">
-                                    <?php 
-                                        
+                                    <div id="featLoadSubmit">
+                                    <?php
                                         if(mysqli_num_rows($cmd) == 0){
-                                            echo'
-                                            
+                                            echo   '
+                                            <div class="submit-feat">             
                                                 <h1>Submit your first Abyssal!</h1>
-                                                    <p>Get your art out there for people see.</p>
-                                                    <div class="featModal" onclick="abyssalModal()">
-                                                        <i class="bx bx-image-add"></i>
+                                                <p>Get your art out there for people see.</p>
+                                                <div class="featModal" onclick="abyssalModal()">
+                                                    <i class="bx bx-image-add"></i>
                                                     <p>Submit</p>
                                                 </div>
+                                            </div>
                                             ';
                                         }
                                     ?>
                                     </div>
-                                    <ul class="feature-gallery-wrapper">
-
-                                    <?php
+                                    
+                                    <ul class="feature-gallery-wrapper ">
+                                     
+                                        <?php
                                             if(mysqli_num_rows($cmd) > 0){
                                                 while($fetch = mysqli_fetch_array($cmd)){
                                                 
@@ -240,6 +249,7 @@
                                                 }
                                             }                                         
                                          ?>
+               
                                     </ul>
 
 
