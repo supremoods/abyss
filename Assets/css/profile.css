@@ -564,7 +564,7 @@
 .profile-col .profile-content{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+
 
 }
 
@@ -582,10 +582,14 @@
     
 }
 
+.profile-col .profile-content .left-area .cards .box{
+    padding:20px 0;
+}
 
-.profile-col .profile-content .left-area .cards .box,
+
 .profile-col .profile-content .right-area .cards .box{
     background: var(--L8--light);
+    margin: 20px 0;
     padding:20px;
 }
 
@@ -603,17 +607,13 @@
 
 
 .profile-col .profile-content .left-area .cards .box .feature-gallery-wrapper .feature-gallery-item{
-   
     position: relative;
-    height:180px;
-
-    
+    height:250px;
 }
 
 .profile-col .profile-content .left-area .cards .box img{
     height: 100%;
     width: 100%;
- 
     object-fit: cover;
 }
 
