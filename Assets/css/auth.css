@@ -325,8 +325,10 @@ label {
     height: 24px;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1366px) {
 
-
-
+    .container-fluid{
+        transform: scale(.8);
     }
+
+}
