@@ -60,7 +60,7 @@ function artFav(temp){
 
 function removeFav(temp){
     $(window).on('load', function(){
-        $('#loader').hide();
+        $('#loader').show();
     });
     $('.feature-gallery-wrapper').load("./phpFunc/removeFeat.php",{
         'id': temp,
