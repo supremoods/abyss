@@ -241,7 +241,7 @@
 {
     position: fixed;
     height: 100%;
-    width: 70px;
+    width: 0px;
     box-sizing: initial;
     background: var(--L8);
     transition: 0.3s;
@@ -333,7 +333,6 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    margin-left: 70px;
     background-color: var(--D1);
     /* background: url('../img/sisu_bg-min.png');
     background-repeat: no-repeat;
@@ -348,8 +347,8 @@
 .main-content .about-container .about-wrapper .about-content{
     text-align: justify;
     text-justify: inter-word;
-    color: var(--D1);
-    background-color: var(--D8);
+    color: var(--D8);
+    background-color: var(--D1);
     padding: 3em;
 }
 
@@ -445,7 +444,6 @@ ul{
 	background-image: url('../img/bg-footer.png');
     background-size: cover;
     padding: 80px 0 180px 0;
-    margin-left:70px;
 }
 .footer-col{
    width: 25%;
