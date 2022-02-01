@@ -18,7 +18,7 @@
 
             echo '
             <li class="feature-gallery-item">
-                <img src="assets/img/arts/'.$fetch['abyssal_art'].'.jpg" alt="" srcset="">
+                <img src="assets/img/arts/'.$fetch['abyssal_art'].'" alt="" srcset="">
             </li>              
         ';
         }
