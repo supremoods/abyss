@@ -341,6 +341,7 @@ function getPostImage(){
                     alert(data.output);
                     $('.gallery-wrapper').empty();
                     $('.gallery-wrapper').load("./phpFunc/loadAbyssals.php");
+                    $('.submit-feat').empty();
                     $('.feature-gallery-wrapper').load("./phpFunc/loadFeat.php");
                 }     
             });

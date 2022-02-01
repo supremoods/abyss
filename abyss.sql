@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2022 at 12:19 PM
+-- Generation Time: Feb 01, 2022 at 04:47 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -304,7 +304,7 @@ CREATE TABLE `art_abyssals` (
 --
 
 INSERT INTO `art_abyssals` (`id`, `art_id`, `abyssal_art`, `title`, `description`, `category`, `privacy`, `count_comment`, `count_fav`, `abyssals_date`, `featured_gallery`) VALUES
-(1, 36, 'va2021__eastern_tale_by_valzheimer_devuh61-fullview.jpg', 'test 1', 'this is a test', 'friends', 'everyone', 0, 1, '', 'feat'),
+(1, 36, 'va2021__eastern_tale_by_valzheimer_devuh61-fullview.jpg', 'test 1', 'this is a test', 'friends', 'everyone', 0, 1, '', 'NULL'),
 (1, 37, 'scificorridor_by_oliverbeck_deuz6ak-pre.jpg', 'test 2', 'this is a test', '3D', 'everyone', 0, 2, '', NULL),
 (1, 38, 'broken_planet_by_pupiy220_dev1dr6-pre.jpg', 'test 3', 'this is a description', '', 'everyone', 0, 2, '', NULL),
 (1, 43, 'denwvpo-7cd12b1b-5ece-413e-882c-5e9b2c169d93.jpg', 'Magical Night Forest', 'The work was done on SM-LT Pro create - Watercolor paper made from 100% cotton. Acid-free, density of 300g / m. And professional watercolors from Rembrandt DeLuxe, which are highly regarded all over the world for their maximum light fastness.\r\n\r\nSignature on the back of the painting. This is original one of a kind hand painted artwork. Painting is not framed, photos with frames are just for example of interior design. All paintings are copyrighted and all rights reserved. Reproduction right of this product do not transfer to the buyer of the artwork. Do not store the painting in the room with high humidity', 'Anthro', 'everyone', 0, 2, '', NULL),
@@ -353,9 +353,14 @@ INSERT INTO `art_abyssals` (`id`, `art_id`, `abyssal_art`, `title`, `description
 (2, 166, '11.png', 'ButterFly', 'this is a test', 'Digital Art', 'everyone', 0, 0, 'February 1, 2022', 'NULL'),
 (2, 167, 'FB_IMG_1620475416247.jpg', 'CAT', 'HSHHAOASDSDFSDF', 'Digital Art', 'everyone', 0, 0, 'February 1, 2022', 'NULL'),
 (2, 168, 'groot-minimalistic-wallpaper.jpg', 'GROOT', 'I AM GROOT', 'Adoptables', 'everyone', 0, 0, 'February 1, 2022', NULL),
-(2, 169, '2021.11.06-17.15.56.png', 'IU', 'THIS IS ME', 'Comics', 'everyone', 0, 0, 'February 1, 2022', 'NULL'),
 (2, 170, '173447618_101818625382992_4351907707049621771_n.jpg', 'LAPSY KNOWS', 'BLA BAL BLA BLA', 'Anime and Manga', 'everyone', 0, 0, 'February 1, 2022', NULL),
-(2, 171, '6a391e2d188f5c4fe8973c248bb5e805.jpg', 'IU', 'MY BABY', 'Anime and Manga', 'everyone', 0, 0, 'February 1, 2022', 'feat');
+(2, 173, '6a391e2d188f5c4fe8973c248bb5e805.jpg', 'IU baby', 'IU kyutiiiiii', 'Comics', 'everyone', 0, 0, 'February 1, 2022', 'feat'),
+(1, 174, 'arcane_jinx_vi_by_yaminokuni_dev103u.jpg', 'Jinx and VI', 'bla bla bla bla', 'Digital Art', 'everyone', 0, 0, 'February 1, 2022', 'NULL'),
+(1, 175, 'visions_by_rossdraws_ddl1im1.jpg', 'sample', 'hey this is sample', '3D', 'everyone', 0, 0, 'February 1, 2022', 'NULL'),
+(1, 176, 'com_healing_magic_by_seyumei.png', 'this is ', 'sdsdsds', 'Comics', 'everyone', 0, 0, 'February 1, 2022', 'NULL'),
+(1, 177, 'autumn_by_pjacubinas_depeguu-pre.jpg', 'this is ', 'sdsdsds', 'Comics', 'everyone', 0, 0, 'February 1, 2022', 'NULL'),
+(1, 178, 'arcane_jinx_vi_by_yaminokuni_dev103u.jpg', 'this is ', 'sdsdsds', 'Comics', 'everyone', 0, 0, 'February 1, 2022', 'NULL'),
+(1, 179, 'autum_evening_by_fawnpetals.png', 'dfsdfs', 'sdfsdfsdfs', 'Comics', 'everyone', 0, 0, 'February 1, 2022', 'NULL');
 
 -- --------------------------------------------------------
 
@@ -436,7 +441,7 @@ ALTER TABLE `abyss_user`
 -- AUTO_INCREMENT for table `art_abyssals`
 --
 ALTER TABLE `art_abyssals`
-  MODIFY `art_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=172;
+  MODIFY `art_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=180;
 
 --
 -- AUTO_INCREMENT for table `test_img`

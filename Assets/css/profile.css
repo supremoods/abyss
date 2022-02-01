@@ -463,6 +463,7 @@
 }
 
 
+
 .profile-col .profile-content .right-area .cards .box{
     background: var(--L8--light);
     margin: 20px 0;
@@ -472,6 +473,48 @@
 .profile-col .profile-content .left-area .cards .box{
     position: relative;
 }
+
+
+.gallery-box .submit-feat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:300px;
+    background: var(--L8--light);
+
+
+}
+
+.gallery-box .submit-feat .featModal{
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    padding:10px;
+}
+
+.gallery-box .submit-feat .featModal{
+    opacity: 1;
+
+}
+
+
+.gallery-box .submit-feat .featModal:hover{
+    color:var(--purple5);
+}
+
+
+.gallery-box .submit-feat .featModal i{
+    font-size:35px;
+}
+.gallery-box .submit-feat .featModal p{
+    font-size:17px;
+    font-weight: 700;
+    padding-left:10px;
+}
+
 
 .profile-col .profile-content .left-area .cards .box .feature-gallery-wrapper{
     display: inline-flex;

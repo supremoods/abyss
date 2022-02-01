@@ -174,6 +174,7 @@
                 <?php
                     $query = "SELECT * FROM art_abyssals WHERE id = $id AND featured_gallery = 'feat'";
                     $cmd = mysqli_query($conn,$query); 
+
                 ?>
                 <div class="profile-col">
                     <div class="profile-content">
@@ -189,6 +190,22 @@
                                     </div>
                                 </div>
                                 <div class="gallery-box box">
+                                    <div class="submit-feat">
+                                    <?php 
+                                        
+                                        if(mysqli_num_rows($cmd) == 0){
+                                            echo'
+                                            
+                                                <h1>Submit your first Abyssal!</h1>
+                                                    <p>Get your art out there for people see.</p>
+                                                    <div class="featModal" onclick="abyssalModal()">
+                                                        <i class="bx bx-image-add"></i>
+                                                    <p>Submit</p>
+                                                </div>
+                                            ';
+                                        }
+                                    ?>
+                                    </div>
                                     <ul class="feature-gallery-wrapper">
 
                                     <?php
@@ -224,9 +241,9 @@
                                             }                                         
                                          ?>
                                     </ul>
-                                    <!-- <h1>Submit your first Abyssal!</h1>
-                                    <p>Get your art out there for people see.</p>
-                                    <a href="#">Submit</a> -->
+
+
+
                                 </div>
                             </div>
 
