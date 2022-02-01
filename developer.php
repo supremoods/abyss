@@ -149,7 +149,7 @@ We give a never-ending source of amusement and motivation. This is the first pla
 
               <div class="about-cards">
                 <h1>Meet our Team</h1>
-                  <div class="upper-cards">
+                  <div class="container-cards">
                       <div class="cards">
                         <div class="card-img">
                           <img src="Assets/img/Lappay.jpg" alt="Lappay, John">
@@ -173,10 +173,8 @@ We give a never-ending source of amusement and motivation. This is the first pla
                               <p>Researcher / Web Developer</p>
                         </div>
                       </div> 
-                   </div>  
 
-                  <div class="lower-cards">
-                  <div class="cards">
+                      <div class="cards">
                         <div class="card-img">
                           <img src="Assets/img/Emil.jpg" alt="Borata, Emil Marie">
                           <h1>Borata, Emil Marie</h1>
@@ -199,8 +197,9 @@ We give a never-ending source of amusement and motivation. This is the first pla
                           <p>Researcher / Web Developer</p>
                         </div>
                       </div>
+                      
+                   </div>  
 
-                  </div>  
 
               </div>
 
