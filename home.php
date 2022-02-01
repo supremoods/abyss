@@ -234,7 +234,7 @@
             </div>
             <div class="footer-col">
               <ul>
-                <li><a href="#">ABOUT</a></li>
+                <li><a href="developer.html">ABOUT</a></li>
                 <li><a href="#">CONTACT</a></li>
                 <li><a href="#">MEMBERSHIP</a></li>
               </ul>
