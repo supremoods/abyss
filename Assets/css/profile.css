@@ -486,6 +486,97 @@
     object-fit: cover;
 }
 
+.profile-col .profile-content .left-area .cards .feature-gallery-name{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.profile-col .profile-content .left-area .cards .feature-gallery-name .featModal{
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.profile-col .profile-content .left-area:hover .cards .feature-gallery-name .featModal{
+    opacity: 1;
+
+}
+
+
+.profile-col .profile-content .left-area .cards .feature-gallery-name .featModal:hover{
+    color:var(--purple5);
+}
+
+
+.profile-col .profile-content .left-area .cards .feature-gallery-name .featModal i{
+    font-size:25px;
+}
+.profile-col .profile-content .left-area .cards .feature-gallery-name .featModal p{
+    font-size:11px;
+    font-weight: 700;
+    padding-left:10px;
+}
+
+
+.feature-gallery-wrapper .feature-gallery-item .text{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 13px;
+    padding: 10px;
+    opacity: 0;
+    z-index:99;
+    transition: all 0.3s ease;
+}
+
+.feature-gallery-wrapper .feature-gallery-item .delete-btn{
+    position: absolute;
+    top: 0;
+    right:0;
+    font-size: 13px;
+    padding: 10px;
+    opacity: 0;
+    z-index:99;
+    transition: all 0.3s ease;
+    background:var(--purple5);
+    cursor:pointer;
+}
+.feature-gallery-wrapper .feature-gallery-item .delete-btn div i{
+    font-size: 16px;
+}
+ .feature-gallery-wrapper .feature-gallery-item:hover .text{
+    opacity: 1;
+}
+
+.feature-gallery-wrapper .feature-gallery-item:hover .delete-btn{
+    opacity: 1;
+}
+
+ .feature-gallery-wrapper .feature-gallery-item:hover img{
+    filter:brightness(60%);
+    transition: all 0.3s ease;
+}
+ .feature-gallery-wrapper .feature-gallery-item .text div{
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:10px;
+}
+
+
+ .feature-gallery-wrapper .feature-gallery-item .text div p{
+    display: flex;
+    align-items:center;
+}
+
+ .feature-gallery-wrapper .feature-gallery-item .text div p span{
+   font-size:16px;
+   padding-left:10px;
+}
+
 .profile-col .profile-content .right-area .about-name,
 .profile-col .profile-content .right-area .about-box .about-info, 
 .profile-col .profile-content .right-area .about-name .about-modal{
@@ -495,6 +586,11 @@
 .profile-col .profile-content .right-area .about-name {
     justify-content: space-between;
     
+}
+
+.profile-col .profile-content .right-area .about-name .about-title span{
+    
+    padding: 0 10px
 }
 
 .profile-col .profile-content .right-area .about-box {
@@ -525,11 +621,18 @@
     transition: all .3s ease-in-out;
     cursor:pointer;
 }
-
-.profile-col .profile-content .right-area .about-name:hover .about-modal {
-    opacity:1;
+.profile-col .profile-content .right-area .about-modal i{
+    font-size:25px;
+}
+.profile-col .profile-content .right-area .about-modal p{
+    font-size: 12px;
+    font-weight: 700;
+    padding-left: 10px;
 }
 
+.profile-col .profile-content .right-area:hover .about-modal {
+    opacity:1;
+}
 
 .profile-col .profile-content .right-area .about-name .about-modal:hover {
     color:var(--purple5);

@@ -173,7 +173,7 @@
                     </div>
                 </div>
                 <?php
-                    $query = "SELECT * FROM art_abyssals WHERE id = $id";
+                    $query = "SELECT * FROM art_abyssals WHERE id = $id AND featured_gallery = 'feat'";
                     $cmd = mysqli_query($conn,$query); 
                 ?>
                 <div class="profile-col">
@@ -181,7 +181,13 @@
                         <div class="left-area">
                             <div class="feature-gallery cards">
                                 <div class="feature-gallery-name">
-                                    <h1>Feature Gallery</h1>
+                                    <div class="featTitle">
+                                        <h1>Feature Gallery</h1>
+                                    </div>
+                                    <div class="featModal" onclick="abyssalModal()">
+                                        <i class='bx bx-image-add'></i>
+                                        <p>ADD</p>
+                                    </div>
                                 </div>
                                 <div class="gallery-box box">
                                     <ul class="feature-gallery-wrapper">
@@ -198,6 +204,21 @@
                                                     echo '
                                                     <li class="feature-gallery-item">
                                                         <img src="assets/img/arts/'.$fetch['abyssal_art'].'" alt="" srcset="">
+                                                        <div class="delete-btn" data-id="'.$fetch['art_id'].'" onclick="removeFav(this.dataset.id)">
+                                                            <div>
+                                                                <i class="bx bx-trash" ></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text">
+                                                            <div>
+                                                                <h3>'.$fetch['title'].'</h3>
+                                                                <p class="highlight">'.$fetch['count_comment'].'<span class="material-icons">chat_bubble_outline</span></p>
+                                                            </div>
+                                                            <div>
+                                                                <p>by '.$fetch2['username'].'</p>
+                                                                <p class="highlight" data-id="'.$fetch['art_id'].'"  onclick="artFav(this.dataset.id)" >'.$fetch['count_fav'].'<span class="material-icons">star_outline</span></p>
+                                                            </div>
+                                                        </div>
                                                     </li>              
                                                 ';
                                                 }
@@ -212,22 +233,22 @@
 
 
                         </div>
-
+                        <?php
+                                    $query = mysqli_query ($conn, "SELECT * FROM abyss_User WHERE id = '$id' ") or die (mysqli_error());
+                                    $fetch = mysqli_fetch_array ($query);                                    
+                        ?>  
                         <div class="right-area">
                             <div class="about-user cards">
                                 <div class="about-name">
                                     <div class="about-title">
-                                        <h1>About</h1>
+                                        <h1>About<span><?php echo $fetch['username']?></span></h1>
                                     </div>
                                     <div class="about-modal" onclick="aboutModal()">
                                         <i class='bx bx-edit-alt'></i>
-                                        <p>edit</p>
+                                        <p>EDIT</p>
                                     </div>
                                 </div>
-                                <?php
-                                    $query = mysqli_query ($conn, "SELECT * FROM abyss_User WHERE id = '$id' ") or die (mysqli_error());
-                                    $fetch = mysqli_fetch_array ($query);                                    
-                                ?>                            
+                          
                                 <div class="about-box box">
                                     <p><?php echo $fetch['checkArtist']?> // <?php echo $fetch['Level']?>  // <?php echo $fetch['Specialty']?></p>
 

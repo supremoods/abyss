@@ -58,8 +58,17 @@ function artFav(temp){
     $('.gallery-wrapper').load("./phpFunc/favUpdate.php",{'id': temp});
 }
 
-function artFavTopics(temp, topic){
+function removeFav(temp){
+    $(window).on('load', function(){
+        $('#loader').hide();
+    });
+    $('.feature-gallery-wrapper').load("./phpFunc/removeFeat.php",{
+        'id': temp,
+    });
 
+}
+
+function artFavTopics(temp, topic){
     $('.gallery-wrapper').load("./phpFunc/favUpdateTopic.php",{
         'id': temp,
         'topic': topic

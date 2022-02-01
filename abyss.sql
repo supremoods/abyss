@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2022 at 09:46 AM
+-- Generation Time: Feb 01, 2022 at 12:19 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -304,7 +304,7 @@ CREATE TABLE `art_abyssals` (
 --
 
 INSERT INTO `art_abyssals` (`id`, `art_id`, `abyssal_art`, `title`, `description`, `category`, `privacy`, `count_comment`, `count_fav`, `abyssals_date`, `featured_gallery`) VALUES
-(1, 36, 'va2021__eastern_tale_by_valzheimer_devuh61-fullview.jpg', 'test 1', 'this is a test', 'friends', 'everyone', 0, 1, '', NULL),
+(1, 36, 'va2021__eastern_tale_by_valzheimer_devuh61-fullview.jpg', 'test 1', 'this is a test', 'friends', 'everyone', 0, 1, '', 'feat'),
 (1, 37, 'scificorridor_by_oliverbeck_deuz6ak-pre.jpg', 'test 2', 'this is a test', '3D', 'everyone', 0, 2, '', NULL),
 (1, 38, 'broken_planet_by_pupiy220_dev1dr6-pre.jpg', 'test 3', 'this is a description', '', 'everyone', 0, 2, '', NULL),
 (1, 43, 'denwvpo-7cd12b1b-5ece-413e-882c-5e9b2c169d93.jpg', 'Magical Night Forest', 'The work was done on SM-LT Pro create - Watercolor paper made from 100% cotton. Acid-free, density of 300g / m. And professional watercolors from Rembrandt DeLuxe, which are highly regarded all over the world for their maximum light fastness.\r\n\r\nSignature on the back of the painting. This is original one of a kind hand painted artwork. Painting is not framed, photos with frames are just for example of interior design. All paintings are copyrighted and all rights reserved. Reproduction right of this product do not transfer to the buyer of the artwork. Do not store the painting in the room with high humidity', 'Anthro', 'everyone', 0, 2, '', NULL),
@@ -349,8 +349,13 @@ INSERT INTO `art_abyssals` (`id`, `art_id`, `abyssal_art`, `title`, `description
 (119, 162, 'sbs__leg_and_thighs_by_rohioart_da90k19-fullview.jpg', 'SBS Leg And Thighs', 'I hope my terrible explaining helps\r\n\r\n\r\nDone in: Paint Tool Sai\r\nWith: Brush, Water Color, Luminosity', 'Tutorial', 'Everyone', 0, 0, 'January 30, 2022', NULL),
 (120, 163, 'sitting_poses_by_rika_dono_d95vtd2-fullview.jpg', 'Sitting Poses', 'There was an empty space so I\'ve put a portrait xD\r\n\r\nNo, I can\'t give you a bigger resolution file. This is the size I used to draw.\r\nNo idea which category this belong to.', 'Tutorial', 'Everyone', 0, 0, 'January 30, 2022', NULL),
 (121, 164, 'd9aw85c-1bb923ae-2a60-4927-8fe5-d902333b7395.jpg', 'Tutorial male torso', 'This is part of the Term 4\'s Tutorial for male turso, including progress video as well!\r\n\r\nTerm 4 will end by 9-30-2015, so act quick if you want this', 'Tutorial', 'Everyone', 0, 0, 'January 30, 2022', NULL),
-(2, 165, '120194683_3241653275953292_1822340385683690078_o.jpg', 'Aesthetic', 'Aesthetic this is a test', 'Traditional Arts', 'everyone', 0, 0, 'January 31, 2022', 'feat'),
-(2, 166, '11.png', 'ButterFly', 'this is a test', 'Digital Art', 'everyone', 0, 0, 'February 1, 2022', 'feat');
+(2, 165, '120194683_3241653275953292_1822340385683690078_o.jpg', 'Aesthetic', 'Aesthetic this is a test', 'Traditional Arts', 'everyone', 0, 0, 'January 31, 2022', 'NULL'),
+(2, 166, '11.png', 'ButterFly', 'this is a test', 'Digital Art', 'everyone', 0, 0, 'February 1, 2022', 'NULL'),
+(2, 167, 'FB_IMG_1620475416247.jpg', 'CAT', 'HSHHAOASDSDFSDF', 'Digital Art', 'everyone', 0, 0, 'February 1, 2022', 'NULL'),
+(2, 168, 'groot-minimalistic-wallpaper.jpg', 'GROOT', 'I AM GROOT', 'Adoptables', 'everyone', 0, 0, 'February 1, 2022', NULL),
+(2, 169, '2021.11.06-17.15.56.png', 'IU', 'THIS IS ME', 'Comics', 'everyone', 0, 0, 'February 1, 2022', 'NULL'),
+(2, 170, '173447618_101818625382992_4351907707049621771_n.jpg', 'LAPSY KNOWS', 'BLA BAL BLA BLA', 'Anime and Manga', 'everyone', 0, 0, 'February 1, 2022', NULL),
+(2, 171, '6a391e2d188f5c4fe8973c248bb5e805.jpg', 'IU', 'MY BABY', 'Anime and Manga', 'everyone', 0, 0, 'February 1, 2022', 'feat');
 
 -- --------------------------------------------------------
 
@@ -370,37 +375,6 @@ CREATE TABLE `test_img` (
 INSERT INTO `test_img` (`id`, `img`) VALUES
 (12, ''),
 (13, 'arcane_jinx_vi_by_yaminokuni_dev103u.jpg');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `topics`
---
-
-CREATE TABLE `topics` (
-  `category` varchar(255) NOT NULL,
-  `img` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `topics`
---
-
-INSERT INTO `topics` (`category`, `img`, `description`) VALUES
-('3D', '3d.jpg', 'Art made using 3D software like Maya, Cinema 4D, 3ds Max, and more.'),
-('Adoptables', 'adoptables.jpg', 'Explore the possibilities of character and species bases, adopted and brought to life here..'),
-('Anime and Manga', 'anime.jpg', 'Cartoons, graphic novels, and videos created in the popular Japanese style'),
-('Anthro', 'anthro.jpg', 'Your home for furry-related art and fiction. Fur, tails, scales, and wings are all welcome here.'),
-('Comics', 'comics.jpg', 'From superheroes to graphic novels, original characters to fan art, comics are both a style and a story.'),
-('Digital Art', 'digital art.jpg', 'Where talent meets tech. Using digital tools to create dazzling art: photographs, drawings, paintings, and 3D.'),
-('Drawings and Paintings', 'drawing and paintings.jpg', 'Hand drawn or digital, these drawings and paintings cover every style and genre.'),
-('Fan Art', 'fan art.jpg', 'Art inspired by movies, characters, books, comics, and more.'),
-('Game Art', 'game art.jpg', 'Concept art for video game worlds: immersive environments, characters, and objects'),
-('Science Fiction', 'science fiction.jpg', 'Visions of the future and technology taken to the extreme: space travel, mecha, dystopian cities, and more.'),
-('Sculpture', 'sculpture.jpg', 'Sculpted from clay, carved from wood, welded from metal—this is art in physical form.'),
-('Traditional Arts', 'traditional art.jpg', 'No computers allowed! Traditional, hand-made art in a wide range of mediums and genres.'),
-('Tutorials', 'tutorials.jpg', 'Step-by-step guides to help you become a better artist.');
 
 --
 -- Indexes for dumped tables
@@ -462,7 +436,7 @@ ALTER TABLE `abyss_user`
 -- AUTO_INCREMENT for table `art_abyssals`
 --
 ALTER TABLE `art_abyssals`
-  MODIFY `art_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=167;
+  MODIFY `art_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=172;
 
 --
 -- AUTO_INCREMENT for table `test_img`
