@@ -49,12 +49,17 @@ function topicGallery(temp){
     window.location.href = 'topic_gallery.php?topic='+temp;
 }
 
+
+
+
 function home(){
     window.location.href = 'home.php';
 }
 
+function gotoComment(temp){
+    window.location.href = 'artdetails.php?abyssalsId='+temp+'#comment-section';
 
-
+}
 function artdetails(temp){
     window.location.href = 'artdetails.php?abyssalsId='+temp;
 }

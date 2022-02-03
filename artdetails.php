@@ -202,7 +202,7 @@
                         <i class='bx bx-star' ></i>
                         <p>Add to Favorites</p>
                     </div>
-                    <div class="btn-comment">
+                    <div class="btn-comment" data-id="<?php echo $fetch['art_id']?>"  onclick="gotoComment(this.dataset.id)">
                         <i class='bx bx-comment' ></i>
                         <p>Comment</p>
                     </div>
@@ -229,7 +229,7 @@
                         <i class='bx bxs-star' ></i>
                         <p><span><?php echo $fetch['count_fav']?></span> Favorite</p>
                     </div>
-                    <div class="comment-count">
+                    <div class="comment-count" id="comment-count">
                         <i class='bx bxs-comment' ></i>
                         <p><span><?php echo $fetch['count_comment'] ?></span> Comments</p>
                     </div>
@@ -243,18 +243,17 @@
                     <pre><?php echo $fetch['description'] ?></pre>
                 </div>
 
-                <div class="comment-section">
+                <div id="comment-section" class="comment-section">
                     <div class="comment">
                       <div class="profile-img">
                         <img src="Assets/img/profile/<?php echo  $profImage ?>" style="height:50px; width:50px; margin-right:10px;" alt="">
                       </div>
                       <div class="input-comment">
-                        <textarea id="userComment" name="userComment" class="input-cmnt" type="text" placeholder="Add a new comment"></textarea>
-                        <div class="user-comment-wrapper">
-                          <div class="user-comment">
-                            <img src="Assets/img/profile/<?php echo  $profImage ?>" style="height:50px; width:50px; margin-right:10px;" alt="">
-                            <pre></pre>
-                          </div>
+                        <textarea  id="userComment" name="userComment" data-id="<?php echo $fetch['art_id']?>" class="input-cmnt" type="text" placeholder="Add a new comment"></textarea>
+                        <div id= "loadComment" class="user-comment-wrapper">
+                          <?php
+                            include ('phpFunc/loadComment.php');
+                          ?>
                         </div>
                       </div>
                     </div>
