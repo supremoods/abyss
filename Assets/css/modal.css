@@ -126,7 +126,10 @@
 .modal-post-content .title-content .post-title textarea:focus{
     outline: none !important;
 }
-
+.modal-post-content .title-content .cover-image{
+    position:relative;
+    width:900px;
+}
 .modal-post-content .title-content .cover-image img{
     max-width: 100%;
     max-height: 100%;

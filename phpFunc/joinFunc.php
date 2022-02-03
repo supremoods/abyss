@@ -10,7 +10,7 @@
             $checkUsername = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `abyss_User` WHERE `username` = '$username'"));
             $checkEmail = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `abyss_User` WHERE `email` = '$email'"));
 
-            $query =  "INSERT INTO abyss_User(id,username,email,password) VALUES(null,'$username','$email','$password')";
+            $query =  "INSERT INTO abyss_User(id,username,email,password,profileImage) VALUES(null,'$username','$email','$password','avatar.png')";
 
             $cmd = mysqli_query($conn,$query) or die(mysqli_error());
                 

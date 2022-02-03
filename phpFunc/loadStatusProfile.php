@@ -1,7 +1,9 @@
 <?php
     include('dbConnect.php');
 
-    $query = "SELECT * FROM abyss_post";
+
+    $id = (int) $_SESSION['id'];
+    $query = "SELECT * FROM abyss_post WHERE id = '$id '";
 
     $cmd = mysqli_query($conn,$query); 
     
@@ -17,7 +19,7 @@
             <div class="post-data">
                 <div class="post-header">
                     <div class="profile-img">
-                        <span class="material-icons"> account_box </span>
+                        <img src="./Assets/img/profile/'.$fetch2['profileImage'].' "style="height:40px; width:40px;" >
                     </div>
                     <div class="post-name-time">
                         <div class="post-name">
@@ -53,10 +55,7 @@
                             <span class="material-icons">chat_bubble_outline</span>
                             <p>Comment</p>
                         </div>
-                        <div class="btn-share">
-                            <span class="material-icons">share</span>
-                            <p>Share</p>
-                        </div>
+
                     </div>
                 
                     <div class="counts-right">

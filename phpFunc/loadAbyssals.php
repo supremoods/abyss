@@ -5,16 +5,6 @@
     $query = "SELECT * FROM art_abyssals";
 
     $cmd = mysqli_query($conn,$query); 
-    
-    if(mysqli_num_rows($cmd) == 0){
-        echo   "
-            <script>submitFeatShow()</script>
-        ";
-    }else{
-        echo   "
-            <script>submitFeatHide()</script>
-        ";
-    }
 
     if(mysqli_num_rows($cmd) > 0){
         while($fetch = mysqli_fetch_array($cmd)){

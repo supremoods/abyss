@@ -1,5 +1,6 @@
 <?php
-include 'phpFunc/dbConnect.php'; ?>
+  include('phpFunc/dbConnect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +8,7 @@ include 'phpFunc/dbConnect.php'; ?>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Abyss | Favorites</title>
+    <title>Abyss | Profile</title>
     <link rel="stylesheet" href="Assets/css/root.css" />
     <link rel="stylesheet" href="Assets/css/favorites.css" />
     <link rel="stylesheet" href="Assets/css/modal.css" />
@@ -56,25 +57,19 @@ include 'phpFunc/dbConnect.php'; ?>
                     </div>
 
                     <div class="avatar-sec">
-                        <img src="Assets/img/icons/user-rectangle-solid-24 (2).png" alt="" srcset="">
+                        <span class="material-icons"> account_box </span>
                         <div class="account-links">
                             <ul class="link-container">
                                 <?php
-                                session_start();
-                                $id = (int) $_SESSION['id'];
+                  session_start();
+                  $id = (int) $_SESSION['id'];
 
-                                ($query = mysqli_query(
-                                    $conn,
-                                    "SELECT * FROM abyss_User WHERE id = '$id' "
-                                )) or die(mysqli_error());
-                                $fetch = mysqli_fetch_array($query);
-                                echo "
-                  <h1>" .
-                                    $fetch['username'] .
-                                    "</h1>
-                  ";
-                                ?>
-                                <!-- <h1><?//php $fetch['username'] ?></h1> -->
+                  $query = mysqli_query ($conn, "SELECT * FROM abyss_User WHERE id = '$id' ") or die (mysqli_error());
+                  $fetch = mysqli_fetch_array ($query);
+                ?>
+                                <h1>
+                                    <?php echo $fetch['username'] ?>
+                                </h1>
                                 <li><a href="profile.php">Profile</a></li>
                                 <li><a href="gallery.php">Gallery</a></li>
                                 <li><a href="favorites.php">Favourites</a></li>
@@ -131,16 +126,12 @@ include 'phpFunc/dbConnect.php'; ?>
             <div class="main-content">
                 <div class="loadCoverImage">
                     <div class="heading-container"
-                        style="background-image: linear-gradient(rgba(248, 122, 221, 0.151), rgba(18, 12, 27, 1)),url(Assets/img/coverProfile/<?php echo $fetch[
-                            'coverProfile'
-                        ]; ?>)">
+                        style="background-image: linear-gradient(rgba(248, 122, 221, 0.151), rgba(18, 12, 27, 1)),url(Assets/img/coverProfile/<?php echo $fetch['coverProfile'] ?>)">
 
                         <div class="profile-name">
                             <div class="user-icon">
                                 <div class="user-container">
-                                    <img src="./Assets/img/profile/<?php echo $fetch[
-                                        'profileImage'
-                                    ]; ?>" alt="">
+                                    <img src="./Assets/img/profile/<?php echo $fetch['profileImage'] ?>" alt="">
                                 </div>
                                 <div class="upload-profile" onclick="modalProfile()">
                                     <i class="bx bx-refresh"></i>
@@ -150,7 +141,7 @@ include 'phpFunc/dbConnect.php'; ?>
 
                             <div class="users-info">
                                 <h1 id="user-name">
-                                    <?php echo $fetch['username']; ?>
+                                    <?php echo $fetch['username'] ?>
                                 </h1>
                                 <h1 id="user-status">0 Watchers | 1 Page view | 0 Abys </h1>
                             </div>
@@ -176,19 +167,73 @@ include 'phpFunc/dbConnect.php'; ?>
                         </ul>
                     </div>
                 </div>
+                <?php
+                    $query = "SELECT * FROM abyssal_favorite WHERE id = $id";
+                    $cmd = mysqli_query($conn,$query); 
+                ?>
+                <div class="gallery-container">
+                    <div class="gallery-content">
+                        <div class="gallery-box box">
+                            <div id="featLoadSubmit">
+                            <?php
+                                if(mysqli_num_rows($cmd) == 0){
+                                    echo   '
+                                        <div class="submit-feat">             
+                                            <h1>Collect Your Favorites</h1>
+                                            <p>Simply star your favourite deviations as you browse, to show other deviants what you love.</p>
+                                            <div class="featModal" onclick="home()"">
+                                                <i class="bx bx-world"></i>
+                                                <p>Browse</p>    
+                                            </div>
+                                        </div>
+                                            ';
+                                    }
+                            ?>
 
-                <div class="favorites-container">
-                    <div class="favorites-content">
-                        <div class="favorites-box">
-                            <h1>Collect Your Favorites</h1>
-                            <p>Simply star your favourite deviations as you browse, to show other deviants what you
-                                love.</p>
-                            <a href="#">Browse</a>
+                            <ul class="feature-gallery-wrapper">
+                                <?php
+                                    if(mysqli_num_rows($cmd) > 0){
+                                        while($fetch = mysqli_fetch_array($cmd)){
+                                             
+
+
+                                            $artId = $fetch['art_id'];
+                                            $query2 = "SELECT * FROM art_abyssals WHERE art_id = '$artId'";
+                                            $cmd2 = mysqli_query($conn,$query2); 
+                                            $fetch2 = mysqli_fetch_array($cmd2);
+
+                                            $userName = $fetch2['id'];  
+                                            $query3 = "SELECT * FROM abyss_user WHERE id = '$userName'";
+                                            $cmd3 = mysqli_query($conn,$query3); 
+                                            $fetch3 = mysqli_fetch_array($cmd3);
+                                            echo '
+                                                <li class="feature-gallery-item">
+                                                    <img src="assets/img/arts/'.$fetch2['abyssal_art'].'" data-id="'.$fetch['art_id'].'"  onclick="artdetails(this.dataset.id)">
+                                                    <div class="delete-btn" data-id="'.$fetch['art_id'].'" onclick="removeAbyssals(this.dataset.id)">
+                                                        <div>
+                                                            <i class="bx bx-trash" ></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text">
+                                                        <div>
+                                                            <h3>'.$fetch2['title'].'</h3>
+                                                            <p class="highlight">'.$fetch2['count_comment'].'<span class="material-icons">chat_bubble_outline</span></p>
+                                                        </div>
+                                                        <div>
+                                                            <p>by '.$fetch3['username'].'</p>
+                                                            <p class="highlight" data-id="'.$fetch2['art_id'].'"  onclick="artFavProfile(this.dataset.id)" >'.$fetch2['count_fav'].'<span class="material-icons">star_outline</span></p>
+                                                        </div>
+                                                    </div>
+                                                </li>              
+                                             ';
+                                             }
+                                         }                                         
+                                ?>
+                            </ul>
+                            </div>          
                         </div>
                     </div>
                 </div>
-
-
 
                 <!-- footer section -->
                 <footer class="footer">
@@ -229,6 +274,8 @@ include 'phpFunc/dbConnect.php'; ?>
                 </footer>
 
         </main>
+
+
 
         <!-- modal notif -->
         <div class="modal-post">
@@ -287,75 +334,78 @@ include 'phpFunc/dbConnect.php'; ?>
             </form>
         </div>
         <div class="modal-abyssals">
-            <form method="post" enctype="multipart/form-data" id="uploadImg">
+            <form method="post" enctype="multipart/form-data" id="uploadImgGallery">
                 <div class="modal-abyssals-wrapper">
-                    <div class="modal-abyssals-header">
-                        <div class="left-section">
-                            <div class="title">
-                                <h1>Submit Abyssal</h1>
-                                <div>
-                                    <p>Who can see it? </p>
-                                    <select id="privacy" name="privacy">
-                                        <option value="everyone">Everyone</option>
-                                        <option value="friends">Friends</option>
-                                        <option value="only_me">Only me</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <p>Category</p>
-                                    <select id="category" name="category">
-                                        <option value="3D">3D</option>
-                                        <option value="Adoptables">Adoptables</option>
-                                        <option value="Anime and Manga">Anime and Manga</option>
-                                        <option value="Anthro">Anthro</option>
-                                        <option value="Comics">Comics</option>
-                                        <option value="Digital Art">Digital Art</option>
-                                        <option value="Drawings and Paintings">Drawings and Paintings</option>
-                                        <option value="Fan Art">Fan Art</option>
-                                        <option value="Game Art">Game Art</option>
-                                        <option value="Science Fiction">Science Fiction</option>
-                                        <option value="Sculpture">Sculpture</option>
-                                        <option value="Traditional Arts">Traditional Arts</option>
-                                        <option value="Tutorials">Tutorials</option>
-                                    </select>
-                                </div>
-                            </div>
+                <div class="modal-abyssals-header">
+                    <div class="left-section">
+                    <div class="title">
+                        <h1>Submit Abyssal</h1>
+                        <div>
+                        <p>Who can see it? </p>   
+                        <select id="privacy" name="privacy">
+                            <option value="everyone">Everyone</option>
+                            <option value="friends">Friends</option>
+                            <option value="only_me">Only me</option>
+                        </select>
                         </div>
-                        <div class="right-section">
-                            <div class="abyssals-close-btn">
-                                <div><i class='bx bx-x closeBtn' onclick="abyssalModalClose()"></i></div>
-                            </div>
+                        <div class = "headerInput">
+                        <div>
+                            <p>Category</p>                  
+                            <select id="category" name="category">
+                            <option value="3D">3D</option>
+                            <option value="Adoptables">Adoptables</option>
+                            <option value="Anime and Manga">Anime and Manga</option>
+                            <option value="Anthro">Anthro</option>
+                            <option value="Comics">Comics</option>
+                            <option value="Digital Art">Digital Art</option>
+                            <option value="Drawings and Paintings">Drawings and Paintings</option>
+                            <option value="Fan Art">Fan Art</option>
+                            <option value="Game Art">Game Art</option>
+                            <option value="Science Fiction">Science Fiction</option>
+                            <option value="Sculpture">Sculpture</option>
+                            <option value="Traditional Arts">Traditional Arts</option>
+                            <option value="Tutorials">Tutorials</option>
+                            </select>
                         </div>
-                    </div>
-                    <div class="modal-abyssals-content">
-                        <div class="title-content">
-                            <div class="cover-image">
-                                <img class="abyssal-art" src="Assets/img/sisu_bg-min.png">
-                            </div>
-                            <div class="abyssals-title">
-                                <textarea type="text" name="abyssals-title"
-                                    placeholder="Add your title here"></textarea>
-                            </div>
-                            <div class="add-img-btn">
-                                <div onclick="abyssalBtnActive()">
-                                    <span><i class='bx bx-image-add'></i>Add Abyssal</span>
-                                </div>
-                                <input id="add-abyysals-btn" name="abyssal_art_image" type="file"
-                                    onclick="getAbyssalImage()" hidden>
-                            </div>
+                        <div class = "featContainer">             
+                            <input type="checkbox" name="featArt" value="feat">
+                            <label for="featArt">Featured</label>
                         </div>
-                        <div class="abyssals-description">
-                            <div class="desc-container">
-                                <textarea name="abyssals-desc" id="abyssals-desc" cols="49" rows="10"
-                                    placeholder="Start typing your main text here"></textarea>
-                            </div>
                         </div>
                     </div>
-                    <div class="modal-abyssals-footer">
-                        <div class="submit-btn">
-                            <button name="AbyssalSubmit" id="submit_Abyssals" type="submit">Submit</button>
+                    </div>
+                    <div class="right-section">
+                        <div class="abyssals-close-btn">
+                        <div><i class='bx bx-x closeBtn' onclick="abyssalModalClose()"></i></div>
                         </div>
                     </div>
+                </div>
+                <div class="modal-abyssals-content">
+                    <div class="title-content">
+                        <div class="cover-image">
+                        <img class="abyssal-art" src="Assets/img/sisu_bg-min.png" >
+                        </div>
+                        <div class="abyssals-title">
+                        <textarea type="text" name="abyssals-title" placeholder="Add your title here"></textarea>
+                        </div>
+                        <div class="add-img-btn">
+                        <div onclick="abyssalBtnActive()">
+                            <span><i class='bx bx-image-add'></i>Add Abyssal</span>
+                        </div>
+                        <input id="add-abyysals-btn" name="abyssal_art_image" type="file" onclick="getAbyssalImage()" hidden>
+                        </div>
+                    </div>
+                    <div class="abyssals-description">
+                        <div class="desc-container">
+                        <textarea name="abyssals-desc" id="abyssals-desc" cols="49" rows="10" placeholder="Start typing your main text here"></textarea>
+                        </div>
+                    </div> 
+                </div>
+                <div class="modal-abyssals-footer">
+                    <div class="submit-btn">
+                        <button name="AbyssalSubmit" id="submit_Abyssals" type="submit">Submit</button>
+                    </div>
+                </div>
                 </div>
             </form>
         </div>

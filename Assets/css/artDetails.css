@@ -434,7 +434,21 @@
 .art-header .btn-fav,
 .art-header .btn-comment{
     padding-right:10px;
+    cursor: pointer;
+   
 }
+.favoritesToggle{
+   display: none;
+}
+
+.favoritesToggle:checked~p{
+    color:var(--purple5);
+}
+
+.favoritesToggle:checked~i{
+    color:var(--purple5);
+}
+
 
 .art-details{
     padding-left: 10px;
@@ -479,11 +493,10 @@
 
 .comment-section .comment{
     display: flex;
-    width: 100%;
+    width: 80%;
 }
-
 .comment-section .comment .input-comment{
-    width: 100%;    
+    width:100%;
 }
 .comment-section .comment .profile-img i{
     font-size: 33px;
@@ -495,13 +508,33 @@
 }
 
 .comment-section .comment .input-comment .input-cmnt[type="text"]{
-    width: 80%;
+    width: 100%;
     height: 50px;
     background: #3c3947;
 	border: 1px solid #3c3947;
 	color: var(--L1);
 	padding: 10px;
 	font-size: 12px;
+}
+
+.input-comment .user-comment-wrapper .user-comment{
+    display: flex;
+    padding: 10px;
+
+}
+
+.input-comment .user-comment-wrapper .user-comment pre{
+    background: #2a2831;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
 }
 
 .footer-container{

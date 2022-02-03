@@ -17,6 +17,8 @@
     $id = (int) $_SESSION['id'];
     if(empty($_POST['featArt'])){
         $feat = "";
+    }else{
+        $feat = $_POST['featArt'];
     }
     $file = $_FILES['abyssal_art_image']['name'];
     $path = "../Assets/img/arts/".basename($file);

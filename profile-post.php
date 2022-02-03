@@ -1,5 +1,6 @@
 <?php
   include('phpFunc/dbConnect.php');
+  include('phpFunc/session.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,22 +59,20 @@
                         </a>
                     </div>
 
+                    <?php
+                        $id = (int) $_SESSION['id'];
+
+                        $query = mysqli_query ($conn, "SELECT * FROM abyss_User WHERE id = '$id' ") or die (mysqli_error());
+                        $fetch = mysqli_fetch_array ($query);
+                    ?>
                     <div class="avatar-sec">
-                        <span class="material-icons"> account_box </span>
+                        <img src="Assets/img/profile/<?php echo $fetch['profileImage'] ?>"
+                            style="height:40px; width:40px;" alt="">
                         <div class="account-links">
                             <ul class="link-container">
-                                <?php
-                  session_start();
-
-                  $id = (int) $_SESSION['id'];
-
-                  $query = mysqli_query ($conn, "SELECT * FROM abyss_User WHERE id = '$id' ") or die (mysqli_error());
-                  $fetch = mysqli_fetch_array ($query);
-                  echo "
-                  <h1>" .$fetch['username']."</h1>
-                  ";
-                ?>
-                                <!-- <h1><?//php $fetch['username'] ?></h1> -->
+                                <h1>
+                                    <?php echo $fetch['username'] ?>
+                                </h1>
                                 <li><a href="profile.php">Profile</a></li>
                                 <li><a href="gallery.php">Gallery</a></li>
                                 <li><a href="favorites.php">Favourites</a></li>
@@ -172,38 +171,44 @@
                         </ul>
                     </div>
                 </div>
+                <div class="post-parent">
+                    <div class="post-section">
+                        <div class="posts-container">
+                            <div class="posts-wrapper">
+                                <div class="posts-content">
+                                    <div class="posts-area">
+                                        <div class="post-ccx">
+                                            <div class="post-cvx-grp">
+                                                <div class="profile-img">
+                                                    <img src="Assets/img/profile/<?php echo $fetch['profileImage'] ?>"
+                            style="height:40px; width:40px;" alt="">
+                                                </div>
+                                                <div class="post-input">
+                                                    <input type="text" class="input-post-btn" onclick="statusModal()"
+                                                        placeholder="What's going on, <?php echo $fetch['username'] ?> ?">
+                                                </div>
+                                            </div>
+                                            <div class="post-btn-grp">
+                                                <div class="btn-submit">
+                                                    <button class="btn-status" onclick="statusModal()">STATUS UPDATE</button>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                <div class="post-container">
-                    <div class="post-wrapper">
-                        <div class="posts-area">
-                            <div class="post-ccx">
-                                <div class="post-cvx-grp">
-                                    <div class="profile-img">
-                                        <i class='bx bxs-user'></i>
-                                    </div>
-                                    <div class="post-input">
-                                        <input type="text" name="" id=""
-                                            placeholder="What's going on, <?php echo $fetch['username'] ?> ?"
-                                            onclick="statusModal()">
+                                        <div class="post-data-wrapper">
+                                            <?php
+                                                include('phpFunc/loadStatusProfile.php');
+                                            ?>
+                                        </div>
+
                                     </div>
                                 </div>
-                                <div class="post-btn-grp">
-                                    <div class="btn-submit">
-                                        <button onclick="statusModal()">STATUS UPDATE</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="post-content">
-                            <div class="post-box">
-                                <h1>No Post Yet</h1>
-                                <p>Tell deviants the story behind your art with a journal, share your latest news with
-                                    the community with a status update or ask a question with a poll..</p>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
 
                 <!-- footer section -->
                 <footer class="footer">

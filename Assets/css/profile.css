@@ -442,6 +442,7 @@
 .profile-col .profile-content{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .profile-col .profile-content .left-area,

@@ -59,17 +59,16 @@
               </a>
             </div>
 
-            
-          <div class="avatar-sec">
-            <img src="Assets/img/icons/user-rectangle-solid-24 (2).png" alt="">
-            <div class="account-links">
-              <ul class="link-container">
-                <?php
+            <?php
                   $id = (int) $_SESSION['id'];
 
                   $query = mysqli_query ($conn, "SELECT * FROM abyss_User WHERE id = '$id' ") or die (mysqli_error());
                   $fetch = mysqli_fetch_array ($query);
-                ?>
+          ?>
+          <div class="avatar-sec">
+            <img src="Assets/img/profile/<?php echo $fetch['profileImage'] ?>" style="height:40px; width:40px;" alt="">
+            <div class="account-links">
+              <ul class="link-container">
                 <h1><?php echo $fetch['username'] ?></h1>
                 <li><a href="profile.php">Profile</a></li>
                 <li><a href="gallery.php">Gallery</a></li>

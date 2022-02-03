@@ -1,5 +1,6 @@
 <?php
   include('phpFunc/dbConnect.php');
+  include('phpFunc/session.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

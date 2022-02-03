@@ -430,29 +430,10 @@
     font-weight: bold;
     color: var(--gray4);
 }
-.post-container{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-.post-wrapper{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin: 3em 0 5em 0;
-    padding: .5em;
-    width: 50%;
-}
-.posts-area{
-    width: 100%;
+
+.post-ccx{
     background: var(--L8--light);
 }
-
-.profile-img{
-    background-image: linear-gradient(235deg, var(--gray6), var(--gray7));
-}
-    
-
 .post-ccx .post-cvx-grp{
     display: flex;
     justify-content: space-between;
@@ -465,8 +446,8 @@
     align-items: center;
 }
 
-.post-ccx .post-cvx-grp .profile-img i{
-    font-size: 20px;
+.post-ccx .post-cvx-grp .profile-img span{
+    font-size: 33px;
 }
 .post-ccx .post-cvx-grp .post-input{
     padding-left:5px;
@@ -484,8 +465,11 @@
 
 .post-ccx .post-cvx-grp .post-input input::placeholder{
     color: var(--D8);
-  
     font-size: 12px;
+}
+
+.post-ccx .post-cvx-grp .post-input .input-post-btn:focus{
+    outline: none !important;
 }
 
 .post-ccx .post-btn-grp{
@@ -510,38 +494,216 @@
     font-weight: 700;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
 .post-ccx .post-btn-grp .btn-submit button:hover{
     color:var(--purple5);
 }
-
-.post-content{
+.post-parent{
+    width: 100%;
+   
     display: flex;
     justify-content: center;
-    margin-top: 1em;
-    background: var(--L8--light);
-    border-radius: 4px;
+    
+}
+.post-section{
+    position: relative;
+    width: 800px;
+  
+}
+.posts-section .posts-container .posts-wrapper .posts-content{
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.post-data-wrapper{
+    display:flex;
+    flex-direction: column-reverse;
+}
+.post-data .post-header{
+    display:flex;
+    padding:15px;
+}
+
+
+
+.post-data .post-header .profile-img {
+    padding-right: 10px;
+}
+
+.post-data .post-header .profile-img span{
+    font-size: 33px;
+    cursor: pointer;
+}
+
+.post-data .post-header .post-name-time{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: left;
+    height: 33px;
+    line-height:16px;
+}
+
+.post-data .post-header .post-name-time .post-name p{
+    font-size:14px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.post-data .post-header .post-name-time .post-name p:hover{
+    color:var(--purple5);
+}
+
+.post-data .post-header .post-name-time .post-time p{
+    font-size:10px;
+    font-weight: 800px;
+}
+.posts-area .post-data{
+    margin: 20px 0;
+
+    background:var(--L8--light);
+}
+
+.post-header .post-menu-btn{
+    display:flex;
+    justify-content: right;
+    align-items: center;
+    width:100%;
+    cursor: pointer;
+}
+
+.post-header .post-menu-btn:hover{
+    color:var(--purple5);
+}
+
+.post-data .post-title{
+    position: relative;
+}
+.post-data .post-title img{
+    object-fit: cover;
+    height: 25vh;
     width: 100%;
 }
 
-.post-box{
-    text-align: center;
-    margin: .5em;
-    padding: 5em 1em 5em 1em;
+
+.post-data .post-title .title{
+    position: absolute;
+    bottom: 0;
+    padding: 1em ;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(255,0,0,0), var(--L8--light)); 
+    width:100%;
+
+}
+.post-data .post-title .title h1{
+    position: absolute;
+    bottom:0;
+    padding:10px 0;
+    font-size: 28px;
+    font-weight: 900;
 }
 
-.post-box h1{
-    font-size: 20px;
-    margin: .5em;
+.post-btns{
+    margin: 0 15px;
+    padding: 15px 0;
+    border-top: 1px solid #3c3947;
+    border-bottom: 1px solid #3c3947;
+}
+.post-btns,
+.post-btns .btns-left{
+    display:flex;
+}
+.post-btns .btns-left div{
+    display:flex;
+    padding-right:10px;
+    cursor: pointer;
 }
 
-.post-box p{
-    font-size: 15px;
-    color: var(--gray4);
-    margin-bottom: 1em;
+.post-btns .btns-left div:hover{
+    color:var(--purple5);
 }
+
+.post-btns .btns-left div p,
+.counts-right .counts div p{
+    font-size: 11px;
+    padding-left:5px;
+    font-weight: 600;
+}
+.post-btns .btns-left{
+   flex-grow: 1;
+   align-items: center;
+}
+
+.post-btns .btns-left .material-icons{
+    font-size: 21px;
+}
+
+.counts-right .counts{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.counts-right .counts div{
+    display: flex;
+    align-items: center;
+    padding-left:5px;
+}
+
+.counts-right .counts div .material-icons{
+    font-size: 21px;
+}
+
+.comment-section{
+    align-items: center;
+    padding:15px;
+}
+.comment-section .comment{
+    display:flex;
+}
+.comment-section .comment .input-comment {
+    width: 100%;
+}
+
+.comment-section .comment .input-comment input{
+    width: 100%;
+    background: #3c3947;
+    border: 1px solid #3c3947;
+    color: var(--L1);
+    padding:10px;
+    font-size: 12px;
+}
+
+.comment-section .comment .input-comment input:focus{
+    outline: none !important;
+    border: 1px solid var(--L1);
+    color:var(--L1);
+}
+
+.comment-section .comment .input-comment ::placeholder{
+    font-size: 12px;
+  
+}
+
+.post-description-cc{
+  
+    padding:15px;
+    
+}
+
+.post-description-cc pre{
+    font-size:14px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+
 
 
 footer-container{

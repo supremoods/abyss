@@ -57,19 +57,19 @@
             </a>
           </div>
   
-          <div class="avatar-sec">
-            <img src="Assets/img/icons/user-rectangle-solid-24 (2).png" alt="">
-            <div class="account-links">
-              <ul class="link-container">
-                <?php
+          <?php
                   $id = (int) $_SESSION['id'];
 
                   $query = mysqli_query ($conn, "SELECT * FROM abyss_User WHERE id = '$id' ") or die (mysqli_error());
                   $fetch = mysqli_fetch_array ($query);
-                  echo "
-                  <h1>" .$fetch['username']."</h1>
-                  ";
-                ?>
+
+                  $profImage = $fetch['profileImage'];
+          ?>
+          <div class="avatar-sec">
+            <img src="Assets/img/profile/<?php echo $fetch['profileImage'] ?>" style="height:40px; width:40px;" alt="">
+            <div class="account-links">
+              <ul class="link-container">
+                <h1><?php echo $fetch['username'] ?></h1>
                 <li><a href="profile.php">Profile</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
                 <li><a href="favorites.php">Favourites</a></li>
@@ -94,7 +94,9 @@
       </div>
     </div>
     
+    <div class="loadEmpty">
 
+    </div>
     <main class="container">
       <!-- sidebar navigation -->
       <div class="sidebar-container">
@@ -169,6 +171,8 @@
          
       ?>
       <!-- main content -->
+
+
       <div class="main-content">
         <div class="art-details-section">
             <div class="art-stage-wrapper">
@@ -185,11 +189,16 @@
                 <div class="next-btns hov">
                     <i data-id="<?php echo $array[$nextIndex] ?>" class='bx bx-chevron-right' onclick="nextSlide(this.dataset.id)"></i>
                 </div>
-
             </div>
             <div class="art-details-wrapper">
                 <div class="art-header">
-                    <div class="btn-fav">
+                    <div id="loadFav" class="btn-fav" data-id="<?php echo $fetch['art_id']?>"  onclick="artFavProfilesDetails(this.dataset.id)" >
+                        <input id="favoritesToggle" type="checkbox" class="favoritesToggle"  <?php 
+                          $artID = $fetch['art_id'];
+                          $query = "SELECT * FROM abyssal_favorite WHERE id= $id AND art_id = $artID ";
+                          $cmd = mysqli_query($conn,$query); 
+                          $count = mysqli_num_rows($cmd);
+                        if($count >= 1){echo 'checked';} ?>/>
                         <i class='bx bx-star' ></i>
                         <p>Add to Favorites</p>
                     </div>
@@ -206,7 +215,7 @@
                     <div class="profile-avatar">
                         <img src="assets/avatar/avatar1.png" alt="">
                     </div>
-                    <div class="art-details">
+                    <div class="art-details" >
                         <h1><?php echo $fetch['title'] ?></h1>
                         <p>by <?php echo $fetch2['username'] ?></p>
                     </div>
@@ -216,13 +225,13 @@
                 </div>
 
                 <div class="socialCounts">  
-                    <div class="fav-count">
+                    <div class="fav-count" id="fav-count">
                         <i class='bx bxs-star' ></i>
-                        <p><span><?php echo $fetch['count_comment']?></span> Favorites</p>
+                        <p><span><?php echo $fetch['count_fav']?></span> Favorite</p>
                     </div>
                     <div class="comment-count">
                         <i class='bx bxs-comment' ></i>
-                        <p><span><?php echo $fetch['count_fav'] ?></span> Comments</p>
+                        <p><span><?php echo $fetch['count_comment'] ?></span> Comments</p>
                     </div>
                     <div class="views-count">
                         <span class="material-icons">visibility</span>
@@ -237,14 +246,20 @@
                 <div class="comment-section">
                     <div class="comment">
                       <div class="profile-img">
-                        <i class='bx bxs-user-rectangle' ></i>
+                        <img src="Assets/img/profile/<?php echo  $profImage ?>" style="height:50px; width:50px; margin-right:10px;" alt="">
                       </div>
                       <div class="input-comment">
-                        <textarea class="input-cmnt" type="text" placeholder="Add a new comment"></textarea>
+                        <textarea id="userComment" name="userComment" class="input-cmnt" type="text" placeholder="Add a new comment"></textarea>
+                        <div class="user-comment-wrapper">
+                          <div class="user-comment">
+                            <img src="Assets/img/profile/<?php echo  $profImage ?>" style="height:50px; width:50px; margin-right:10px;" alt="">
+                            <pre></pre>
+                          </div>
+                        </div>
                       </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
       </div>  
@@ -418,6 +433,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="Assets/js/script.js"></script>
+  <script src="Assets/js/comment.js"></script>
 
 </body>
 

@@ -1,5 +1,6 @@
 <?php
   include('phpFunc/dbConnect.php');
+  include('phpFunc/session.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,21 +56,17 @@
             </a>
           </div>
   
-          <div class="avatar-sec">
-            <span class="material-icons"> account_box </span>
-            <div class="account-links">
-              <ul class="link-container">
-                <?php
-                  session_start();
+          <?php
                   $id = (int) $_SESSION['id'];
 
                   $query = mysqli_query ($conn, "SELECT * FROM abyss_User WHERE id = '$id' ") or die (mysqli_error());
                   $fetch = mysqli_fetch_array ($query);
-                  echo "
-                  <h1>" .$fetch['username']."</h1>
-                  ";
-                ?>
-                <!-- <h1><?//php $fetch['username'] ?></h1> -->
+          ?>
+          <div class="avatar-sec">
+            <img src="Assets/img/profile/<?php echo $fetch['profileImage'] ?>" style="height:40px; width:40px;" alt="">
+            <div class="account-links">
+              <ul class="link-container">
+                <h1><?php echo $fetch['username'] ?></h1>
                 <li><a href="profile.php">Profile</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
                 <li><a href="favorites.php">Favourites</a></li>

@@ -49,6 +49,11 @@ function topicGallery(temp){
     window.location.href = 'topic_gallery.php?topic='+temp;
 }
 
+function home(){
+    window.location.href = 'home.php';
+}
+
+
 
 function artdetails(temp){
     window.location.href = 'artdetails.php?abyssalsId='+temp;
@@ -56,6 +61,40 @@ function artdetails(temp){
 
 function artFav(temp){
     $('.gallery-wrapper').load("./phpFunc/favUpdate.php",{'id': temp});
+}
+
+function artFavProfile(temp){
+    $('.feature-gallery-wrapper').load("./phpFunc/favUpdateProfile.php",{
+        'id': temp,
+    });
+
+    $('#featLoad').load(location.href + " #featLoad");
+    $('#loadFav').load(location.href + " #loadFav");
+    $('#featLoadSubmit').load(location.href + " #featLoadSubmit");
+}
+
+function artFavProfilesDetails(temp){
+    $('.loadEmpty').load("./phpFunc/favUpdateProfile.php",{
+        'id': temp,
+    });
+    var checkBox = document.getElementById("favoritesToggle");
+
+    if (checkBox.checked == true){
+        $("#favoritesToggle").prop("checked", false);
+    } else {
+        $("#favoritesToggle").prop("checked", true);
+    }
+
+    $('#fav-count').load(location.href + " #fav-count");
+}
+
+function artFavDetails(temp){
+    $('.feature-gallery-wrapper').load("./phpFunc/favUpdateProfile.php",{
+        'id': temp,
+    });
+
+    $('#featLoad').load(location.href + " #featLoad");
+    $('#featLoadSubmit').load(location.href + " #featLoadSubmit");
 }
 
 function removeFav(temp){
@@ -349,13 +388,11 @@ function getPostImage(){
                 contentType:false,
                 success:function(data){
                     console.log(data.output);
-                    $('#featLoad').load(location.href + " #featLoad");
-                    $('#featLoadSubmit').load(location.href + " #featLoadSubmit");
                     $('.gallery-wrapper').empty();
                     $('.gallery-wrapper').load("./phpFunc/loadAbyssals.php");
                     $('.feature-gallery-wrapper').load("./phpFunc/loadFeat.php");
-                    $('.feature-gallery-wrapper').load("./phpFunc/loadGallery.php");
-
+                    $('#featLoad').load(location.href + " #featLoad");
+                    $('#featLoadSubmit').load(location.href + " #featLoadSubmit");
                 }     
             });
             abyssalModalClose()
@@ -363,7 +400,6 @@ function getPostImage(){
     });
     $(document).ready(function(){
         $("#uploadImgGallery").on("submit",function(e){
-            alert('2323232');
             e.preventDefault();
             var form_data = new FormData(this);     
             $.ajax({
@@ -375,10 +411,9 @@ function getPostImage(){
                 contentType:false,
                 success:function(data){
                     console.log(data.output);
+                    $('.feature-gallery-wrapper').load("./phpFunc/loadGallery.php");
                     $('#featLoad').load(location.href + " #featLoad");
                     $('#featLoadSubmit').load(location.href + " #featLoadSubmit");
-                    $('.feature-gallery-wrapper').load("./phpFunc/loadGallery.php");
-
                 }     
             });
             abyssalModalClose()
