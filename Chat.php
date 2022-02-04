@@ -145,18 +145,301 @@
               <div class="chat-text ">
                 <p>Why not reach out to another Abyssals and say hi?</p>
               </div> -->
+             
+            
               <div class="chat_user">
-
                 <div class="status-activity">
                   <i class='bx bxs-circle'></i>
                 </div>
+                <div class="userName_item">
+                  <div class="user_name">
+                    <p>Penguin</p>
+                  </div>
+                  <div class="latestMessage">
+                    <pre>You: This is a test message</pre>
+                  </div>
+                </div>         
               </div>
+              <div class="chat_user">
+                <div class="status-activity">
+                  <i class='bx bxs-circle'></i>
+                </div>
+                <div class="userName_item">
+                  <div class="user_name">
+                    <p>Penguin</p>
+                  </div>
+                  <div class="latestMessage">
+                    <pre>You: This is a test message</pre>
+                  </div>
+                </div>         
+              </div>
+              <div class="chat_user">
+                <div class="status-activity">
+                  <i class='bx bxs-circle'></i>
+                </div>
+                <div class="userName_item">
+                  <div class="user_name">
+                    <p>Penguin</p>
+                  </div>
+                  <div class="latestMessage">
+                    <pre>You: This is a test message</pre>
+                  </div>
+                </div>         
+              </div>
+              <div class="chat_user">
+                <div class="status-activity">
+                  <i class='bx bxs-circle'></i>
+                </div>
+                <div class="userName_item">
+                  <div class="user_name">
+                    <p>Penguin</p>
+                  </div>
+                  <div class="latestMessage">
+                    <pre>You: This is a test message</pre>
+                  </div>
+                </div>         
+              </div>
+              <div class="chat_user">
+                <div class="status-activity">
+                  <i class='bx bxs-circle'></i>
+                </div>
+                <div class="userName_item">
+                  <div class="user_name">
+                    <p>Penguin</p>
+                  </div>
+                  <div class="latestMessage">
+                    <pre>You: This is a test message</pre>
+                  </div>
+                </div>         
+              </div>
+              <div class="chat_user">
+                <div class="status-activity">
+                  <i class='bx bxs-circle'></i>
+                </div>
+                <div class="userName_item">
+                  <div class="user_name">
+                    <p>Penguin</p>
+                  </div>
+                  <div class="latestMessage">
+                    <pre>You: This is a test message</pre>
+                  </div>
+                </div>         
+              </div>
+              <div class="chat_user">
+                <div class="status-activity">
+                  <i class='bx bxs-circle'></i>
+                </div>
+                <div class="userName_item">
+                  <div class="user_name">
+                    <p>Penguin</p>
+                  </div>
+                  <div class="latestMessage">
+                    <pre>You: This is a test message</pre>
+                  </div>
+                </div>         
+              </div>
+              
+              <div class="chat_user">
+                <div class="status-activity">
+                  <i class='bx bxs-circle'></i>
+                </div>
+                <div class="userName_item">
+                  <div class="user_name">
+                    <p>Penguin</p>
+                  </div>
+                  <div class="latestMessage">
+                    <pre>You: This is a test message</pre>
+                  </div>
+                </div>         
+              </div>
+              <div class="chat_user">
+                <div class="status-activity">
+                  <i class='bx bxs-circle'></i>
+                </div>
+                <div class="userName_item">
+                  <div class="user_name">
+                    <p>Penguin</p>
+                  </div>
+                  <div class="latestMessage">
+                    <pre>You: This is a test message</pre>
+                  </div>
+                </div>         
+              </div>
+              <div class="chat_user">
+                <div class="status-activity">
+                  <i class='bx bxs-circle'></i>
+                </div>
+                <div class="userName_item">
+                  <div class="user_name">
+                    <p>Penguin</p>
+                  </div>
+                  <div class="latestMessage">
+                    <pre>You: This is a test message</pre>
+                  </div>
+                </div>         
+              </div>
+              <div class="chat_user">
+                <div class="status-activity">
+                  <i class='bx bxs-circle'></i>
+                </div>
+                <div class="userName_item">
+                  <div class="user_name">
+                    <p>Penguin</p>
+                  </div>
+                  <div class="latestMessage">
+                    <pre>You: This is a test message</pre>
+                  </div>
+                </div>         
+              </div>
+              <div class="chat_user">
+                <div class="status-activity">
+                  <i class='bx bxs-circle'></i>
+                </div>
+                <div class="userName_item">
+                  <div class="user_name">
+                    <p>Penguin</p>
+                  </div>
+                  <div class="latestMessage">
+                    <pre>You: This is a test message</pre>
+                  </div>
+                </div>         
+              </div>
+              <div class="chat_user">
+                <div class="status-activity">
+                  <i class='bx bxs-circle'></i>
+                </div>
+                <div class="userName_item">
+                  <div class="user_name">
+                    <p>Penguin</p>
+                  </div>
+                  <div class="latestMessage">
+                    <pre>You: This is a test message</pre>
+                  </div>
+                </div>         
+              </div>
+              <div class="chat_user">
+                <div class="status-activity">
+                  <i class='bx bxs-circle'></i>
+                </div>
+                <div class="userName_item">
+                  <div class="user_name">
+                    <p>Penguin</p>
+                  </div>
+                  <div class="latestMessage">
+                    <pre>You: This is a test message</pre>
+                  </div>
+                </div>         
+              </div>
+
             </div>
           </div>
-          <div class="chat-convo">
-            <div class="img-chat">
+          <div class="chat-convo-container">
+            <!-- <div class="img-chat">
               <img src="Assets/img/undraw_fresh_notification_re_whq4.svg" alt="" srcset="">
+            </div> -->
+            <div class="chat-convo-wrapper">
+              <div class="chat_convo_header">
+                <div class="chat_name">
+                  <img src="Assets/img/profile/6a391e2d188f5c4fe8973c248bb5e805.jpg" alt="">
+                  <div>
+                    <p>Penguin</p>
+                    <p>Active now</p>
+                  </div>
+                </div>
+                <div class="convo_close">
+                  <i class='bx bx-x' ></i>
+                </div>
+              </div>
+              <div class="chat_convo">
+                  
+                  <div class="chat incoming">
+                    <img src="Assets/img/profile/6a391e2d188f5c4fe8973c248bb5e805.jpg" alt="">
+                    <div class="details">
+                      <p>this is a test message</p>
+                    </div>
+                  </div>
+                  <div class="chat outgoing">
+                    <div class="details">
+                      <p>this is a test message</p>
+                    </div>
+                  </div>
+                  <div class="chat incoming">
+                    <img src="Assets/img/profile/6a391e2d188f5c4fe8973c248bb5e805.jpg" alt="">
+                    <div class="details">
+                      <p>this is a test message</p>
+                    </div>
+                  </div>
+                  <div class="chat incoming">
+                    <img src="Assets/img/profile/6a391e2d188f5c4fe8973c248bb5e805.jpg" alt="">
+                    <div class="details">
+                      <p>this is a test message</p>
+                    </div>
+                  </div>
+                  <div class="chat incoming">
+                    <img src="Assets/img/profile/6a391e2d188f5c4fe8973c248bb5e805.jpg" alt="">
+                    <div class="details">
+                      <p>this is a test message</p>
+                    </div>
+                  </div>
+                  <div class="chat outgoing">
+                    <div class="details">
+                      <p>this is a test message</p>
+                    </div>
+                  </div>
+                  <div class="chat incoming">
+                    <img src="Assets/img/profile/6a391e2d188f5c4fe8973c248bb5e805.jpg" alt="">
+                    <div class="details">
+                      <p>this is a test message</p>
+                    </div>
+                  </div>
+                  <div class="chat incoming">
+                    <img src="Assets/img/profile/6a391e2d188f5c4fe8973c248bb5e805.jpg" alt="">
+                    <div class="details">
+                      <p>this is a test message</p>
+                    </div>
+                  </div>
+                  <div class="chat incoming">
+                    <img src="Assets/img/profile/6a391e2d188f5c4fe8973c248bb5e805.jpg" alt="">
+                    <div class="details">
+                      <p>this is a test message</p>
+                    </div>
+                  </div>
+                  <div class="chat outgoing">
+                    <div class="details">
+                      <p>this is a test message</p>
+                    </div>
+                  </div>
+                  <div class="chat incoming">
+                    <img src="Assets/img/profile/6a391e2d188f5c4fe8973c248bb5e805.jpg" alt="">
+                    <div class="details">
+                      <p>this is a test message</p>
+                    </div>
+                  </div>
+                  <div class="chat incoming">
+                    <img src="Assets/img/profile/6a391e2d188f5c4fe8973c248bb5e805.jpg" alt="">
+                    <div class="details">
+                      <p>this is a test message</p>
+                    </div>
+                  </div>
+                  <div class="chat incoming">
+                    <img src="Assets/img/profile/6a391e2d188f5c4fe8973c248bb5e805.jpg" alt="">
+                    <div class="details">
+                      <p>this is a test message</p>
+                    </div>
+                  </div>
+                  <div class="chat incoming">
+                    <img src="Assets/img/profile/6a391e2d188f5c4fe8973c248bb5e805.jpg" alt="">
+                    <div class="details">
+                      <p>this is a test message</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="chat_input">
+                <textarea name="messageContent" type="text" id="" cols="30" rows="10" placeholder="Type a message..."></textarea>
+                <i class='bx bxl-telegram' ></i>
+              </div>
             </div>
+
           </div>
       </div>
     </main>
