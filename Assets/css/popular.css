@@ -83,8 +83,18 @@
 .search-sec input[type="text"]{
     background: none;
     border: 1.5px solid var(--D4);
+    color: var(--D8);
     padding: 9px;
+    padding-right:40px;
 }
+
+.search-sec input[type="text"]:focus{
+    outline:none !important;
+}
+.submitDrop{
+    display: none;
+}
+
 
 .search-sec input[type="text"]:hover{
     border-color:var(--purple5);
@@ -624,46 +634,51 @@ ul{
 
 /*responsive*/
 @media(max-width: 767px){
-  .footer-col{
-   
-    width: 50%;
-    margin-bottom: 30px;
-}
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
 }
 
 @media(max-width: 767px){
     #logo-footer{
-      width: 100%;
-      margin-bottom: 30px;
-  }
-  #social{
-    width: 100%;
-    padding: 0 75px;
-  }
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    #social{
+        width: 100%;
+        padding: 0 75px;
+    }
 }
+
 @media(max-width: 574px){
-  .footer-col{
-    width: 100%;
+    .footer-col{
+        width: 100%;
+    }
 }
-}
 
 
+@media only screen and (max-width: 863px){
+    .search-sec div{
+        position: relative;
+    }
+    .submitDrop{
+        display: block;
+    }
+    .submit-btn{
+        display:none;
+    }
 
-@media only screen and (max-width: 768px){
+
+    .logo{
+        flex-grow: 1;
+    }
     .gallery .gallery-wrapper .gallery-item{
         height: 30vh;
         
     }
-}
-
-
-@media only screen and (max-width: 600px){
-    .search-sec div{
-        position: relative;
+    .nav-wrapper{
+        display: flex;
+        justify-content:flex-end;
     }
-
-    .search-sec input[type="text"]{
-      visibility:hidden;
-    }
-
 }

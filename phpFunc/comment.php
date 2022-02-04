@@ -3,6 +3,8 @@
     session_start();
     $artId = $_REQUEST['artID'];
     $comment = $_REQUEST['comment'];
+
+   
     $id = (int) $_SESSION['id'];
     $query = "INSERT INTO abyssal_comment(comment_ID,id,art_id,comment) VALUES(null, $id, $artId, '$comment')"; 
     $cmd = mysqli_query($conn,$query); 

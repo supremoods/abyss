@@ -4,8 +4,12 @@
     $query = "SELECT * FROM abyss_post";
 
     $cmd = mysqli_query($conn,$query); 
-    
 
+    $id = (int) $_SESSION['id'];
+
+    $queryProfile = "SELECT * FROM abyss_user WHERE id = $id";
+    $cmdProfile = mysqli_query($conn,$queryProfile); 
+    $fetchImage = mysqli_fetch_array($cmdProfile);
     if(mysqli_num_rows($cmd) > 0){
         while($fetch = mysqli_fetch_array($cmd)){
             $userName = $fetch['id'];  
@@ -76,17 +80,25 @@
                 <div class="comment-section">
                     <div class="comment">
                         <div class="profile-img">
-                            <img src="./Assets/img/profile/'.$fetch2['profileImage'].'" style="height:50px; width:50px; margin-right:10px;" alt="">
+                            <img src="./Assets/img/profile/'.$fetchImage['profileImage'].'" style="height:50px; width:50px; margin-right:10px;" alt="">
                         </div>
                         <div class="input-comment">
-                            <input class="input-cmnt" type="text" placeholder="Add a new comment">
+                            <textarea  id="userComment1" name="userComment1" data-id="'.$fetch['post_id'].'" class="input-cmnt" type="text" placeholder="Add a new comment"></textarea>
+                            <div id= "loadComment" class="user-comment-wrapper">
+            ';?>
+                       
+                       <?php include('loadCommentPost.php')?>
+
+<?php
+                    echo'     
+                          </div>
                         </div>
                     </div>
                 </div>    
             </div>               
-        ';
+            ';
         }
     }
 
-?>
 
+?>

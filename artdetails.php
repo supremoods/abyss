@@ -20,79 +20,11 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
 </head>
-</head>
+  
 
 <body class="body-root">
   <div id="root">
-    <div class="header-container">
-      <div class="header">
-        <button class="deck-btn" onclick="sidebarNav()">
-          <span class="material-icons"> grid_view </span>
-        </button>
-  
-        <a href="home.php" class="logo">
-          <div>
-          <img src="Assets/logoWord.png" alt="" style="height: 30px; ">
-        </div>
-        </a>
-  
-        <div class="nav-wrapper">
-          <div class="search-sec">
-            <div>
-              <input type="text" name="" id="" placeholder="Search & Discover" />
-              <span class="material-icons"> search </span>
-            </div>
-          </div>
-
-          <div class="navlinks">
-            <a href="Chat.php" class="join-link">
-                <span class="material-icons">
-                    textsms
-                </span>
-            </a>
-            <a href="#" class="login-link">
-                <span class="material-icons">
-                    notifications
-                </span>
-            </a>
-          </div>
-  
-          <?php
-                  $id = (int) $_SESSION['id'];
-
-                  $query = mysqli_query ($conn, "SELECT * FROM abyss_User WHERE id = '$id' ") or die (mysqli_error());
-                  $fetch = mysqli_fetch_array ($query);
-
-                  $profImage = $fetch['profileImage'];
-          ?>
-          <div class="avatar-sec">
-            <img src="Assets/img/profile/<?php echo $fetch['profileImage'] ?>" style="height:40px; width:40px;" alt="">
-            <div class="account-links">
-              <ul class="link-container">
-                <h1><?php echo $fetch['username'] ?></h1>
-                <li><a href="profile.php">Profile</a></li>
-                <li><a href="gallery.php">Gallery</a></li>
-                <li><a href="favorites.php">Favourites</a></li>
-                <li><a href="profile-post.php">Posts</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="phpFunc/logout.php">Logout</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="submit-btn">
-            <p>Submit</p>
-            <div class="submit-container">
-              <div class="submit-links">
-                <button class="btn-abyssals" onclick="abyssalModal()">Abyssals</button>
-                <button class="btn-status" onclick="statusModal()">Status Update</button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
+    <?php include_once('headerContainer.php');?>
     
     <div class="loadEmpty">
 
@@ -124,6 +56,7 @@
         </div>
       </div>
       <?php
+          $profileImage = $fetch['profileImage'];
           $art_id = $_GET['abyssalsId'];
 
           $query = "SELECT * FROM art_abyssals WHERE  art_id= '$art_id ' ";
@@ -212,8 +145,8 @@
                 </div>
 
                 <div class="profile-header">
-                    <div class="profile-avatar">
-                        <img src="assets/avatar/avatar1.png" alt="">
+                    <div class="profile-avatar" data-username="<?php echo $fetch2['username'] ?>" onclick="userProfile(this.dataset.username)">
+                      <img src="Assets/img/profile/<?php echo $fetch2['profileImage']?>" style="height:50px; width:50px; margin-right:10px;" alt="">
                     </div>
                     <div class="art-details" >
                         <h1><?php echo $fetch['title'] ?></h1>
@@ -246,7 +179,7 @@
                 <div id="comment-section" class="comment-section">
                     <div class="comment">
                       <div class="profile-img">
-                        <img src="Assets/img/profile/<?php echo  $profImage ?>" style="height:50px; width:50px; margin-right:10px;" alt="">
+                        <img src="Assets/img/profile/<?php echo $profileImage ?>" style="height:50px; width:50px; margin-right:10px;" alt="" data-username="<?php echo $fetch2['username'] ?>" onclick="userProfile(this.dataset.username)">
                       </div>
                       <div class="input-comment">
                         <textarea  id="userComment" name="userComment" data-id="<?php echo $fetch['art_id']?>" class="input-cmnt" type="text" placeholder="Add a new comment"></textarea>
@@ -258,7 +191,6 @@
                       </div>
                     </div>
                 </div>
-
             </div>
         </div>
       </div>  
@@ -433,6 +365,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="Assets/js/script.js"></script>
   <script src="Assets/js/comment.js"></script>
+  <script src="Assets/js/search.js"></script>
 
 </body>
 

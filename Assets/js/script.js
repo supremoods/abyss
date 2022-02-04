@@ -50,6 +50,10 @@ function topicGallery(temp){
 }
 
 
+function userProfile(temp){
+    window.location.href = 'users.php?username='+temp;
+}
+
 
 
 function home(){
@@ -67,6 +71,9 @@ function artdetails(temp){
 function artFav(temp){
     $('.gallery-wrapper').load("./phpFunc/favUpdate.php",{'id': temp});
 }
+
+
+
 
 function artFavProfile(temp){
     $('.feature-gallery-wrapper').load("./phpFunc/favUpdateProfile.php",{
@@ -439,9 +446,18 @@ function getPostImage(){
                 contentType:false,
                 success:function(data){
                     console.log(data.output);
-                    $('.post-data-wrapper').empty();
-                    $('.post-data-wrapper').load("./phpFunc/loadStatus.php");
-
+                    // $('.post-data-wrapper').empty();
+                    // $('.post-data-wrapper').load("./phpFunc/loadStatus.php");
+                    var xhr = new XMLHttpRequest();
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            $('#loadPostdata').load(location.href + " #loadPostdata");
+                          
+                        }
+                    }
+                    xhr.open("POST", "./postData.php", true);
+                    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xhr.send();
                 }     
             });
             statusModalClose()

@@ -13,9 +13,9 @@
   flex-direction: column;
   background: var(--D1_SISU);
   color: var(--D8);
-  height: 100%;
+  height: 100vh;
   width: 100%;
-  overflow: hidden;
+  overflow: none;
 }
 
 .header-container {
@@ -80,6 +80,9 @@
 .submit-btn .submit-container .submit-links button:hover {
   color: var(--purple5);
 }
+.submitDrop{
+  display: none;
+}
 
 .deck-btn {
   box-sizing: border-box;
@@ -124,11 +127,18 @@
   align-items: center;
 }
 
-.search-sec input[type="text"] {
+.search-sec input[type="text"]{
   background: none;
   border: 1.5px solid var(--D4);
+  color: var(--D8);
   padding: 9px;
+  padding-right:40px;
 }
+
+.search-sec input[type="text"]:focus{
+  outline:none !important;
+}
+
 
 .search-sec input[type="text"]:hover {
   border-color: var(--purple5);
@@ -297,10 +307,12 @@
 
 /* chat section */
 .container .chat-container {
-  min-width: 1024px;
+
   height: calc(100vh - 54px);
-  display: grid;
-  grid-template-columns: 484px auto;
+
+  width: 100%;
+  display: flex;
+
   background: #27253348;
 }
 
@@ -309,6 +321,7 @@
   height: inherit;
   display: flex;
   flex-direction: column;
+  width: 478px;
 }
 
 .chat-list .header-chat {
@@ -423,8 +436,9 @@
 }
 
 .chat-container .chat-convo-container {
-    position: relative;
-    height: 100vh;
+  position: relative;
+  height: calc(100vh - 54px);
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -521,13 +535,15 @@
   flex-direction: column;
   padding: 20px;
   flex-grow: 1;
+  height:100%;
 }
 .chat-container .chat-convo-container .chat-convo-wrapper .chat_input {
   background: #21202eef;
   border-top: 1px solid rgba(244, 127, 255, 0.2);
   border-bottom: 1px solid rgba(244, 127, 255, 0.2);
   display: flex;
-  height:130px;
+  height:8%;
+  align-items: center;
   padding: 10px 20px;
 }
 .chat-container .chat-convo-container .chat-convo-wrapper .chat_input i {
@@ -540,18 +556,21 @@
   .chat_input
   textarea[type="text"] {
   width: 100%;
-  padding: 15px;
+  padding: 10px;
   background: none;
   border: none;
   color: var(--D8);
-  font-size: 16px;
+  height:100%;
+  font-size: 14px;
+  resize: none;
 }
 .chat-container
   .chat-convo-container
   .chat-convo-wrapper
   .chat_input
   textarea[type="text"]::placeholder {
-  font-size: 16px;
+  font-size: 14px;
+
 }
 .chat-container
   .chat-convo-container
@@ -567,14 +586,16 @@
 }
 .chat_convo .outgoing .details {
   margin-left: auto;
-  max-width: calc(100% - 490px);
+  /* width: calc(100% - 10px); */
 }
 .chat_convo .outgoing .details p {
-    background: var(--purple5);
+  background: var(--purple5);
+  text-align: right;
   word-wrap: break-word;
   color: var(--D8);
   border-radius: 18px 18px 0 18px;
   padding: 8px 16px;
+  font-size: 14px;
 
 }
 
@@ -591,37 +612,17 @@
 .chat_convo .incoming .details {
   margin-right: auto;
   margin-left: 10px;
-  max-width: calc(100% - 130px);
+  max-width: calc(100% - 10px);
 }
 .incoming .details p {
     background: #404050;
   color: var(--D8);
   border-radius: 18px 18px 18px 0;
   padding: 8px 16px;
+  font-size: 14px;
+
 }
 /*responsive*/
-@media (max-width: 767px) {
-  .footer-col {
-    width: 50%;
-    margin-bottom: 30px;
-  }
-}
-
-@media (max-width: 767px) {
-  #logo-footer {
-    width: 100%;
-    margin-bottom: 30px;
-  }
-  #social {
-    width: 100%;
-    padding: 0 75px;
-  }
-}
-@media (max-width: 574px) {
-  .footer-col {
-    width: 100%;
-  }
-}
 
 @media only screen and (max-width: 768px) {
   .gallery .gallery-wrapper .gallery-item {
@@ -629,12 +630,54 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .search-sec div {
-    position: relative;
-  }
-
-  .search-sec input[type="text"] {
-    visibility: hidden;
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+      width: 50%;
+      margin-bottom: 30px;
   }
 }
+
+@media(max-width: 767px){
+  #logo-footer{
+      width: 100%;
+      margin-bottom: 30px;
+  }
+  #social{
+      width: 100%;
+      padding: 0 75px;
+  }
+}
+
+@media(max-width: 574px){
+  .footer-col{
+      width: 100%;
+  }
+}
+
+
+@media only screen and (max-width: 863px){
+  .search-sec div{
+      position: relative;
+  }
+  .submitDrop{
+      display: block;
+  }
+  .submit-btn{
+      display:none;
+  }
+
+
+  .logo{
+      flex-grow: 1;
+  }
+  .gallery .gallery-wrapper .gallery-item{
+      height: 30vh;
+      
+  }
+  .nav-wrapper{
+      display: flex;
+      justify-content:flex-end;
+  }
+}
+

@@ -132,8 +132,18 @@
 .search-sec input[type="text"]{
     background: none;
     border: 1.5px solid var(--D4);
+    color: var(--D8);
     padding: 9px;
+    padding-right:40px;
 }
+
+.search-sec text[type="text"]:focus{
+    outline:none !important;
+}
+.submitDrop{
+    display: none;
+}
+
 
 .search-sec input[type="text"]:hover{
     border-color:var(--purple5);
@@ -484,6 +494,7 @@
     align-items: left;
     height: 33px;
     line-height:16px;
+    width: 100px;
 }
 
 .post-data .post-header .post-name-time .post-name p{
@@ -606,17 +617,18 @@
     width: 100%;
 }
 
-.comment-section .comment .input-comment input{
+.comment-section .comment .input-comment textarea{
     width: 100%;
     background: #3c3947;
     border: 1px solid #3c3947;
     color: var(--L1);
     padding:10px;
     font-size: 12px;
+    height:50px;
 
 }
 
-.comment-section .comment .input-comment input:focus{
+.comment-section .comment .input-comment textarea:focus{
     outline: none !important;
     border: 1px solid var(--L1);
     color:var(--L1);
@@ -627,11 +639,8 @@
   
 }
 
-
 .post-description-cc{
-  
     padding:15px;
-    
 }
 
 .post-description-cc pre{
@@ -683,6 +692,28 @@
     align-items: left;
     padding:30px;
 }
+
+
+.input-comment .user-comment-wrapper .user-comment{
+    display: flex;
+    padding: 10px;
+
+}
+
+.input-comment .user-comment-wrapper .user-comment pre{
+    background: #2a2831;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
 
 .events .events-title h1{
     font-size:25px;
@@ -867,29 +898,7 @@ ul{
 
 
 /*responsive*/
-@media(max-width: 767px){
-  .footer-col{
-   
-    width: 50%;
-    margin-bottom: 30px;
-}
-}
 
-@media(max-width: 767px){
-    #logo-footer{
-      width: 100%;
-      margin-bottom: 30px;
-  }
-  #social{
-    width: 100%;
-    padding: 0 75px;
-  }
-}
-@media(max-width: 574px){
-    .footer-col{
-        width: 100%;
-    }
-}
 
 @media only screen and (max-width: 1384px){
     .modal-status .modal-status-wrapper {
@@ -917,4 +926,55 @@ ul{
       visibility:hidden;
     }
 
+}
+
+/*responsive*/
+@media(max-width: 767px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 767px){
+    #logo-footer{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    #social{
+        width: 100%;
+        padding: 0 75px;
+    }
+}
+
+@media(max-width: 574px){
+    .footer-col{
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 863px){
+    .search-sec div{
+        position: relative;
+    }
+    .submitDrop{
+        display: block;
+    }
+    .submit-btn{
+        display:none;
+    }
+
+
+    .logo{
+        flex-grow: 1;
+    }
+    .gallery .gallery-wrapper .gallery-item{
+        height: 30vh;
+        
+    }
+    .nav-wrapper{
+        display: flex;
+        justify-content:flex-end;
+    }
 }

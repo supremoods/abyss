@@ -83,8 +83,15 @@
 .search-sec input[type="text"]{
     background: none;
     border: 1.5px solid var(--D4);
+    color: var(--D8);
     padding: 9px;
+    padding-right:40px;
 }
+
+.search-sec input[type="text"]:focus{
+    outline:none !important;
+}
+
 
 .search-sec input[type="text"]:hover{
     border-color:var(--purple5);
@@ -574,3 +581,4 @@ ul{
     }
 
 }
+

@@ -1,5 +1,6 @@
 <?php
   include('phpFunc/dbConnect.php');
+  include('phpFunc/session.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,77 +24,7 @@
 
 <body class="body-root">
     <div id="root">
-        <div class="header-container">
-            <div class="header">
-                <button class="deck-btn" onclick="sidebarNav()">
-                    <span class="material-icons"> grid_view </span>
-                </button>
-
-                <a href="home.php" class="logo">
-                    <div>
-                        <img src="Assets/logoWord.png" alt="" style="height: 24px; ">
-                    </div>
-                </a>
-
-                <div class="nav-wrapper">
-                    <div class="search-sec">
-                        <div>
-                            <input type="text" name="" id="" placeholder="Search & Discover" />
-                            <span class="material-icons"> search </span>
-                        </div>
-                    </div>
-
-                    <div class="navlinks">
-                        <a href="chat.php" class="join-link">
-                            <span class="material-icons">
-                                textsms
-                            </span>
-                        </a>
-                        <a href="#" class="login-link">
-                            <span class="material-icons">
-                                notifications
-                            </span>
-                        </a>
-                    </div>
-
-                    <div class="avatar-sec">
-                        <span class="material-icons"> account_box </span>
-                        <div class="account-links">
-                            <ul class="link-container">
-                                <?php
-                  session_start();
-                  $id = (int) $_SESSION['id'];
-
-                  $query = mysqli_query ($conn, "SELECT * FROM abyss_User WHERE id = '$id' ") or die (mysqli_error());
-                  $fetch = mysqli_fetch_array ($query);
-                ?>
-                                <h1>
-                                    <?php echo $fetch['username'] ?>
-                                </h1>
-                                <li><a href="profile.php">Profile</a></li>
-                                <li><a href="gallery.php">Gallery</a></li>
-                                <li><a href="favorites.php">Favourites</a></li>
-                                <li><a href="profile-post.php">Posts</a></li>
-                                <li><a href="about.php">About</a></li>
-                                <li><a href="phpFunc/logout.php">Logout</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="submit-btn">
-                        <p>Submit</p>
-                        <div class="submit-container">
-                            <div class="submit-links">
-                                <button class="btn-abyssals" onclick="abyssalModal()">Abyssals</button>
-                                <button class="btn-status-header" onclick="statusModal()">Status Update</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
+        <?php include_once('headerContainer.php');?>
 
         <main class="container">
             <!-- sidebar navigation -->
@@ -209,7 +140,7 @@
                                             echo '
                                                 <li class="feature-gallery-item">
                                                     <img src="assets/img/arts/'.$fetch2['abyssal_art'].'" data-id="'.$fetch['art_id'].'"  onclick="artdetails(this.dataset.id)">
-                                                    <div class="delete-btn" data-id="'.$fetch['art_id'].'" onclick="removeAbyssals(this.dataset.id)">
+                                                    <div class="delete-btn" data-id="'.$fetch2['art_id'].'" onclick="artFavProfile(this.dataset.id)">
                                                         <div>
                                                             <i class="bx bx-trash" ></i>
                                                         </div>
@@ -471,6 +402,7 @@
     <script>
         document.getElementById("confirmEnable").disabled = true;
     </script>
+    <script src="Assets/js/search.js"></script>
 </body>
 
 </html>
