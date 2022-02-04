@@ -90,10 +90,15 @@
                             <li><a href="usersGallery.php?username=<?php echo $fetch['username'] ?>">Gallery</a></li>
                             <li><a href="userFavorites.php?username=<?php echo $fetch['username'] ?>">Favourites</a></li>
                             <li><a href="userProfile-post.php?username=<?php echo $fetch['username'] ?>">Posts</a></li>
-                            <li><a href="userProfile-post.php?username=<?php echo $fetch['username'] ?>">Chat</a></li>
-                            <li><a href="userProfile-post.php?username=<?php echo $fetch['username'] ?>">Add</a></li>
 
                         </ul>
+                        <div class="chatUser">
+                            <button class="chatUserbtn">Chat</button>
+                        </div>
+                        <div class="addFriend">
+                            <button class="addFriendbtn">Add friend</button>
+                        </div>
+                        
                     </div>
                 </div>
                 <?php
