@@ -93,6 +93,27 @@
                             <li><a href="userFavorites.php?username=<?php echo $fetch['username'] ?>">Favourites</a></li>
                             <li><a href="userProfile-post.php?username=<?php echo $fetch['username'] ?>">Posts</a></li>
                         </ul>
+                        <div class="addChat" data-id="<?php echo $fetch['id'] ?>" onclick="chatUser(this.dataset.id)">
+                            <button class="chatUserbtn">Chat</button>
+                        </div>
+                        <div class="addWatch">
+                        <?php
+                            $watchID = $fetch['id'];
+                            $query = "SELECT * FROM abyss_watcher WHERE userID= $id AND watchID= $watchID";
+                            $cmd = mysqli_query($conn, $query);
+
+                            if(mysqli_num_rows($cmd)>0){
+                        ?>
+                        
+                                <button class="watchBtn"  data-id="<?php echo $watchID?>" onclick="addWatching(this.dataset.id)" >Watching</button>
+                        <?php
+                            }else{
+                        ?>
+                            <button class="watchBtn"  data-id="<?php echo $watchID?>" onclick="addWatching(this.dataset.id)" ><i class='bx bx-bookmark-plus' ></i> Watch</button>
+                        <?php
+                            }
+                        ?>
+                        </div>
                     </div>
                 </div>
                 <div class="post-parent">
@@ -343,6 +364,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="Assets/js/script.js"></script>
     <script src="Assets/js/search.js"></script>
+    <script src="Assets/js/users.js"></script>
     <script>
         document.getElementById("confirmEnable").disabled = true;
     </script>

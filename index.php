@@ -205,10 +205,10 @@
         <span>Join the world's largest art community and get personalized art recommendations.</span>
       </div>
       <div class="auth">
-        <button class="login-foot">
-          Log In
+        <button class="login-foot" onclick="gotoLogIn()">
+           Log In
         </button>
-        <button class="join-foot">
+        <button class="join-foot" onclick="gotoJoin()">
           Join
         </button>
       </div>

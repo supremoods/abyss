@@ -22,7 +22,17 @@
 
 <body class="body-root">
   <div id="root">
-    <?php include_once('headerContainer.php');?>
+    <?php 
+    include_once('headerContainer.php');
+    
+    $chatUser = $_GET['userID'];
+
+    $query = "SELECT * FROM abyss_user WHERE id = $chatUser";
+    $cmd = mysqli_query($conn, $query);
+
+    $fetch = mysqli_fetch_array($cmd);
+    
+    ?>
 
     <main class="container">
       <div class="sidebar-container">
@@ -68,213 +78,48 @@
               </div>
             </div>
             <div class="chat-list-container">
-              <!-- <div class="chat-text">
-                <h1>You don't have any chats yet</h1>
+              <div class="empty-chatlist">
+                <div class="chat-text">
+                  <h1>You don't have any chats yet</h1>
+                </div>
+                <div class="img-chat">
+                  <img src="Assets/img/undraw_fresh_notification_re_whq4.svg" alt="" srcset="">
+                </div>
+                <div class="chat-text ">
+                  <p>Why not reach out to another Abyssals and say hi?</p>
+                </div>
               </div>
-              <div class="img-chat">
-                <img src="Assets/img/undraw_fresh_notification_re_whq4.svg" alt="" srcset="">
-              </div>
-              <div class="chat-text ">
-                <p>Why not reach out to another Abyssals and say hi?</p>
+              <!-- <div class="chat_user">
+                <div class="status-activity">
+                  <i class='bx bxs-circle'></i>
+                </div>
+                <div class="userName_item">
+                  <div class="user_name">
+                    <p>Penguin</p>
+                  </div>
+                  <div class="latestMessage">
+                    <pre>You: This is a test message</pre>
+                  </div>
+                </div>         
               </div> -->
-             
-            
-              <div class="chat_user">
-                <div class="status-activity">
-                  <i class='bx bxs-circle'></i>
-                </div>
-                <div class="userName_item">
-                  <div class="user_name">
-                    <p>Penguin</p>
-                  </div>
-                  <div class="latestMessage">
-                    <pre>You: This is a test message</pre>
-                  </div>
-                </div>         
-              </div>
-              <div class="chat_user">
-                <div class="status-activity">
-                  <i class='bx bxs-circle'></i>
-                </div>
-                <div class="userName_item">
-                  <div class="user_name">
-                    <p>Penguin</p>
-                  </div>
-                  <div class="latestMessage">
-                    <pre>You: This is a test message</pre>
-                  </div>
-                </div>         
-              </div>
-              <div class="chat_user">
-                <div class="status-activity">
-                  <i class='bx bxs-circle'></i>
-                </div>
-                <div class="userName_item">
-                  <div class="user_name">
-                    <p>Penguin</p>
-                  </div>
-                  <div class="latestMessage">
-                    <pre>You: This is a test message</pre>
-                  </div>
-                </div>         
-              </div>
-              <div class="chat_user">
-                <div class="status-activity">
-                  <i class='bx bxs-circle'></i>
-                </div>
-                <div class="userName_item">
-                  <div class="user_name">
-                    <p>Penguin</p>
-                  </div>
-                  <div class="latestMessage">
-                    <pre>You: This is a test message</pre>
-                  </div>
-                </div>         
-              </div>
-              <div class="chat_user">
-                <div class="status-activity">
-                  <i class='bx bxs-circle'></i>
-                </div>
-                <div class="userName_item">
-                  <div class="user_name">
-                    <p>Penguin</p>
-                  </div>
-                  <div class="latestMessage">
-                    <pre>You: This is a test message</pre>
-                  </div>
-                </div>         
-              </div>
-              <div class="chat_user">
-                <div class="status-activity">
-                  <i class='bx bxs-circle'></i>
-                </div>
-                <div class="userName_item">
-                  <div class="user_name">
-                    <p>Penguin</p>
-                  </div>
-                  <div class="latestMessage">
-                    <pre>You: This is a test message</pre>
-                  </div>
-                </div>         
-              </div>
-              <div class="chat_user">
-                <div class="status-activity">
-                  <i class='bx bxs-circle'></i>
-                </div>
-                <div class="userName_item">
-                  <div class="user_name">
-                    <p>Penguin</p>
-                  </div>
-                  <div class="latestMessage">
-                    <pre>You: This is a test message</pre>
-                  </div>
-                </div>         
-              </div>
-              
-              <div class="chat_user">
-                <div class="status-activity">
-                  <i class='bx bxs-circle'></i>
-                </div>
-                <div class="userName_item">
-                  <div class="user_name">
-                    <p>Penguin</p>
-                  </div>
-                  <div class="latestMessage">
-                    <pre>You: This is a test message</pre>
-                  </div>
-                </div>         
-              </div>
-              <div class="chat_user">
-                <div class="status-activity">
-                  <i class='bx bxs-circle'></i>
-                </div>
-                <div class="userName_item">
-                  <div class="user_name">
-                    <p>Penguin</p>
-                  </div>
-                  <div class="latestMessage">
-                    <pre>You: This is a test message</pre>
-                  </div>
-                </div>         
-              </div>
-              <div class="chat_user">
-                <div class="status-activity">
-                  <i class='bx bxs-circle'></i>
-                </div>
-                <div class="userName_item">
-                  <div class="user_name">
-                    <p>Penguin</p>
-                  </div>
-                  <div class="latestMessage">
-                    <pre>You: This is a test message</pre>
-                  </div>
-                </div>         
-              </div>
-              <div class="chat_user">
-                <div class="status-activity">
-                  <i class='bx bxs-circle'></i>
-                </div>
-                <div class="userName_item">
-                  <div class="user_name">
-                    <p>Penguin</p>
-                  </div>
-                  <div class="latestMessage">
-                    <pre>You: This is a test message</pre>
-                  </div>
-                </div>         
-              </div>
-              <div class="chat_user">
-                <div class="status-activity">
-                  <i class='bx bxs-circle'></i>
-                </div>
-                <div class="userName_item">
-                  <div class="user_name">
-                    <p>Penguin</p>
-                  </div>
-                  <div class="latestMessage">
-                    <pre>You: This is a test message</pre>
-                  </div>
-                </div>         
-              </div>
-              <div class="chat_user">
-                <div class="status-activity">
-                  <i class='bx bxs-circle'></i>
-                </div>
-                <div class="userName_item">
-                  <div class="user_name">
-                    <p>Penguin</p>
-                  </div>
-                  <div class="latestMessage">
-                    <pre>You: This is a test message</pre>
-                  </div>
-                </div>         
-              </div>
-              <div class="chat_user">
-                <div class="status-activity">
-                  <i class='bx bxs-circle'></i>
-                </div>
-                <div class="userName_item">
-                  <div class="user_name">
-                    <p>Penguin</p>
-                  </div>
-                  <div class="latestMessage">
-                    <pre>You: This is a test message</pre>
-                  </div>
-                </div>         
-              </div>
 
             </div>
           </div>
+          <div class="space">
+            
+          </div>
           <div class="chat-convo-container">
-            <!-- <div class="img-chat">
+
+            <div class="img-chat" hidden>
               <img src="Assets/img/undraw_fresh_notification_re_whq4.svg" alt="" srcset="">
-            </div> -->
+            </div>
+
             <div class="chat-convo-wrapper">
               <div class="chat_convo_header">
                 <div class="chat_name">
-                  <img src="Assets/img/profile/6a391e2d188f5c4fe8973c248bb5e805.jpg" alt="">
+                  <img src="Assets/img/profile/<?php echo $fetch['profileImage'] ?>" alt="">
                   <div>
-                    <p>Penguin</p>
+                    <p><?php echo $fetch['username'] ?></p>
                     <p>Active now</p>
                   </div>
                 </div>
@@ -282,10 +127,7 @@
                   <i class='bx bx-x' ></i>
                 </div>
               </div>
-              <div id="chat_convo" class="chat_convo">
-                  
-                  
-            
+              <div id="chat_convo" class="chat_convo" data-id="<?php echo $fetch['id'] ?>">
               </div>
               <div class="chat_input">
                 <textarea name="messageContent" type="text" id="messageContent" cols="30" rows="1" placeholder="Type a message..."></textarea>

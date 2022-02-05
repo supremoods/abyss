@@ -59,7 +59,13 @@ function userProfile(temp){
 function home(){
     window.location.href = 'home.php';
 }
+function gotoLogIn(){
+    window.location.href = 'login.php';
+}
 
+function gotoJoin(){
+    window.location.href = 'join.php';
+}
 function gotoComment(temp){
     window.location.href = 'artdetails.php?abyssalsId='+temp+'#comment-section';
 
@@ -71,8 +77,6 @@ function artdetails(temp){
 function artFav(temp){
     $('.gallery-wrapper').load("./phpFunc/favUpdate.php",{'id': temp});
 }
-
-
 
 
 function artFavProfile(temp){

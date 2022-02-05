@@ -442,42 +442,49 @@
     font-weight: bold;
     color: var(--gray4);
 } 
-.nav-list .addFriend,
-.nav-list .chatUser {
+.nav-list .addWatch,
+.nav-list .addChat {
     height:100%;
 }
-.nav-list .chatUser .chatUserbtn{
-   
-    background: var(--D8);
-    border: none;
-    font-size: 14px;
-    height:100%;
-    color: var(--D1);
-    font-weight: 800;
-    width: 150px;
-    cursor:pointer;
-
+.nav-list .addChat .chatUserbtn {
+	background: var(--G8);
+	border: none;
+	font-size: 14px;
+	height: 100%;
+	color: var(--D8);
+	font-weight: 800;
+	width: 150px;
+	cursor: pointer;
+    transition: all .2s ease-in-out;
 }
-.nav-list .chatUser .chatUserbtn:hover{
-    color: var(--purple5);
-}
-.nav-list .addFriend .addFriendbtn{
-    background-image: linear-gradient(to bottom,rgb(213, 140, 250),var(--purple5));
-    border: none;
-    font-size: 14px;
-    height:100%;
-    color: var(--D1);
-    font-weight: 800;
-    width: 150px;
-    cursor:pointer;
-    transition: backgroound .3s ease-in-out;
-
+.nav-list .addChat .chatUserbtn:hover{
+   font-size: 16px;
+   transition: all .2s ease-in-out;
 }
 
-.nav-list .addFriend .addFriendbtn:hover{
-    background-image: linear-gradient(to bottom,var(--purple5),rgb(213, 140, 250));
-    transition: all .3s ease-in-out;
+.nav-list .addWatch .watchBtn {
+    display: flex;
+	background-image: var(--gradient6);
+	border: none;
+	font-size: 14px;
+	height: 100%;
+	color: var(--D8);
+	font-weight: 800;
+	width: 150px;
+	cursor: pointer;
+    transition: all .2s ease-in-out;
+    justify-content: center;
+    align-items: center;
 }
+
+.nav-list .addWatch .watchBtn i{
+    font-size: 24px;
+}
+.nav-list .addWatch .watchBtn:hover{
+    font-size: 16px;
+    transition: all .2s ease-in-out;
+ }
+
 
 
 .profile-col{

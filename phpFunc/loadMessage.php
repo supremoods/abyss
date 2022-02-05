@@ -2,11 +2,12 @@
  include('dbConnect.php');
  session_start();
 $outgoing = $_SESSION['id'];
-if($outgoing == 1){
-    $incoming = 2;
-}else{
-    $incoming = 1;
+
+if (isset($_POST["userID"])) {
+    $incoming = $_POST["userID"];
 }
+
+
 $output = "";
 
 $query = "SELECT * FROM messages LEFT JOIN abyss_user ON abyss_user.id = messages.outgoing_msg_id
