@@ -26,12 +26,7 @@
     <div id="root">
         <?php include_once('headerContainer.php');?>
 
-        <?php
-            $username = $_GET['username'];
-            $sql = "SELECT * FROM art_abyssals LEFT JOIN abyss_user ON abyss_user.id = art_abyssals.id WHERE username = '$username'";
-            $cmd = mysqli_query($conn,$sql); 
-            $fetch = mysqli_fetch_array($cmd)
-        ?>
+
         <main class="container">
             <!-- sidebar navigation -->
             <div class="sidebar-container">
