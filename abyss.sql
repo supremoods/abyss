@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2022 at 05:39 PM
+-- Generation Time: Feb 06, 2022 at 05:50 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -305,6 +305,26 @@ INSERT INTO `abyss_user` (`id`, `username`, `email`, `password`, `profileImage`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `abyss_watcher`
+--
+
+CREATE TABLE `abyss_watcher` (
+  `id` int(255) NOT NULL,
+  `userID` int(255) NOT NULL,
+  `watchId` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `abyss_watcher`
+--
+
+INSERT INTO `abyss_watcher` (`id`, `userID`, `watchId`) VALUES
+(18, 2, 1),
+(19, 2, 27);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `art_abyssals`
 --
 
@@ -375,6 +395,48 @@ INSERT INTO `art_abyssals` (`id`, `art_id`, `abyssal_art`, `title`, `description
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `msg_id` int(11) NOT NULL,
+  `incoming_msg_id` int(255) NOT NULL,
+  `outgoing_msg_id` int(255) NOT NULL,
+  `msg` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`msg_id`, `incoming_msg_id`, `outgoing_msg_id`, `msg`) VALUES
+(95, 1, 2, 'hi\n'),
+(96, 1, 2, 'how are you???\n'),
+(97, 1, 2, 'heelo\n'),
+(98, 1, 2, 'hi\n'),
+(99, 1, 2, 'how are you\n'),
+(100, 1, 2, 'hello\n'),
+(101, 1, 2, 'hi\n'),
+(102, 1, 2, 'hello\n'),
+(103, 1, 2, 'this is my chat\n'),
+(104, 2, 1, 'hello\n'),
+(105, 2, 1, 'how are you\n'),
+(106, 2, 1, 'this is me\n'),
+(107, 2, 1, 'this is me I\nm falling for you'),
+(108, 1, 2, 'hi\n'),
+(109, 22, 2, 'hi\n'),
+(110, 2, 1, '\'\n'),
+(111, 2, 1, 's\n'),
+(112, 2, 1, 'A\n'),
+(113, 2, 1, 'THIS IS MY CHAT\n'),
+(114, 2, 1, 'HELLO\n'),
+(115, 1, 2, 'hi\n'),
+(116, 27, 2, 'hi\n'),
+(117, 39, 2, 'hello\n');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `test_img`
 --
 
@@ -390,6 +452,37 @@ CREATE TABLE `test_img` (
 INSERT INTO `test_img` (`id`, `img`) VALUES
 (12, ''),
 (13, 'arcane_jinx_vi_by_yaminokuni_dev103u.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `topics`
+--
+
+CREATE TABLE `topics` (
+  `category` varchar(255) NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `topics`
+--
+
+INSERT INTO `topics` (`category`, `img`, `description`) VALUES
+('3D', '3d.jpg', 'Art made using 3D software like Maya, Cinema 4D, 3ds Max, and more.'),
+('Adoptables', 'adoptables.jpg', 'Explore the possibilities of character and species bases, adopted and brought to life here..'),
+('Anime and Manga', 'anime.jpg', 'Cartoons, graphic novels, and videos created in the popular Japanese style'),
+('Anthro', 'anthro.jpg', 'Your home for furry-related art and fiction. Fur, tails, scales, and wings are all welcome here.'),
+('Comics', 'comics.jpg', 'From superheroes to graphic novels, original characters to fan art, comics are both a style and a story.'),
+('Digital Art', 'digital art.jpg', 'Where talent meets tech. Using digital tools to create dazzling art: photographs, drawings, paintings, and 3D.'),
+('Drawings and Paintings', 'drawing and paintings.jpg', 'Hand drawn or digital, these drawings and paintings cover every style and genre.'),
+('Fan Art', 'fan art.jpg', 'Art inspired by movies, characters, books, comics, and more.'),
+('Game Art', 'game art.jpg', 'Concept art for video game worlds: immersive environments, characters, and objects'),
+('Science Fiction', 'science fiction.jpg', 'Visions of the future and technology taken to the extreme: space travel, mecha, dystopian cities, and more.'),
+('Sculpture', 'sculpture.jpg', 'Sculpted from clay, carved from wood, welded from metal—this is art in physical form.'),
+('Traditional Arts', 'traditional art.jpg', 'No computers allowed! Traditional, hand-made art in a wide range of mediums and genres.'),
+('Tutorials', 'tutorials.jpg', 'Step-by-step guides to help you become a better artist.');
 
 --
 -- Indexes for dumped tables
@@ -426,10 +519,22 @@ ALTER TABLE `abyss_user`
   ADD PRIMARY KEY (`id`,`username`);
 
 --
+-- Indexes for table `abyss_watcher`
+--
+ALTER TABLE `abyss_watcher`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `art_abyssals`
 --
 ALTER TABLE `art_abyssals`
   ADD PRIMARY KEY (`art_id`);
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`msg_id`);
 
 --
 -- Indexes for table `test_img`
@@ -472,10 +577,22 @@ ALTER TABLE `abyss_user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
 
 --
+-- AUTO_INCREMENT for table `abyss_watcher`
+--
+ALTER TABLE `abyss_watcher`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
 -- AUTO_INCREMENT for table `art_abyssals`
 --
 ALTER TABLE `art_abyssals`
   MODIFY `art_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=223;
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 
 --
 -- AUTO_INCREMENT for table `test_img`
