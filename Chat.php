@@ -25,8 +25,15 @@
     <?php 
     include_once('headerContainer.php');
     
-    $chatUser = $_GET['userID'];
-
+    if(isset($_GET['userID'])){
+      $chatUser = $_GET['userID'];
+    }else{
+      $chatUser =0;
+      echo "
+        
+      ";
+    }
+   
     $query = "SELECT * FROM abyss_user WHERE id = $chatUser";
     $cmd = mysqli_query($conn, $query);
 
