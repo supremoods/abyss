@@ -78,30 +78,6 @@
               </div>
             </div>
             <div class="chat-list-container">
-              <div class="empty-chatlist">
-                <div class="chat-text">
-                  <h1>You don't have any chats yet</h1>
-                </div>
-                <div class="img-chat">
-                  <img src="Assets/img/undraw_fresh_notification_re_whq4.svg" alt="" srcset="">
-                </div>
-                <div class="chat-text ">
-                  <p>Why not reach out to another Abyssals and say hi?</p>
-                </div>
-              </div>
-              <!-- <div class="chat_user">
-                <div class="status-activity">
-                  <i class='bx bxs-circle'></i>
-                </div>
-                <div class="userName_item">
-                  <div class="user_name">
-                    <p>Penguin</p>
-                  </div>
-                  <div class="latestMessage">
-                    <pre>You: This is a test message</pre>
-                  </div>
-                </div>         
-              </div> -->
 
             </div>
           </div>
@@ -115,14 +91,32 @@
             </div>
 
             <div class="chat-convo-wrapper">
-              <div class="chat_convo_header">
-                <div class="chat_name">
-                  <img src="Assets/img/profile/<?php echo $fetch['profileImage'] ?>" alt="">
-                  <div>
-                    <p><?php echo $fetch['username'] ?></p>
-                    <p>Active now</p>
-                  </div>
+              <div id="chat_convo_header" class="chat_convo_header">
+                <div id="loadStatus" class="loadStatus">
+                  <?php 
+                    if($fetch['Status'] == "online"){
+                      ?>
+                    <div class="chat_name active">
+                      <img src="Assets/img/profile/<?php echo $fetch['profileImage'] ?>" alt="">
+                      <div>
+                        <p><?php echo $fetch['username'] ?></p>
+                        
+                        <p><?php echo $fetch['Status'] ?></p>
+                      </div>
+                    </div>
+                  <?php  } if($fetch['Status'] == "offline"){?>
+                    <div class="chat_name">
+                      <img src="Assets/img/profile/<?php echo $fetch['profileImage'] ?>" alt="">
+                      <div>
+                        <p><?php echo $fetch['username'] ?></p>
+                        
+                        <p><?php echo $fetch['Status'] ?></p>
+                      </div>
+                    </div>
+                  <?php  }?>
                 </div>
+
+
                 <div class="convo_close">
                   <i class='bx bx-x' ></i>
                 </div>

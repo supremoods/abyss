@@ -16,6 +16,12 @@
                  session_start();
                  $_SESSION['id'] = $row['id'];
 
+                 $userId =  $_SESSION['id'];
+
+                 $query = "UPDATE abyss_User SET Status = 'online' WHERE id = '$userId'";
+
+                 $cmd = mysqli_query($conn,$query);
+
                  header ("location:home.php");
             }else{
                 echo '

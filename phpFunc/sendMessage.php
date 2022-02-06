@@ -2,7 +2,7 @@
     include('dbConnect.php');
 
     session_start();
-    $message = $_REQUEST['outgoing_message'];
+    $message = mysqli_real_escape_string($conn,$_REQUEST['outgoing_message']);
     $outgoing = $_SESSION['id'];
     $incoming =  $_REQUEST['userID'];
 

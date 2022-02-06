@@ -1,9 +1,7 @@
 <?php
-    if(!isset($variable)){
-        include('dbConnect.php');
-        $postID = $_REQUEST['postID'];
-
-    }
+   
+    $postID = $_REQUEST['postID'];
+    
     $query = "SELECT * FROM abyss_post_comment WHERE post_id = $postID";
     $cmdComment = mysqli_query($conn, $query);
 

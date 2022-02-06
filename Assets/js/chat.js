@@ -88,6 +88,8 @@ function loadChat() {
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             document.getElementById("chat_convo").innerHTML = this.responseText;
+            $('#loadStatus').load(location.href + " #loadStatus");
+  
             if(!chatBox.classList.contains("active")){
               scrollToBottom();
             }
@@ -100,10 +102,12 @@ function loadChat() {
 
 setInterval(function(){
     loadChat();
-},100);
+},500);
 window.onload = loadChat;
 
-
+setInterval(function(){
+  $('.chat-list-container').load("./phpFunc/loadChatlist.php");
+},3000);
 
 function scrollToBottom(){
   chatBox.scrollTop = chatBox.scrollHeight;

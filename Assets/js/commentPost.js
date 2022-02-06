@@ -1,7 +1,5 @@
 $(".input-cmnt").keyup(function (event) {
     var userCommentID = "userComment_"+this.dataset.id;
-    
-
     if (event.keyCode == 13 && event.shiftKey) {
         var content = this.value;
         var caret = getCaret(this);
@@ -22,17 +20,18 @@ $(".input-cmnt").keyup(function (event) {
             
         }
         
-        $("textarea#"+userCommentID).val("");
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                $('#loadPostdata').load(location.href + " #loadPostdata");
+
+        // var xhr = new XMLHttpRequest();
+        // xhr.onreadystatechange = function() {
+        //     if (xhr.readyState == 4 && xhr.status == 200) {
+        //         $('#loadPostdata').load(location.href + " #loadPostdata");
               
-            }
-        }
-        xhr.open("POST", "./postData.php", true);
-        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhr.send();
+        //     }
+        // }
+        // xhr.open("POST", "./postData.php", true);
+        // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        // xhr.send();
+        $("textarea#"+userCommentID).val("");
     }
 
 });
@@ -58,22 +57,29 @@ function getCaret(el) {
     return 0;
 }
 
+// function onMouseHover(temp){
+//     $("#loadComment_"+temp).load("./phpFunc/loadCommentPost.php",{
+//         postID: temp,
+//     });
+// }
+ 
 
-//  function sendRequestFavCount() {
-//      var xhr = new XMLHttpRequest();
-//      xhr.onreadystatechange = function() {
-//          if (xhr.readyState == 4 && xhr.status == 200) {
-//              $('#loadPostdata').load(location.href + " #loadPostdata");
-          
-//          }
-//      }
-//      xhr.open("POST", "./sample.php", true);
-//      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-//      xhr.send();
-//  }
+setInterval(function(){
+    var idArr = [];
+    $(".user-comment-wrapper").each(function(){
+        idArr.push($(this).attr("id"));
+    });   
 
-//  setInterval(function(){
-//      sendRequestFavCount();
-//  },2000);
+    for (i = 0; i <= idArr.length - 1; i++) {
+        $("#"+idArr[i]).load("./phpFunc/loadCommentPost.php",{
+            postID: idArr[i].replace(/\D/g, ""),
+        });
+    }
 
-//  window.onload = sendRequestFavCount;
+    for (i = 0; i <= idArr.length - 1; i++) {
+        $("#"+idArr[i].replace(/\D/g, "")).load("./phpFunc/fetchCountComment.php",{
+            postID: idArr[i].replace(/\D/g, ""),
+        });
+    }
+    console.log(idArr.join(", ")); 
+},500);

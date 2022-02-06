@@ -9,6 +9,7 @@ $("#userComment").keyup(function (event) {
     event.stopPropagation();
   } else if (event.keyCode == 13) {
     if ($.trim($("textarea#userComment").val())) {
+
         var artID = this.dataset.id;
         var comment = $("textarea#userComment").val();
         $(".user-comment-wrapper").load("./phpFunc/comment.php", {

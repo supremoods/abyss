@@ -1,10 +1,11 @@
 <?php
     include('dbConnect.php');
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
 
     $postID = $_REQUEST['postID'];
-    $comment = $_REQUEST['comment'];
-
+    $comment = mysqli_real_escape_string($conn, $_REQUEST['comment']);
 
     $id = (int) $_SESSION['id'];
     $query = "INSERT INTO abyss_post_comment(commentId,id,post_id,comment) VALUES(null, $id, $postID, '$comment')"; 

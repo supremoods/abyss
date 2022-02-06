@@ -25,7 +25,7 @@ if(mysqli_num_rows($cmd) > 0){
                         <p>'. $row['msg'] .'</p>
                     </div>
                 </div>
-               
+    
             ';
         }else{
             $output .= '

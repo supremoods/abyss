@@ -2,7 +2,7 @@
     include('dbConnect.php');
     session_start();
     $artId = $_REQUEST['artID'];
-    $comment = $_REQUEST['comment'];
+    $comment = mysqli_real_escape_string($conn, $_REQUEST['comment']);
 
    
     $id = (int) $_SESSION['id'];
