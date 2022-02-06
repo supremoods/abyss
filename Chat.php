@@ -68,7 +68,6 @@
               </div>
               <div class="right-side">
                 <i class='bx bxs-edit' ></i>
-                <i class='bx bxs-cog' ></i>
               </div>
             </header> 
             
@@ -85,8 +84,8 @@
             
           </div>
           <div class="chat-convo-container">
-
-            <div class="img-chat" hidden>
+    
+            <div class="img-chat" >
               <img src="Assets/img/undraw_fresh_notification_re_whq4.svg" alt="" srcset="">
             </div>
 
@@ -95,7 +94,7 @@
                 <div id="loadStatus" class="loadStatus">
                   <?php 
                     if($fetch['Status'] == "online"){
-                      ?>
+                    ?>
                     <div class="chat_name active">
                       <img src="Assets/img/profile/<?php echo $fetch['profileImage'] ?>" alt="">
                       <div>
@@ -117,7 +116,7 @@
                 </div>
 
 
-                <div class="convo_close">
+                <div class="convo_close" onclick="closeBtn()">
                   <i class='bx bx-x' ></i>
                 </div>
               </div>

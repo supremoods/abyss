@@ -30,40 +30,79 @@ if(mysqli_num_rows($cmd) > 0){
         }
 
         if($fetchUser['outgoing_msg_id'] === $outgoing){
-                 
-            echo'
-            <div class="chat_user">
-                <div class="status-activity">
-                    <i class="bx bxs-circle"></i>
+           if($fetchUser['Status'] == "online"){
+                echo'
+                <div class="chat_user" data-id="'.$fetchUser['id'].'" onclick="chatUser(this.dataset.id)">
+                    <div class="status-activity active">
+                        <i class="bx bxs-circle"></i>
+                    </div>
+                    <div class="userName_item">
+                        <div class="user_name">
+                        <p>'.$fetchUser['username'].'</p>
+                        </div>
+                        <div class="latestMessage">
+                        <pre>'.$fetchUser['msg'].'</pre>
+                        </div>
+                    </div>         
                 </div>
-                <div class="userName_item">
-                    <div class="user_name">
-                    <p>'.$fetchUser['username'].'</p>
-                    </div>
-                    <div class="latestMessage">
-                    <pre>'.$fetchUser['msg'].'</pre>
-                    </div>
-                </div>         
-            </div>
 
-        ';
+                ';
+            }else{
+                echo'
+                <div class="chat_user" data-id="'.$fetchUser['id'].'" onclick="chatUser(this.dataset.id)">
+                    <div class="status-activity">
+                        <i class="bx bxs-circle"></i>
+                    </div>
+                    <div class="userName_item">
+                        <div class="user_name">
+                        <p>'.$fetchUser['username'].'</p>
+                        </div>
+                        <div class="latestMessage">
+                        <pre>'.$fetchUser['msg'].'</pre>
+                        </div>
+                    </div>         
+                </div>
+
+                ';
+            }   
+           
         }else{
-            echo'
-            <div class="chat_user">
-                <div class="status-activity">
-                    <i class="bx bxs-circle"></i>
-                </div>
-                <div class="userName_item">
-                    <div class="user_name">
-                    <p>'.$fetchUser['username'].'</p>
+            if($fetchUser['Status'] == "online"){
+                echo'
+                    <div class="chat_user"  data-id="'.$fetchUser['id'].'" onclick="chatUser(this.dataset.id)">
+                        <div class="status-activity active">
+                            <i class="bx bxs-circle"></i>
+                        </div>
+                        <div class="userName_item">
+                            <div class="user_name">
+                            <p>'.$fetchUser['username'].'</p>
+                            </div>
+                            <div class="latestMessage">
+                            <pre>You: '.$fetchUser['msg'].'</pre>
+                            </div>
+                        </div>         
                     </div>
-                    <div class="latestMessage">
-                    <pre>You: '.$fetchUser['msg'].'</pre>
-                    </div>
-                </div>         
-            </div>
 
-        ';
+                ';
+            }else{
+                echo'
+                    <div class="chat_user"  data-id="'.$fetchUser['id'].'" onclick="chatUser(this.dataset.id)">
+                        <div class="status-activity">
+                            <i class="bx bxs-circle"></i>
+                        </div>
+                        <div class="userName_item">
+                            <div class="user_name">
+                            <p>'.$fetchUser['username'].'</p>
+                            </div>
+                            <div class="latestMessage">
+                            <pre>You: '.$fetchUser['msg'].'</pre>
+                            </div>
+                        </div>         
+                    </div>
+
+                ';
+            }
+            
         }
 
     }

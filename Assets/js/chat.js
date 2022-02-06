@@ -71,6 +71,15 @@ $("#sendBtn").click(function () {
 
 });
 
+function closeBtn(){
+  let body = document.querySelector('.chat-convo-wrapper')
+  body.classList.toggle('active');
+}
+
+function chatUser(temp){
+  window.location.href = 'Chat.php?userID='+temp;
+}
+
 chatBox = document.querySelector(".chat_convo");
 
 chatBox.onmouseenter = ()=>{
@@ -88,7 +97,7 @@ function loadChat() {
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             document.getElementById("chat_convo").innerHTML = this.responseText;
-            $('#loadStatus').load(location.href + " #loadStatus");
+           
   
             if(!chatBox.classList.contains("active")){
               scrollToBottom();
@@ -107,7 +116,12 @@ window.onload = loadChat;
 
 setInterval(function(){
   $('.chat-list-container').load("./phpFunc/loadChatlist.php");
+},1000);
+
+setInterval(function(){
+  $('#loadStatus').load(location.href + " #loadStatus");
 },3000);
+
 
 function scrollToBottom(){
   chatBox.scrollTop = chatBox.scrollHeight;
