@@ -467,6 +467,7 @@
 }
 
 .chat-container .chat-convo-container .img-chat{
+ 
   transform: scale(0);
   transition: all .3s ease-in-out;
   width: 0%;
@@ -476,6 +477,9 @@
   transform: scale(1);
   transition: all .3s ease-in-out;
   width: 100%;
+
+  display: flex;
+  justify-content: center;
 
 }
 .chat-container .chat-convo-container img {

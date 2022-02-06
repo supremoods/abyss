@@ -73,7 +73,9 @@ $("#sendBtn").click(function () {
 
 function closeBtn(){
   let body = document.querySelector('.chat-convo-wrapper')
+  let img = document.querySelector('.img-chat')
   body.classList.toggle('active');
+  img.classList.toggle('active');
 }
 
 function chatUser(temp){
