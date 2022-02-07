@@ -395,6 +395,7 @@
 }
 .row{
 	display: flex;
+    justify-content: flex-end;
 	flex-wrap: wrap;
 }
 ul{

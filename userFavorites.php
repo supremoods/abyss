@@ -185,19 +185,12 @@
                                     </li>
                                 </ul>
                             </div>
+                           
                             <div class="footer-col">
                                 <ul>
-                                    <li><a href="#">ABOUT</a></li>
-                                    <li><a href="#">CONTACT</a></li>
-                                    <li><a href="#">MEMBERSHIP</a></li>
-                                </ul>
-                            </div>
-                            <div class="footer-col">
-                                <ul>
-                                    <li><a href="#">DEVELOPERS</a></li>
-                                    <li><a href="#">ADVERTISE</a></li>
-                                    <li><a href="#">TERMS OF SERVICE</a></li>
-                                    <li><a href="#">PRIVACY POLICY</a></li>
+                                    <li><a href="developer.php">DEVELOPERS</a></li>
+                                    <li><a href="TOS.php">TERMS OF SERVICE</a></li>
+                                    <li><a href="Privacy.php">PRIVACY POLICY</a></li>
                                 </ul>
                             </div>
 

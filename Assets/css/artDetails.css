@@ -558,6 +558,7 @@
 
 .row{
 	display: flex;
+    justify-content: flex-end;
 	flex-wrap: wrap;
 }
 
@@ -656,7 +657,7 @@ ul{
 /*responsive*/
 @media(max-width: 767px){
     .footer-col{
-        width: 50%;
+        width: 100%;
         margin-bottom: 30px;
     }
 }

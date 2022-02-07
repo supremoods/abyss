@@ -11,7 +11,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Abyss | About Us</title>
+    <title>Abyss | Developers</title>
     <link rel="stylesheet" href="Assets/css/root.css" />
     <link rel="stylesheet" href="Assets/css/developer.css" />
     <link rel="shortcut icon" href="Assets/logo.png" type="image/x-icon">
@@ -143,24 +143,18 @@ We give a never-ending source of amusement and motivation. This is the first pla
             <footer class="footer">
                 <div class="footer-container">
                     <div class="row">
+
                         <div id="logo-footer" class="footer-col">
                             <ul>
-                                <li><a href="#"> <img src="Assets/logoWord.png" alt="" style="height: 30px; "></a></li>
+                                <li><a href="home.php"> <img src="Assets/logoWord.png" alt="" style="height: 30px; "></a></li>
                             </ul>
                         </div>
+                
                         <div class="footer-col">
                             <ul>
-                                <li><a href="#">ABOUT</a></li>
-                                <li><a href="#">CONTACT</a></li>
-                                <li><a href="#">MEMBERSHIP</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-col">
-                            <ul>
-                                <li><a href="#">DEVELOPERS</a></li>
-                                <li><a href="#">ADVERTISE</a></li>
-                                <li><a href="#">TERMS OF SERVICE</a></li>
-                                <li><a href="#">PRIVACY POLICY</a></li>
+                            <li><a href="developer.php">DEVELOPERS</a></li>
+                            <li><a href="TOS.php">TERMS OF SERVICE</a></li>
+                            <li><a href="Privacy.php">PRIVACY POLICY</a></li>
                             </ul>
                         </div>
 
