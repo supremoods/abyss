@@ -21,27 +21,17 @@ $("#messageContent").keyup(function (event) {
       scrollToBottom();
     }
   });
-  
-  function getCaret(el) {
-    if (el.selectionStart) {
-      return el.selectionStart;
-    } else if (document.selection) {
-      el.focus();
-  
-      var r = document.selection.createRange();
-      if (r == null) {
-        return 0;
-      }
-  
-      var re = el.createTextRange(),
-        rc = re.duplicate();
-      re.moveToBookmark(r.getBookmark());
-      rc.setEndPoint("EndToStart", re);
-  
-      return rc.text.length;
+
+  $("#userChat").keyup(function (event) {
+   if (event.keyCode == 13) {
+        const userChat = document.getElementById("userChat").value;
+        $(".space").load("./phpFunc/searchID.php", {
+          userChat: userChat,
+        });
+       
+      $("input#userChat").val("");
     }
-    return 0;
-  }
+  });
   
 
 function getCaret(el) {
@@ -82,7 +72,13 @@ function chatUser(temp){
   window.location.href = 'Chat.php?userID='+temp;
 }
 
+function showInputUser(){
+  let inputUser = document.querySelector(".inputUser");
+  inputUser.classList.toggle('active');
+
+}
 chatBox = document.querySelector(".chat_convo");
+
 
 chatBox.onmouseenter = ()=>{
   chatBox.classList.add("active");

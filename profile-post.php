@@ -76,14 +76,13 @@
                                 <h1 id="user-name">
                                     <?php echo $fetch['username'] ?>
                                 </h1>
-                                <h1 id="user-status">0 Watchers | 1 Page view | 0 Abys </h1>
+                                <h1 id="user-status">0 Watchers | 0 Abyss </h1>
                             </div>
                         </div>
 
                         <div class="profile-btn" onclick="modalCoverImage()">
                             <a href="#" class="btn">
-                                <img src="Assets/img/profile/<?php echo $fetch['profileImage'] ?>"
-                                style="height:40px; width:40px;" alt="">
+                                <i class="bx bx-image-add"></i>
                                 <h1 id="cover-text">ADD COVER IMAGE</h1>
                             </a>
                         </div>
@@ -97,7 +96,6 @@
                             <li><a href="gallery.php">Gallery</a></li>
                             <li><a href="favorites.php">Favourites</a></li>
                             <li><a href="#">Posts</a></li>
-                            <li><a href="#">About</a></li>
                         </ul>
                     </div>
                 </div>

@@ -71,7 +71,10 @@
               <div class="left-side">
                 <h1>Chat</h1>
               </div>
-              <div class="right-side">
+              <div class="inputUser">
+                <input type="text" name="" id="userChat" placeholder="Search User">
+              </div>
+              <div class="right-side" onclick="showInputUser()">
                 <i class='bx bxs-edit' ></i>
               </div>
             </header> 

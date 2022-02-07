@@ -96,7 +96,6 @@
                             <li><a href="gallery.php">Gallery</a></li>
                             <li><a href="favorites.php">Favourites</a></li>
                             <li><a href="profile-post.php">Posts</a></li>
-                            <li><a href="#">About</a></li>
                         </ul>
                     </div>
                 </div>

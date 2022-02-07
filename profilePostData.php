@@ -57,7 +57,7 @@
 
         <div class="counts-right">
             <div class="counts">
-                <div class="count-comment">
+                <div id="<?php echo $fetch['post_id'] ?>"  class="count-comment">
                     <span class="material-icons">chat_bubble</span>
                     <p>
                         <?php echo $fetch['count_comment']?>
@@ -67,13 +67,13 @@
         </div>
     </div>
 
-    <div class="comment-section" data-id="<?php echo $fetch['post_id'] ?>">
+    <div class="comment-section"  data-id="<?php echo $fetch['post_id'] ?>" >
         <div class="comment">
             <div class="profile-img">
                 <img src="./Assets/img/profile/<?php echo $fetchImage['profileImage'] ?>"
                     style="height:50px; width:50px; margin-right:10px;" alt="">
             </div>
-            <div class="input-comment">
+            <div class="input-comment" id="input-comment">
                 <textarea id="userComment_<?php echo $fetch['post_id'] ?>" name="userComment<?php echo $fetch['post_id'] ?>" data-id="<?php echo $fetch['post_id'] ?>"
                     class="input-cmnt" type="text" placeholder="Add a new comment"></textarea>
                 <div id="loadComment_<?php echo $fetch['post_id'] ?>" class="user-comment-wrapper">

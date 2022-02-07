@@ -75,7 +75,7 @@
                                 <h1 id="user-name">
                                     <?php echo $fetch['username'] ?>
                                 </h1>
-                                <h1 id="user-status">0 Watchers | 1 Page view | 0 Abys </h1>
+                                <h1 id="user-status">0 Watchers | 0 Abyss </h1>
                             </div>
                         </div>
 
@@ -95,7 +95,6 @@
                             <li><a href="gallery.php">Gallery</a></li>
                             <li><a href="favorites.php">Favourites</a></li>
                             <li><a href="profile-post.php">Posts</a></li>
-                            <li><a href="#">About</a></li>
                         </ul>
                     </div>
                 </div>
