@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2022 at 03:35 PM
+-- Generation Time: Feb 07, 2022 at 07:48 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -33,26 +33,6 @@ CREATE TABLE `abyssal_comment` (
   `art_id` int(11) NOT NULL,
   `comment` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `abyssal_comment`
---
-
-INSERT INTO `abyssal_comment` (`comment_ID`, `id`, `art_id`, `comment`) VALUES
-(48, 2, 100, 'sdasdas\n'),
-(68, 2, 92, 'dfs\n'),
-(69, 2, 92, 'asasa\n'),
-(70, 1, 46, 'asdasdas\n'),
-(71, 1, 46, 'asddasdas\n'),
-(72, 1, 46, 'asdasda\n3'),
-(73, 1, 46, 'asas\n'),
-(74, 1, 46, 'asdas\n'),
-(75, 1, 46, 'sdsds\n'),
-(76, 1, 46, 's\n'),
-(77, 1, 46, 's\n'),
-(78, 1, 46, '\'\n'),
-(79, 2, 222, 'NICE ARTWORK 😀😀😀😀😀!!!!\n'),
-(80, 1, 222, 'Thank you hehehehehe 😀\n');
 
 -- --------------------------------------------------------
 
@@ -103,12 +83,12 @@ CREATE TABLE `abyss_post` (
 
 INSERT INTO `abyss_post` (`id`, `post_id`, `cover_image`, `title`, `post_description`, `count_fav`, `count_comment`, `privacy`) VALUES
 (123, 29, 'commission_price_list__updated_20_01_22__by_queen_of_kinkiness_dexib3f-fullview(COVER PHOTO).jpg', 'Commissions Prices Update', 'I was taught in school that I should gift someone a present on my Birthday as others do the same to me. \r\n\r\n\r\nSo, since on February 2 I\'ll turned 22, here\'s my present for you folks: I\'ve lowered the Commissions Prices by 20$. \r\n\r\n\r\nCheck it out on my profile!', 0, 0, 'everyone'),
-(125, 35, 'demochibi_by_a_i_k_art_deyi22c-fullview(cover photo).png', 'DEMO', 'Hey~!\r\n\r\nWe are releasing a free demo of our game so you can try it~ \r\n\r\n\r\nThis is just a fraction of the game, you can find the latest version in our Patreon! 💗', 0, 2, 'everyone'),
+(125, 35, 'demochibi_by_a_i_k_art_deyi22c-fullview(cover photo).png', 'DEMO', 'Hey~!\r\n\r\nWe are releasing a free demo of our game so you can try it~ \r\n\r\n\r\nThis is just a fraction of the game, you can find the latest version in our Patreon! 💗', 0, 0, 'everyone'),
 (129, 40, 'deuqyj1-bbea172e-768f-428a-a949-416d41f5cf84 (COVER).png', 'NFT theft - Zelda artists', 'EDIT: Looks like we did it! 😄\r\nWhen clicking on the link there\'s no picture on display in this os account anymore! Nice work everyone!\r\n\r\nOld post:\r\n\r\nHello everyone!\r\n\r\nI don\'t know if it has been shared already, but we got this account selling a bunch of stolen Zelda art as NFTs: \r\n\r\nhttps://opensea.io/0xcfa655727c17607ac84e35d26805f2cc30e45213\r\n\r\nFeel free to spread the word and to report this opensea account. I\'m trying to gather a list of the artists that have been stolen too.\r\n\r\nStay safe and take care. ', 0, 0, 'everyone'),
 (128, 41, 'elvira_by_nkstudiodigital_dewualq-pre (COVER).jpg', 'CommissionIsNowOpen', '\r\nHi guys,\r\n\r\nIf u want to have your dream heroes, original characters, NFTs come true in high-quality with a good price! Don\'t hesitate to contact us via email: nkstudiodigital@gmail.com\r\n\r\nThe link below contains all information about our prices and rules of taking commission:\r\n\r\n    https://www.artstation.com/blogs/nk_art/6L0V/nk-studio-digital-commission-and-status-2022\r\n\r\nWe\'re opening for commission, there are some references of our commission pieces below:\r\n\r\n    https://www.deviantart.com/nkstudiodigital/art/Grandessa-Shantalla-Karinor-874656017\r\n\r\n    https://www.deviantart.com/nkstudiodigital/art/Glorious-836880199\r\n\r\n    https://www.deviantart.com/nkstudiodigital/art/Thorn-897618046\r\n\r\nIf you like my style, you can look for more of my illustrations in here:\r\n\r\n    https://www.deviantart.com/nkstudiodigital\r\n\r\n    https://www.artstation.com/nk_art\r\n\r\n    https://www.instagram.com/nk.studiodigital/\r\n\r\nThanks a lot for passing by and have a good day!', 0, 0, 'everyone'),
-(1, 45, 'kalachuchi.png', 'kalachuchi', 'NVM', 0, 2, 'everyone'),
-(1, 48, 'luna.png', 'Luna', 'this artwork is special for me', 0, 7, 'everyone'),
-(2, 51, '106794623_969803723473386_304610471820742651_n.jpg', 'Kaori', 'just a test', 0, 3, 'everyone');
+(1, 45, 'kalachuchi.png', 'kalachuchi', 'NVM', 0, 0, 'everyone'),
+(1, 48, 'luna.png', 'Luna', 'this artwork is special for me', 0, 0, 'everyone'),
+(2, 51, '106794623_969803723473386_304610471820742651_n.jpg', 'Kaori', 'just a test', 0, 0, 'everyone');
 
 -- --------------------------------------------------------
 
@@ -122,26 +102,6 @@ CREATE TABLE `abyss_post_comment` (
   `post_id` int(100) NOT NULL,
   `comment` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `abyss_post_comment`
---
-
-INSERT INTO `abyss_post_comment` (`commentId`, `id`, `post_id`, `comment`) VALUES
-(69, 1, 45, 'hi\n'),
-(70, 1, 45, 'nice\n'),
-(71, 1, 51, 'hello\n'),
-(72, 2, 51, 'hi\n'),
-(73, 2, 35, 'nice \n'),
-(74, 1, 35, 'nice too\n'),
-(75, 1, 48, 'hi\n'),
-(76, 1, 48, 'hello\n'),
-(77, 1, 48, 'A\n'),
-(78, 1, 48, '2\n'),
-(79, 1, 48, 'A\n'),
-(80, 1, 48, 'hi\n'),
-(81, 1, 51, 'he\n'),
-(82, 1, 48, 'qqq\n');
 
 -- --------------------------------------------------------
 
@@ -170,8 +130,8 @@ CREATE TABLE `abyss_user` (
 --
 
 INSERT INTO `abyss_user` (`id`, `username`, `email`, `password`, `profileImage`, `coverProfile`, `checkArtist`, `birthDay`, `Level`, `Location`, `Specialty`, `Pronouns`, `Status`) VALUES
-(1, 'supremood', 'lappay.john@gmail.com', 'supremo25', '86971185_2680674678717824_4104365190093471744_n.jpg', 'meteor_shower_by_t1na_denymcu-fullview.jpg', 'Artist', '2001-10-25', 'Student', 'Philippines', 'Artisan Crafts', 'He/Him', 'online'),
-(2, 'b1ngu', 'b1ngu@gmail.com', 'b1nguMachaLover', '6a391e2d188f5c4fe8973c248bb5e805.jpg', 'meteor_shower_by_t1na_denymcu-fullview.jpg', 'Artist', '2001-10-25', 'Student', 'Philippines', 'Traditional Art', 'She/Her', 'online'),
+(1, 'supremood', 'lappay.john@gmail.com', 'supremo25', '116595643_3074563835995571_346927649058464295_o.jpg', 'meteor_shower_by_t1na_denymcu-fullview.jpg', 'Artist', '2001-10-25', 'Student', 'Philippines', 'Artisan Crafts', 'He/Him', 'online'),
+(2, 'b1ngu', 'b1ngu@gmail.com', 'b1nguMachaLover', '6a391e2d188f5c4fe8973c248bb5e805.jpg', 'meteor_shower_by_t1na_denymcu-fullview.jpg', 'Artist', '2001-10-25', 'Student', 'Philippines', 'Traditional Art', 'She/Her', 'offline'),
 (3, 'Laghrian', 'Laghrian@gmail.com', 'supremo25', 'avatar.png', 'sisu_bg-min.png', '', '', '', '', '', '', 'offline'),
 (4, 'tigaer', 'tigaer@gmail.com', 'tigaertigaer', 'avatar.png', 'sisu_bg-min.png', '', '', '', '', '', '', 'offline'),
 (5, 'PSK-Projekt4D', 'PSK-Projekt4D@gmail.com', 'PSK-Projekt4D', 'avatar.png', 'sisu_bg-min.png', '', '', '', '', '', '', 'offline'),
@@ -336,7 +296,10 @@ INSERT INTO `abyss_watcher` (`id`, `userID`, `watchId`) VALUES
 (26, 2, 20),
 (27, 2, 26),
 (28, 2, 38),
-(29, 2, 19);
+(29, 2, 19),
+(30, 6, 2),
+(52, 2, 1),
+(53, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -368,13 +331,13 @@ INSERT INTO `art_abyssals` (`id`, `art_id`, `abyssal_art`, `title`, `description
 (5, 47, '_daz3d____cyberpunk_by_psk_projekt4d_detrnxj-pre.jpg', '[DAZ3D]- Cyberpunk', 'Finally, after many months I have a new wallpaper on my smartphone, that looks really cool on it. :happybounce: \r\nOtherwise, I didn\'t think much of it, just wanted to combine the lady with the bike and somehow it came out.Sweating a little...  In the background is a police operation to bring more lights and life into the picture. Actually there was a police robot, but then I removed it again. The same is true for the light cone of the drone, which you can\'t really see anymore.:| (Blank Stare)', '3D', 'Everyone', 0, 2, 'January 29, 2022', NULL),
 (6, 48, 'autumn_by_pjacubinas_depeguu-pre.jpg', 'Autumn', 'I personally can\'t wait to have some cooler weather again. This 100+ degrees is getting on my nerves....\r\n\r\nSet up and rendered in Daz3D, Composited and Color Corrected in PS CC\r\n\r\nI hope you enjoy it and thanks for looking!', '3D', 'Everyone', 0, 3, 'January 29, 2022', NULL),
 (97, 50, 'portrait_jisoo_blackpink_by_tinytruc_dc5edj6-fullview.jpg', 'Portrait Jisoo Blackpink', '\"My page:\r\nDevianart: tinytruc.deviantart.com/\r\nIG: www.instagram.com/tinytruc_art\r\nArtStation: www.artstation.com/tinytruc\r\nFB: www.fb.com/tinytrucART/\r\nBehance: www.behance.net/tinytruc\r\nTwitter: twitter.com/TinyThanhTruc\r\nYoutube: www.youtube.com/tinytrucart\r\nEmail: TinyTrucART@gmail.com\"', 'Digital art', 'Everyone', 0, 0, 'January 30, 2022', NULL),
-(22, 55, 'lily_demon_oc_ayame_by_gisakura.jpg', 'Lily Demon - OC Ayame', '\r\nCOMMISSIONS OPEN \r\n\r\n\r\nTwitter  Instagram \r\n\r\n\r\n First drawing made with the ipad! Half done in procreate and the other half in clip studio xd And as a model my precious Ayame ', 'Anime and Manga', 'Everyone', 0, 1, 'January 30, 2022', NULL),
+(22, 55, 'lily_demon_oc_ayame_by_gisakura.jpg', 'Lily Demon - OC Ayame', '\r\nCOMMISSIONS OPEN \r\n\r\n\r\nTwitter  Instagram \r\n\r\n\r\n First drawing made with the ipad! Half done in procreate and the other half in clip studio xd And as a model my precious Ayame ', 'Anime and Manga', 'Everyone', 0, 0, 'January 30, 2022', NULL),
 (25, 57, '_prize__art_raffle_by_juukah.png', '[Prize] Art raffle', '\r\nArt raffle prize in my twitter ! \r\n\r\n\r\n─────────────────────────────────────────────\r\nCommission info (open)\r\n\r\nJuukah\'s Pixiv / twitter / Youtube  / Toy House ', 'Anime and Manga', 'Everyone', 0, 0, 'January 30, 2022', NULL),
 (21, 59, 'sakura_kinomoto_and_kerberos_by_gigiedt.jpg', 'Sakura Kinomomoto and Kerberos', '\r\nFanart from Card Captor Sakura I made on twitch as twitch subgoal\r\n\r\nIf you want to watch me when I\'m live subscribe to my channel:\r\nwww.twitch.tv/eudetenis', 'Anime and Manga', 'Everyone', 9, 2, 'January 30, 2022', NULL),
-(20, 62, 'autum_evening_by_fawnpetals.png', 'Autumn Evening', 'Gift for Fangeddoe on Twitter!', 'Anthro', 'Everyone', 4, 1, 'January 30, 2022', NULL),
+(20, 62, 'autum_evening_by_fawnpetals.png', 'Autumn Evening', 'Gift for Fangeddoe on Twitter!', 'Anthro', 'Everyone', 0, 0, 'January 30, 2022', NULL),
 (26, 92, 'megumi_by_mizorebusujima.jpg', 'Megumi', '\r\nCharacter  Megumi \r\nArt © @Lau._.Art / MizoreBusujima \r\nTools:   Tablet Wacom Cintiq 16 | CLIP STUDIO PAINT\r\nTime taken: ??\r\n\r\nDrawing of my OC and Live2d Megumi! \r\n\r\nwww.teepublic.com/user/lau_art\r\n\r\n\r\nThank you so much for all the support! It means a lot to me! <3\r\n\r\nFeel free to follow me! ♪\r\n\r\nTwitter:  twitter.com/Lau_Art01\r\nInstagram:  www.instagram.com/lau._.art/\r\nPixiv: www.pixiv.net/member.php?id=33…\r\nTwitch: www.twitch.tv/lauart \r\n\r\nPlease do not use, trace, alter, copy, claim, reupload as your own without my permission.\r\n', 'Anime and Manga', 'Everyone', 14, 2, 'January 30, 2022', NULL),
-(38, 99, '_cm__kristal_by_solchan.jpg', '[CM] Kristal', 'Commission for :iconshadastorm120: \r\nHer OC Kristal Heart \r\n\r\n---------------------------------------------------\r\nMy other art sites:\r\n\r\n Twitter\r\n Instagram\r\n Facebook', 'Anime and Manga', 'Everyone', 0, 1, 'January 30, 2022', NULL),
-(19, 100, 'zhong_li_by_ereyz.jpg', 'Zhong Li', 'Sun    \r\n--------------------------------------------------\r\nAttention (deviantart icon) DO NOT REPOST\r\n\r\nDiluc - Genshin Impact by Ereyz Childe - Genshin Impact by Ereyz Kaeya - Genshin by Ereyz Zhongli - Genshin by Ereyz\r\n\r\n:fire:  High-res PNG, steps tutorial and layered PSD on my Patreon.com/Ereyz\r\n:fire:  PRINTS Redbubble\r\n:fire:  Old Patreon rewards on Gumroad\r\n\r\nPatreon (2017, round) Icon mid  PATREON REWARDS \r\n\r\nlittle star Exclusive Sketches & WIPs little star High quality Images little star Step by Step Shots little star\r\nlittle star Photoshop PSDs with layers  little star Different variations of some illustrations little star', 'Anime and Manga', 'Everyone', 1, 1, 'January 30, 2022', NULL),
+(38, 99, '_cm__kristal_by_solchan.jpg', '[CM] Kristal', 'Commission for :iconshadastorm120: \r\nHer OC Kristal Heart \r\n\r\n---------------------------------------------------\r\nMy other art sites:\r\n\r\n Twitter\r\n Instagram\r\n Facebook', 'Anime and Manga', 'Everyone', 0, 0, 'January 30, 2022', NULL),
+(19, 100, 'zhong_li_by_ereyz.jpg', 'Zhong Li', 'Sun    \r\n--------------------------------------------------\r\nAttention (deviantart icon) DO NOT REPOST\r\n\r\nDiluc - Genshin Impact by Ereyz Childe - Genshin Impact by Ereyz Kaeya - Genshin by Ereyz Zhongli - Genshin by Ereyz\r\n\r\n:fire:  High-res PNG, steps tutorial and layered PSD on my Patreon.com/Ereyz\r\n:fire:  PRINTS Redbubble\r\n:fire:  Old Patreon rewards on Gumroad\r\n\r\nPatreon (2017, round) Icon mid  PATREON REWARDS \r\n\r\nlittle star Exclusive Sketches & WIPs little star High quality Images little star Step by Step Shots little star\r\nlittle star Photoshop PSDs with layers  little star Different variations of some illustrations little star', 'Anime and Manga', 'Everyone', 0, 0, 'January 30, 2022', NULL),
 (27, 101, 'commission__nightwind87_by_nashiepotato.jpg', 'COMMISSION: NightWind87', '\r\n[  I l l u s t r a t i o n  ]\r\nR A O U L\r\n\r\n\r\n        It felt like I was speedrunning the rendering of this one --- it was a such a bliss to color him that I don\'t even notice the time pass :iconureshiiplz:. another bishie for NightWind87~ thanks so much for this opportunity to draw your wonderful bois :iconlazepoolplz  \r\n\r\n\r\n\r\n[ credits ]\r\nart © :iconnashiepotato:\r\ncharacter belongs to © :iconnightwind87:\r\n\r\n█ Regular Commissions [OPEN] \r\n\r\nI am open for anime-styled illustrations ~ If the slots are once again filled \'ve put up a waitlist for those who still want to order: trello.com/b/WY2cL53W \r\n \r\ncommission journal: \r\nwww.deviantart.com/nashiepotat…\r\n\r\nthanks for the interest! ≧◠‿◠≦\r\n\r\n█ Prices :\r\n\r\n● chibi = 18 USD\r\n● halfbody = 30 USD\r\n● fullbody = 60 USD \r\n\r\n▨ prices for character sheets and full illustrations will be discussed separately.\r\n\r\n█ Commission Info & Samples : commission info & TOS: nashiepotato.carrd.co/', 'Anime and Manga', 'Everyone', 0, 0, 'January 30, 2022', NULL),
 (30, 102, 'koi_in_sword_by_pinlin_.jpg', 'Koi In Sword', '\r\nMy OC Sachiro with Koi fish and his katana. I planned to animate the fish but it turns harder than I thought in Blender. Maybe switching back to after effects.\r\nI had this idea for a while with glass swords. It would be cool if something is moving inside.\r\n\r\nHe is from my visual novel \"Dark Nights\" pinlin.itch.io/darknights\r\n\r\nArt & Character Pinlin \r\nFind me on:@ Facebook @ Youtube @ Twitter @ Pixiv @ Instagram \r\n', 'Anime and Manga', 'Everyone', 0, 0, 'January 30, 2022', NULL),
 (39, 109, 'ajani__the_greathearted_by_thevictoradame.jpg', 'Ajani, The Greathearted', '\r\n\r\nAjani, the Greathearted\r\nAD: Taylor Ingvarsson. Magic the Gathering, copyright WOTC 2021\r\n\r\nThis was another fun and challenging art to work on, especially me being colorblind and all the greens/reds in the image. \r\nI think the white and green palette works really well so I wanted to try it out here, especially with Ajani being white-green mana aligned.', 'Anthro', 'Everyone', 0, 0, 'January 30, 2022', NULL),
@@ -448,7 +411,9 @@ INSERT INTO `messages` (`msg_id`, `incoming_msg_id`, `outgoing_msg_id`, `msg`) V
 (114, 2, 1, 'HELLO\n'),
 (115, 1, 2, 'hi\n'),
 (116, 27, 2, 'hi\n'),
-(117, 39, 2, 'hello\n');
+(117, 39, 2, 'hello\n'),
+(118, 3, 1, 'hi\n'),
+(119, 2, 1, 'hello');
 
 -- --------------------------------------------------------
 
@@ -591,7 +556,7 @@ ALTER TABLE `abyss_post`
 -- AUTO_INCREMENT for table `abyss_post_comment`
 --
 ALTER TABLE `abyss_post_comment`
-  MODIFY `commentId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `commentId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `abyss_user`
@@ -603,7 +568,7 @@ ALTER TABLE `abyss_user`
 -- AUTO_INCREMENT for table `abyss_watcher`
 --
 ALTER TABLE `abyss_watcher`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `art_abyssals`
@@ -615,7 +580,7 @@ ALTER TABLE `art_abyssals`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 
 --
 -- AUTO_INCREMENT for table `test_img`

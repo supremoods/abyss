@@ -178,7 +178,7 @@
               </div>
               <div class="chat_input">
                 <textarea name="messageContent" type="text" id="messageContent" cols="30" rows="1" placeholder="Type a message..."></textarea>
-                <i class='bx bxl-telegram' id="sendBtn"></i>
+                <i class='bx bxl-telegram' id="sendBtn" onclick="sendMessage()"></i>
               </div>
             </div>
 <?php

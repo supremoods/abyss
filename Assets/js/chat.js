@@ -33,7 +33,17 @@ $("#messageContent").keyup(function (event) {
     }
   });
   
-
+function sendMessage(){
+  const chat_convo = document.querySelector('#chat_convo');
+        var userID = chat_convo.dataset.id;
+          var message = $("textarea#messageContent").val();
+          $(".space").load("./phpFunc/sendMessage.php", {
+            outgoing_message: message,
+            userID: userID,
+          });
+          $("textarea#messageContent").val("");
+          scrollToBottom();
+}
 function getCaret(el) {
     if (el.selectionStart) {
         return el.selectionStart;

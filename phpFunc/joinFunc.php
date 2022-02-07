@@ -32,8 +32,6 @@
                 ';
             }
             
-           
-
         }else{
             echo "all fields required!";
         }
