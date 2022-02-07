@@ -72,11 +72,24 @@
                                 </div>
                             </div>
 
-                            <div class="users-info">
+                            <div id = "users-info" class="users-info">
                                 <h1 id="user-name">
                                     <?php echo $fetch['username'] ?>
                                 </h1>
-                                <h1 id="user-status">0 Watchers | 0 Abys </h1>
+                                <?php
+                                    $userID = $fetch['id'];
+                                    $watcherCount ="SELECT COUNT(watchId) AS watchers FROM abyss_watcher LEFT JOIN abyss_user ON abyss_user.id = abyss_watcher.userID WHERE watchId = $userID ";
+                                    $sql = mysqli_query($conn,$watcherCount);
+                                    $fetchCount = mysqli_fetch_array($sql);
+
+                                    $AbyssCount ="SELECT COUNT(title) AS abyssals FROM art_abyssals WHERE id = 1";
+                                    $sql = mysqli_query($conn,$AbyssCount);
+                                    $fetchCountAbyss = mysqli_fetch_array($sql);                   
+                                ?>
+                                
+                                <h1 id="user-status">
+                                    <?php echo $fetchCount['watchers']?> Watchers | <?php echo $fetchCountAbyss['abyssals']?> Abyss
+                                </h1>
                             </div>
                         </div>
                     </div>
@@ -179,6 +192,52 @@
 
 
 
+                                </div>
+                                <div id="watching-box" class="watching-box">
+                                    <h1>Watching</h1>
+                                    <div class="list-watching">
+                                        <?php
+                                            $sql = mysqli_query($conn,"SELECT * FROM abyss_watcher LEFT JOIN abyss_user ON abyss_user.id = abyss_watcher.watchId WHERE userID = $id") or die (mysqli_error());
+                                           
+                                        ?>
+
+                                        <?php
+                                            if(mysqli_num_rows($sql) > 0){
+                                                while($fetchList = mysqli_fetch_array($sql)){
+                                        ?>
+                                            <div class="usersWatched" data-username="<?php echo $fetchList['username'] ?>" onclick="userProfile(this.dataset.username)">
+                                                <img class="profileAvatar" src="./Assets/img/profile/<?php echo $fetchList['profileImage'] ?>" alt="">
+                                                <h1><?php echo $fetchList['username'] ?></h1>
+                                            </div>
+                                        <?php 
+                                                }
+                                            }
+                                        
+                                        ?>
+                                    </div>
+                                </div>
+                                <div id="watcher-box" class="watcher-box">
+                                    <h1>Watchers</h1>
+                                    <div id="list-watcher" class="list-watcher">
+                                        <?php
+                                            $sql = mysqli_query($conn,"SELECT * FROM abyss_watcher LEFT JOIN abyss_user ON abyss_user.id = abyss_watcher.userID WHERE watchId = $id") or die (mysqli_error());
+                                           
+                                        ?>
+
+                                        <?php
+                                            if(mysqli_num_rows($sql) > 0){
+                                                while($fetchList = mysqli_fetch_array($sql)){
+                                        ?>
+                                            <div class="usersWatcher" data-username="<?php echo $fetchList['username'] ?>" onclick="userProfile(this.dataset.username)">
+                                                <img class="profileAvatar" src="./Assets/img/profile/<?php echo $fetchList['profileImage'] ?>" alt="">
+                                                <h1><?php echo $fetchList['username'] ?></h1>
+                                            </div>
+                                        <?php 
+                                                }
+                                            }
+                                        
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
 

@@ -1,9 +1,14 @@
 <?php
-
-    $id = (int) $_SESSION['id'];
-    $query = "SELECT * FROM abyss_post  WHERE id = $id";
+    include('phpFunc/dbConnect.php');
+    $query = "SELECT * FROM abyss_post ORDER BY count_comment ASC";
 
     $cmd = mysqli_query($conn,$query); 
+
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    $id = (int) $_SESSION['id'];
 
     $queryProfile = "SELECT * FROM abyss_user WHERE id = $id";
     $cmdProfile = mysqli_query($conn,$queryProfile); 
@@ -106,15 +111,5 @@
 </div>
 <?php
         }
-    }else{
-
-        echo'
-        <div class="post-data">
-            <div class="no-post">
-                <h1>No Posts Yet</h1>
-                <p>Tell abyssians the story behind your art with a share your latest news with the community with a status update </p>
-            </div>
-        </div>
-        ';
     }
 ?>

@@ -57,49 +57,9 @@
 
             <!-- main content -->
             <div class="main-content">
-                <div class="loadCoverImage">
-                    <div class="heading-container"
-                        style="background-image: linear-gradient(rgba(248, 122, 221, 0.151), rgba(18, 12, 27, 1)),url(Assets/img/coverProfile/<?php echo $fetch['coverProfile'] ?>)">
-                        <div class="profile-name">
-                            <div class="user-icon">
-                                <div class="user-container">
-                                    <img src="./Assets/img/profile/<?php echo $fetch['profileImage'] ?>" alt="">
-                                </div>
-                                <div class="upload-profile" onclick="modalProfile()">
-                                    <i class="bx bx-refresh"></i>
-                                    <span>change</span>
-                                </div>
-                            </div>
-
-                            <div class="users-info">
-                                <h1 id="user-name">
-                                    <?php echo $fetch['username'] ?>
-                                </h1>
-                                <h1 id="user-status">0 Watchers | 1 Page view | 0 Abys </h1>
-                            </div>
-                        </div>
-
-                        <div class="profile-btn" onclick="modalCoverImage()">
-                            <a href="#" class="btn">
-                                <i class="bx bx-image-add"></i>
-                                <h1 id="cover-text">ADD COVER IMAGE</h1>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="navigation">
-                    <div class="nav-list">
-                        <ul>
-                            <li><a href="profile.php">Home</a></li>
-                            <li><a href="gallery.php">Gallery</a></li>
-                            <li><a href="favorites.php">Favourites</a></li>
-                            <li><a href="profile-post.php">Posts</a></li>
-                            <li><a href="#">About</a></li>
-                        </ul>
-                    </div>
-                </div>
+                <?php
+                    include_once('headerProfile.php');
+                ?>
                 <?php
                     $query = "SELECT * FROM art_abyssals WHERE id = $id AND featured_gallery = 'feat'";
                     $cmd = mysqli_query($conn,$query); 
@@ -183,6 +143,52 @@
 
 
 
+                                </div>
+                                <div class="watching-box">
+                                    <h1>Watching</h1>
+                                    <div class="list-watching">
+                                        <?php
+                                            $sql = mysqli_query($conn,"SELECT * FROM abyss_watcher LEFT JOIN abyss_user ON abyss_user.id = abyss_watcher.watchId WHERE userID = $id") or die (mysqli_error());
+                                           
+                                        ?>
+
+                                        <?php
+                                            if(mysqli_num_rows($sql) > 0){
+                                                while($fetchList = mysqli_fetch_array($sql)){
+                                        ?>
+                                            <div class="usersWatched" data-username="<?php echo $fetchList['username'] ?>" onclick="userProfile(this.dataset.username)">
+                                                <img class="profileAvatar" src="./Assets/img/profile/<?php echo $fetchList['profileImage'] ?>" alt="">
+                                                <h1><?php echo $fetchList['username'] ?></h1>
+                                            </div>
+                                        <?php 
+                                                }
+                                            }
+                                        
+                                        ?>
+                                    </div>
+                                </div>
+                                <div class="watcher-box">
+                                    <h1>Watchers</h1>
+                                    <div class="list-watcher">
+                                        <?php
+                                            $sql = mysqli_query($conn,"SELECT * FROM abyss_watcher LEFT JOIN abyss_user ON abyss_user.id = abyss_watcher.userID WHERE watchId = $id") or die (mysqli_error());
+                                           
+                                        ?>
+
+                                        <?php
+                                            if(mysqli_num_rows($sql) > 0){
+                                                while($fetchList = mysqli_fetch_array($sql)){
+                                        ?>
+                                            <div class="usersWatcher" data-username="<?php echo $fetchList['username'] ?>" onclick="userProfile(this.dataset.username)">
+                                                <img class="profileAvatar" src="./Assets/img/profile/<?php echo $fetchList['profileImage'] ?>" alt="">
+                                                <h1><?php echo $fetchList['username'] ?></h1>
+                                            </div>
+                                        <?php 
+                                                }
+                                            }
+                                        
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
 

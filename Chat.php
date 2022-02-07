@@ -29,9 +29,7 @@
       $chatUser = $_GET['userID'];
     }else{
       $chatUser =0;
-      echo "
-        
-      ";
+
     }
    
     $query = "SELECT * FROM abyss_user WHERE id = $chatUser";
@@ -73,7 +71,10 @@
               <div class="left-side">
                 <h1>Chat</h1>
               </div>
-              <div class="right-side">
+              <div class="inputUser">
+                <input type="text" name="" id="userChat" placeholder="Search User">
+              </div>
+              <div class="right-side" onclick="showInputUser()">
                 <i class='bx bxs-edit' ></i>
               </div>
             </header> 
@@ -92,10 +93,56 @@
           </div>
           <div class="chat-convo-container">
     
-            <div class="img-chat" >
-              <img src="Assets/img/undraw_fresh_notification_re_whq4.svg" alt="" srcset="">
-            </div>
+          <div class="img-chat">
+            <img src="Assets/img/undraw_fresh_notification_re_whq4.svg" alt="" srcset="">
+        </div>
+<?php
+  if($chatUser == 0){
+    ?>
+    <div class="img-chat active" >
+      <img src="Assets/img/undraw_fresh_notification_re_whq4.svg" alt="" srcset="">
+    </div>
+    <div class="chat-convo-wrapper active">
+              <div id="chat_convo_header" class="chat_convo_header">
+                <div id="loadStatus" class="loadStatus">
+                  <?php 
+                    if($fetch['Status'] == "online"){
+                    ?>
+                    <div class="chat_name active">
+                      <img src="Assets/img/profile/<?php echo $fetch['profileImage'] ?>" alt="">
+                      <div>
+                        <p><?php echo $fetch['username'] ?></p>
+                        
+                        <p><?php echo $fetch['Status'] ?></p>
+                      </div>
+                    </div>
+                  <?php  } if($fetch['Status'] == "offline"){?>
+                    <div class="chat_name">
+                      <img src="Assets/img/profile/<?php echo $fetch['profileImage'] ?>" alt="">
+                      <div>
+                        <p><?php echo $fetch['username'] ?></p>
+                        
+                        <p><?php echo $fetch['Status'] ?></p>
+                      </div>
+                    </div>
+                  <?php  }?>
+                </div>
 
+
+                <div class="convo_close" onclick="closeBtn()">
+                  <i class='bx bx-x' ></i>
+                </div>
+              </div>
+              <div id="chat_convo" class="chat_convo" data-id="<?php echo $fetch['id'] ?>">
+              </div>
+              <div class="chat_input">
+                <textarea name="messageContent" type="text" id="messageContent" cols="30" rows="1" placeholder="Type a message..."></textarea>
+                <i class='bx bxl-telegram' id="sendBtn"></i>
+              </div>
+            </div>
+ <?php } else{
+ ?>
+ 
             <div class="chat-convo-wrapper">
               <div id="chat_convo_header" class="chat_convo_header">
                 <div id="loadStatus" class="loadStatus">
@@ -134,7 +181,9 @@
                 <i class='bx bxl-telegram' id="sendBtn"></i>
               </div>
             </div>
-
+<?php
+}
+?>
           </div>
       </div>
     </main>

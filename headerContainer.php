@@ -24,11 +24,7 @@
                   textsms
               </span>
           </a>
-          <a href="#" class="login-link">
-              <span class="material-icons">
-                  notifications
-              </span>
-          </a>
+
         </div>
         <?php
                 $id = (int) $_SESSION['id'];

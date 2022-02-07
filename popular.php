@@ -13,15 +13,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abyss | Popular</title>
   <link rel="stylesheet" href="Assets/css/root.css" />
-  <link rel="stylesheet" href="Assets/css/popular.css" />
+  <link rel="stylesheet" href="Assets/css/home.css" />
   <link rel="stylesheet" href="Assets/css/modal.css" />
+  <link rel="stylesheet" href="Assets/css/load.css" />
   <link rel="shortcut icon" href="Assets/logo.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
 </head>
-
 
 <body class="body-root">
   <div id="root">
@@ -33,7 +33,7 @@
       <div class="sidebar-container">
         <div class="sidebar">
           <ul>
-            <li class="list active">
+            <li class="list">
               <a href="home.php">
                 <span class="material-icons">home</span>
                 <span class="title">Home</span>
@@ -45,7 +45,7 @@
                 <span class="title">Topics</span>
               </a>
             </li>
-            <li class="list">
+            <li class="list active">
                 <a href="popular.php">
                 <span class="material-icons">whatshot</span>
                 <span class="title">Popular</span>
@@ -65,15 +65,15 @@
             <div class="banner-wrapper">
               <header class="banner">
                 <div>
-                  <h1>Popular</h1>
+                  <h1>Home</h1>
                 </div>
                 <div class="banner-links">
                     <div class="abyssals-link">
-                        <a href="home.php">Abyssals</a>
+                        <a href="popular.php">Abyssals</a>
                     </div>
 
                     <div class="posts-link">
-                        <a href="post.php" class="links">Posts</a>
+                        <a href="popularPost.php" class="links">Posts</a>
                     </div>
                 </div>
               </header>
@@ -87,193 +87,15 @@
 
           </div>
 
+          <!-- topics -->
+
          
           <!-- gallery -->
           <div class="gallery">
             <ul class="gallery-wrapper">
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img1.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Nightmare</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by AlvaroCardozoW</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img2.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>The war is over, my knight. You can go home.</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by AizelKon</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img3.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Portrait 03</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by NIRASATAN</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img4.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>MATRIX 4 - HARBOR</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by Leifheanzo</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img5.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Look At Me</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by ZialerZ</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img6.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Shou</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by ZialerZ</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img7.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Cosmic emptiness</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by Gabrix89</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img1.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Nightmare</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by AlvaroCardozoW</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img2.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>The war is over, my knight. You can go home.</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by AizelKon</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img3.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Portrait 03</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by NIRASATAN</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img4.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>MATRIX 4 - HARBOR</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by Leifheanzo</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img5.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Look At Me</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by ZialerZ</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img6.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Shou</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by ZialerZ</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              <li class="gallery-item" onclick="artdetails()">
-                <img src="assets/img/arts/img7.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h3>Cosmic emptiness</h3>
-                    <p class="highlight">20<span class="material-icons">chat_bubble_outline</span></p>
-                  </div>
-                  <div>
-                    <p>by Gabrix89</p>
-                    <p class="highlight" >539<span class="material-icons">star_outline</span></p>
-                  </div>
-                </div>
-              </li>
-              
+              <?php
+                include('phpFunc/loadAbyssalsPopular.php');
+              ?>
             </ul>
           </div>
   
@@ -382,23 +204,29 @@
                     <option value="only_me">Only me</option>
                   </select>
                 </div>
-                <div>
-                  <p>Category</p>                  
-                  <select id="category" name="category">
-                    <option value="3D">3D</option>
-                    <option value="Adoptables">Adoptables</option>
-                    <option value="Anime and Manga">Anime and Manga</option>
-                    <option value="Anthro">Anthro</option>
-                    <option value="Comics">Comics</option>
-                    <option value="Digital Art">Digital Art</option>
-                    <option value="Drawings and Paintings">Drawings and Paintings</option>
-                    <option value="Fan Art">Fan Art</option>
-                    <option value="Game Art">Game Art</option>
-                    <option value="Science Fiction">Science Fiction</option>
-                    <option value="Sculpture">Sculpture</option>
-                    <option value="Traditional Arts">Traditional Arts</option>
-                    <option value="Tutorials">Tutorials</option>
-                  </select>
+                <div class = "headerInput">
+                  <div>
+                    <p>Category</p>                  
+                    <select id="category" name="category">
+                      <option value="3D">3D</option>
+                      <option value="Adoptables">Adoptables</option>
+                      <option value="Anime and Manga">Anime and Manga</option>
+                      <option value="Anthro">Anthro</option>
+                      <option value="Comics">Comics</option>
+                      <option value="Digital Art">Digital Art</option>
+                      <option value="Drawings and Paintings">Drawings and Paintings</option>
+                      <option value="Fan Art">Fan Art</option>
+                      <option value="Game Art">Game Art</option>
+                      <option value="Science Fiction">Science Fiction</option>
+                      <option value="Sculpture">Sculpture</option>
+                      <option value="Traditional Arts">Traditional Arts</option>
+                      <option value="Tutorials">Tutorials</option>
+                    </select>
+                  </div>
+                  <div class = "featContainer">             
+                    <input type="checkbox" name="featArt" value="feat">
+                    <label for="featArt">Featured</label>
+                  </div>
                 </div>
               </div>
             </div>
@@ -438,11 +266,28 @@
       </form>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <div id="loader">
+        <svg width="140" height="140" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                <line x1="59.9833" y1="140.333" x2="219.978" y2="139" stroke="#7579ff" stroke-width="4"/>
+                <circle cx="60" cy="140" r="5" fill="#7579ff"/>
+                <circle cx="220" cy="139" r="5" fill="#7579ff"/>
+                </g>
+                <path class="circle" d="M109.957 122.655L140 105.309L170.043 122.655V157.345L140 174.691L109.957 157.345V122.655Z" stroke="#7579ff" stroke-width="4"/>
+                <circle class="circle" cx="140" cy="140" r="13" stroke="#f5d77b" stroke-width="4"/>
+                <circle class="circle" cx="110" cy="192" r="13" stroke="#f7a78f" stroke-width="4"/>
+                <circle class="circle circle_s" cx="85" cy="232" r="8" stroke="#7579ff" stroke-width="4"/>
+                <circle class="circle" cx="170" cy="88" r="13" stroke="#7579ff" stroke-width="4"/>
+                <circle class="circle circle_s" cx="110" cy="192" r="5" fill="#f7a78f"/>
+                <circle class="circle circle_s" cx="185" cy="61" r="5" fill="#f5d77b"/>
+        </svg>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="Assets/js/script.js"></script>
+  <script src="Assets/js/search.js"></script>
   <script src="Assets/js/search.js"></script>
 </body>
 

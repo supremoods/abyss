@@ -9,11 +9,11 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abyss | Topics</title>
-  <link rel="stylesheet" href="Assets/css/root.css" />
-  <link rel="stylesheet" href="Assets/css/topic.css" />
-  <link rel="stylesheet" href="Assets/css/modal.css" />
+  <title>Abyss | Popular Posts</title>
   <link rel="shortcut icon" href="Assets/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="Assets/css/root.css" />
+  <link rel="stylesheet" href="Assets/css/posts.css" />
+  <link rel="stylesheet" href="Assets/css/modal.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -24,26 +24,24 @@
 <body class="body-root">
   <div id="root">
     <?php include_once('headerContainer.php');?>
-    
 
     <main class="container">
-      <!-- sidebar navigation -->
       <div class="sidebar-container">
         <div class="sidebar">
           <ul>
-            <li class="list ">
+            <li class="list">
               <a href="home.php">
                 <span class="material-icons">home</span>
                 <span class="title">Home</span>
               </a>
             </li>
-            <li class="list active">
+            <li class="list">
               <a href="topic.php">
                 <span class="material-icons">category</span>
                 <span class="title">Topics</span>
               </a>
             </li>
-            <li class="list">
+            <li class="list active">
                 <a href="popular.php">
                 <span class="material-icons">whatshot</span>
                 <span class="title">Popular</span>
@@ -53,19 +51,23 @@
         </div>
       </div>
 
-      <!-- main content -->
       <div class="main-content">
-
-        <div class="gallery-section">
-
-          <!-- banner -->
+        <div class="posts-section">
           <div class="banner-container">
             <div class="banner-wrapper">
               <header class="banner">
                 <div>
-                  <h1>Topics</h1>
+                  <h1>Home</h1>
                 </div>
-                
+                <div class="banner-links">
+                    <div class="abyssals-link">
+                        <a href="popular.php">Abyssals</a>
+                    </div>
+
+                    <div class="posts-link">
+                        <a href="popularPostData.php" class="links">Posts</a>
+                    </div>              
+                </div>
               </header>
             </div>
           </div>
@@ -77,195 +79,124 @@
 
           </div>
 
-          <!-- topics -->
-          <!-- carousel -->
-          <section class="teams" id="teams">
-            <div class="max-width">
-                <h2 class="title">Explore <span><a href="http://">Topics</a></span></h2>
-                <div class="carousel owl-carousel">
-                    <div class="card"  data-id="Digital Art" onclick="topicGallery(this.dataset.id)">
-                        <div class="box">
-                            <img src="assets/img/topics/digital art.jpg" alt="" srcset="">
-                            <div class="text">Digital Art</div>
+          
+          <div class="posts-container">
+              <div class="posts-wrapper">
+                <div class="posts-content">
+                    <div class="posts-area">
+                      <div class="post-ccx">
+                        <div class="post-cvx-grp">
+                          <div class="profile-img">
+                            <img src="Assets/img/profile/<?php echo $fetch['profileImage'] ?>"
+                            style="height:40px; width:40px;" alt="">
+                          </div>
+                          <div class="post-input">
+                            <input type="text" class="input-post-btn" onclick="statusModal()"placeholder="What's going on, <?php echo $fetch['username'] ?> ?" >
+                          </div>
                         </div>
-                    </div>
-                    <div class="card" data-id="Comics" onclick="topicGallery(this.dataset.id)">
-                        <div class="box">
-                            <img src="assets/img/topics/comics.jpg" alt="" srcset="">
-                            <div class="text">Comics</div>
+                        <div class="post-btn-grp">
+                          <div class="btn-submit">
+                            <button class="btn-status" onclick="statusModal()">STATUS UPDATE</button>
+                          </div>
                         </div>
-                    </div>
-                    <div class="card" data-id="3D" onclick="topicGallery(this.dataset.id)">
-                        <div class="box">
-                            <img src="Assets/img/fantasy.jpg" alt="">
-                            <div class="text">3D</div>
-                        </div>
-                    </div>
-                    <div class="card" data-id="Game Art" onclick="topicGallery(this.dataset.id)">
-                        <div class="box">
-                            <img src="assets/img/topics/fantasy art.jpg" alt="" srcset="">
-                            <div class="text">Game Art</div>
-                        </div>
-                    </div>
-                    <div class="card" data-id="Science Fiction" onclick="topicGallery(this.dataset.id)">
-                        <div class="box">
-                            <img src="assets/img/topics/science fiction.jpg" alt="" srcset="">
-                            <div class="text">Science Fiction</div>
-                        </div>
-                    </div>
-                    <div class="card" data-id="Sculpture" onclick="topicGallery(this.dataset.id)">
-                      <div class="box">
-                      <img src="assets/img/topics/sculpture.jpg" alt="" srcset="">
-                          <div class="text">Sculpture</div>
                       </div>
-                    </div>
-                    <div class="card" data-id="Anthro" onclick="topicGallery(this.dataset.id)">
-                      <div class="box">
-                          <img src="Assets/img/wallpaper.jpg" alt="">
-                          <div class="text">Anthro</div>
-                      </div>
-                    </div>
-                    <div class="card" data-id="Traditional Arts" onclick="topicGallery(this.dataset.id)">
-                      <div class="box">
-                          <img src="Assets/img/Traditional art.jpg" alt="">
-                          <div class="text">Traditional Art</div>
-                      </div>
-                    </div>           
-                </div>
-            </div>
-          </section>
-         
-          <!-- gallery -->
-          <div class="gallery">
-              <div class="text">
-                  <h1>All Topics</h1>
-              </div>
-            <ul class="gallery-wrapper">
-              <li data-id="3D" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
-                <img src="assets/img/topics/3d.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h1>3d</h1>
-                  </div>
-                </div>
-              </li>
-              <li data-id="Adoptables" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
-                <img src="assets/img/topics/adoptables.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h1>Adoptables</h1>
-                  </div>
-                </div>
-              </li>
-              <li data-id="Anime and Manga" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
-                <img src="assets/img/topics/anime.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h1>Anime and Manga</h1>
-                  </div>
-                </div>
-              </li>
-              <li data-id="Anthro" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
-                <img src="assets/img/topics/anthro.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h1>Anthro</h1>
-                  </div>
-                </div>
-              </li>
-              <li data-id="Comics" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
-                <img src="assets/img/topics/comics.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h1>Comics</h1>
-                  </div>
-                </div>
-              </li>
-              <li data-id="Digital Art" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
-                <img src="assets/img/topics/digital art.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h1>Digital Art</h1>
-                  </div>
-                </div>
-              </li>
-              <li data-id="Drawings and Paintings" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
-                <img src="assets/img/topics/drawing and paintings.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h1>Drawing and Paintings</h1>
-                  </div>
-                </div>
-              </li>
-              <li data-id="Fan Art" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
-                <img src="assets/img/topics/fan art.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h1>Fan Art</h1>
-                  </div>
-                </div>
-              </li>
-              <li data-id="Game Art" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
-                <img src="assets/img/topics/fantasy art.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h1>Game Art</h1>
-                  </div>
-                </div>
-              </li>
-              <li data-id="Science Fiction" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
-                <img src="assets/img/topics/science fiction.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h1>Science and Fiction</h1>
-                  </div>
-                </div>
-              </li>
-              <li data-id="Sculpture" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
-                <img src="assets/img/topics/sculpture.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h1>Sculpture</h1>
-                  </div>
-                </div>
-              </li>
-              <li data-id="Traditional Arts" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
-                <img src="assets/img/topics/traditional art.jpg" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h1>Traditional Art</h1>
-                  </div>
-                </div>
-              </li>
-              <li data-id="tutorial" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
-                <img src="assets/img/topics/tutorials.png" alt="" srcset="">
-                <div class="text">
-                  <div>
-                    <h1>Tutorials</h1>
-                  </div>
-                </div>
-              </li>  
-            </ul>
-          </div>
-  
-        </div>
-      </div>  
 
-      <!-- footer section -->
+                        <div id="loadPostdata" class="post-data-wrapper">
+                          <?php
+                            include('popularPostData.php')
+                          ?>
+                        </div>
+
+
+                    </div>
+
+                    <div class="ads-area">
+                      <div class="events">
+                        <img src="assets/img/arts/img7.jpg" >
+                        <div class="events-title">
+                          <h1>Artist Feature: kristyglas</h1>
+                          <p>1 day ago</p>
+                        </div>
+                        <div class="events-btns">
+                          <div class="btns-left">
+                            <div>
+                              <img src="assets/logo.png" style="height: 22px; width:22px;"alt="">
+                              <span>team</span>
+                            </div>
+                          </div>
+                          <div class="btns-right">
+                            <div class="btns-count-comment">
+                              <span class="material-icons">chat_bubble_outline</span>
+                              <p>30</p>
+                            </div>
+                            <div class="btns-count-fav">
+                              <span class="material-icons">star_outline</span>
+                              <p>30</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="events">
+                        <img src="assets/asset_2___journal_header__5__by_team_dexn110-fullview.png" >
+                        <div class="events-title">
+                          <h1>Tutorial: Draw Pikachu with Ry-Spirit</h1>
+                          <p>1 day ago</p>
+                        </div>
+                        <div class="events-btns">
+                          <div class="btns-left">
+                            <div>
+                              <img src="assets/logo.png" style="height: 22px; width:22px;"alt="">
+                              <span>team</span>
+                            </div>
+                          </div>
+                          <div class="btns-right">
+                            <div class="btns-count-comment">
+                              <span class="material-icons">chat_bubble_outline</span>
+                              <p>30</p>
+                            </div>
+                            <div class="btns-count-fav">
+                              <span class="material-icons">star_outline</span>
+                              <p>30</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="events">
+                        <img src="assets/img/arts/img4.jpg" >
+                        <div class="events-title">
+                          <h1>Artist Feature: kristyglas</h1>
+                          <p>3 days ago</p>
+                        </div>
+                      </div>
+                    </div>
+
+                </div>
+              </div>
+          </div>
+
+        </div>
+      </div>
       <footer class="footer">
         <div class="footer-container">
           <div class="row">
             <div id="logo-footer" class="footer-col">
               <ul>
-                <li><a href="home.php"> <img src="Assets/logoWord.png" alt="" style="height: 30px; "></a></li>
+                <li><a href="#"> <img src="Assets/logoWord.png" alt="" style="height: 30px; "></a></li>
               </ul>
             </div>
-         
             <div class="footer-col">
               <ul>
-                <li><a href="developer.php">DEVELOPERS</a></li>
-                <li><a href="TOS.php">TERMS OF SERVICE</a></li>
-                <li><a href="Privacy.php">PRIVACY POLICY</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="#">MEMBERSHIP</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <ul>
+                <li><a href="#">DEVELOPERS</a></li>
+                <li><a href="#">ADVERTISE</a></li>
+                <li><a href="#">TERMS OF SERVICE</a></li>
+                <li><a href="#">PRIVACY POLICY</a></li>
               </ul>
             </div>
           
@@ -279,14 +210,11 @@
             </div>
           </div>
         </div>
-      </footer>
-      
+     </footer>
     </main>
 
-        
- 
-     <!-- modal notif -->
-     <div class="modal-post">
+    <!-- modal notif -->
+    <div class="modal-post">
       <form method="post" enctype="multipart/form-data" id="uploadStatus">
         <div class="modal-post-wrapper">
           <div class="modal-post-header">
@@ -410,12 +338,16 @@
         </div>
       </form>
     </div>
+    
   </div>
+
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="Assets/js/script.js"></script>
+  <script src="Assets/js/search.js"></script>
+  <script src="Assets/js/commentPost.js"></script>
 </body>
 
 </html>
