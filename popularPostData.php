@@ -1,9 +1,14 @@
 <?php
-
-    $id = (int) $_SESSION['id'];
-    $query = "SELECT * FROM abyss_post  WHERE id = $id";
+    include('phpFunc/dbConnect.php');
+    $query = "SELECT * FROM abyss_post ORDER BY count_comment ASC";
 
     $cmd = mysqli_query($conn,$query); 
+
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    $id = (int) $_SESSION['id'];
 
     $queryProfile = "SELECT * FROM abyss_user WHERE id = $id";
     $cmdProfile = mysqli_query($conn,$queryProfile); 
@@ -57,7 +62,7 @@
 
         <div class="counts-right">
             <div class="counts">
-                <div class="count-comment">
+                <div id="<?php echo $fetch['post_id'] ?>"  class="count-comment">
                     <span class="material-icons">chat_bubble</span>
                     <p>
                         <?php echo $fetch['count_comment']?>
@@ -67,13 +72,13 @@
         </div>
     </div>
 
-    <div class="comment-section" data-id="<?php echo $fetch['post_id'] ?>">
+    <div class="comment-section"  data-id="<?php echo $fetch['post_id'] ?>" >
         <div class="comment">
             <div class="profile-img">
                 <img src="./Assets/img/profile/<?php echo $fetchImage['profileImage'] ?>"
                     style="height:50px; width:50px; margin-right:10px;" alt="">
             </div>
-            <div class="input-comment">
+            <div class="input-comment" id="input-comment">
                 <textarea id="userComment_<?php echo $fetch['post_id'] ?>" name="userComment<?php echo $fetch['post_id'] ?>" data-id="<?php echo $fetch['post_id'] ?>"
                     class="input-cmnt" type="text" placeholder="Add a new comment"></textarea>
                 <div id="loadComment_<?php echo $fetch['post_id'] ?>" class="user-comment-wrapper">
@@ -106,15 +111,5 @@
 </div>
 <?php
         }
-    }else{
-
-        echo'
-        <div class="post-data">
-            <div class="no-post">
-                <h1>No Posts Yet</h1>
-                <p>Tell abyssians the story behind your art with a share your latest news with the community with a status update </p>
-            </div>
-        </div>
-        ';
     }
 ?>

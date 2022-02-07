@@ -184,7 +184,8 @@
 
 
                                 </div>
-                                <div class="watching-box box">
+                                <div class="watching-box">
+                                    <h1>Watching</h1>
                                     <div class="list-watching">
                                         <?php
                                             $sql = mysqli_query($conn,"SELECT * FROM abyss_watcher LEFT JOIN abyss_user ON abyss_user.id = abyss_watcher.watchId WHERE userID = $id") or die (mysqli_error());
@@ -196,7 +197,7 @@
                                                 while($fetchList = mysqli_fetch_array($sql)){
                                         ?>
                                             <div class="usersWatched" data-username="<?php echo $fetchList['username'] ?>" onclick="userProfile(this.dataset.username)">
-                                                <img src="./Assets/img/profile/<?php echo $fetchList['profileImage'] ?>" style="height:30px; width:30px;" alt="">
+                                                <img class="profileAvatar" src="./Assets/img/profile/<?php echo $fetchList['profileImage'] ?>" alt="">
                                                 <h1><?php echo $fetchList['username'] ?></h1>
                                             </div>
                                         <?php 
@@ -204,8 +205,29 @@
                                             }
                                         
                                         ?>
+                                    </div>
+                                </div>
+                                <div class="watcher-box">
+                                    <h1>Watchers</h1>
+                                    <div class="list-watcher">
+                                        <?php
+                                            $sql = mysqli_query($conn,"SELECT * FROM abyss_watcher LEFT JOIN abyss_user ON abyss_user.id = abyss_watcher.userID WHERE watchId = $id") or die (mysqli_error());
+                                           
+                                        ?>
 
-
+                                        <?php
+                                            if(mysqli_num_rows($sql) > 0){
+                                                while($fetchList = mysqli_fetch_array($sql)){
+                                        ?>
+                                            <div class="usersWatcher" data-username="<?php echo $fetchList['username'] ?>" onclick="userProfile(this.dataset.username)">
+                                                <img class="profileAvatar" src="./Assets/img/profile/<?php echo $fetchList['profileImage'] ?>" alt="">
+                                                <h1><?php echo $fetchList['username'] ?></h1>
+                                            </div>
+                                        <?php 
+                                                }
+                                            }
+                                        
+                                        ?>
                                     </div>
                                 </div>
                             </div>

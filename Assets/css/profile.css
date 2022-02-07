@@ -565,23 +565,112 @@
     font-weight: 700;
     padding-left:10px;
 }
+.watching-box {
+    border-top: 1px solid rgba(83, 49, 133, 0.755) ;
+    transition: all .2s ease;
+}
 
-.watching-box{
-    
-    background: var(--L8--light);
+.watching-box:hover {
+    border-top: 1px solid rgb(117, 65, 196) ;
+    transition: all .2s ease;
+}
+.watching-box h1{
+    padding:20px 0px;
 }
 .watching-box .list-watching {
-    padding:20px; 
     display: flex;
-    justify-content:center;
+    flex-wrap: wrap;
     align-items:center;
 }
 .watching-box .list-watching .usersWatched{
     display: flex;
     align-items:center;
-    width: 100%;
+    background: var(--L8--light);
+    padding:10px;
+    margin:10px 10px 10px 0px;
+    
+    cursor:pointer;
+    transition: all .2s ease-in-out;
+
+}
+.watching-box .list-watching .usersWatched:hover{
+    -webkit-animation: glow .2s ease-in-out infinite alternate;
+    -moz-animation: glow .2s ease-in-out infinite alternate;
+    animation: glow .2s ease-in-out infinite alternate;
+    transform: scale(1.05);
+    transition: all .2s ease-in-out;
+}
+@-webkit-keyframes glow {
+    from {
+      box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073;
+    }
+    to {
+      box-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #9b0fff;
+    }
+  }
+.watching-box .list-watching .usersWatched .profileAvatar{
+    height: 30px;
+    width: 30px;
 }
 
+.watching-box .list-watching .usersWatched h1{
+    padding:0 10px;
+    
+}
+
+.watcher-box {
+    margin:60px 0;
+    border-top: 1px solid rgba(83, 49, 133, 0.755) ;
+    transition: all .2s ease;
+}
+
+.watcher-box:hover {
+    border-top: 1px solid rgb(117, 65, 196) ;
+    transition: all .2s ease;
+}
+.watcher-box h1{
+    padding:20px 0px;
+}
+.watcher-box .list-watcher {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+}
+.watcher-box .list-watcher .usersWatcher{
+    display: flex;
+    align-items:center;
+    background: var(--L8--light);
+    padding:10px;
+    margin-right:10px;
+    cursor:pointer;
+    transition: all .2s ease-in-out;
+
+}
+.watcher-box .list-watcher .usersWatcher:hover{
+    -webkit-animation: glow .2s ease-in-out infinite alternate;
+    -moz-animation: glow .2s ease-in-out infinite alternate;
+    animation: glow .2s ease-in-out infinite alternate;
+    transform: scale(1.05);
+    transition: all .2s ease-in-out;
+}
+@-webkit-keyframes glow {
+    from {
+      box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073;
+    }
+    to {
+      box-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #9b0fff;
+    }
+  }
+.watcher-box .list-watcher .usersWatcher .profileAvatar{
+    height: 30px;
+    width: 30px;
+}
+
+.watcher-box .list-watcher .usersWatcher h1{
+    padding:0 10px;
+    
+}
 .profile-col .profile-content .left-area .cards .box .feature-gallery-wrapper{
     display: inline-flex;
     flex-wrap: wrap;

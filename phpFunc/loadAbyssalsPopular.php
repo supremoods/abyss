@@ -2,7 +2,7 @@
     include('dbConnect.php');
     
 
-    $query = "SELECT * FROM art_abyssals ORDER BY art_id DESC";
+    $query = "SELECT * FROM art_abyssals ORDER BY count_fav AND count_comment DESC";
 
     $cmd = mysqli_query($conn,$query); 
 

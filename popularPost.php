@@ -1,9 +1,7 @@
 <?php
-  include('phpFunc/session.php');
-  homeSession();
   include('phpFunc/dbConnect.php');
+  include('phpFunc/session.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,25 +9,23 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abyss | Popular</title>
-  <link rel="stylesheet" href="Assets/css/root.css" />
-  <link rel="stylesheet" href="Assets/css/home.css" />
-  <link rel="stylesheet" href="Assets/css/modal.css" />
-  <link rel="stylesheet" href="Assets/css/load.css" />
+  <title>Abyss | Popular Posts</title>
   <link rel="shortcut icon" href="Assets/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="Assets/css/root.css" />
+  <link rel="stylesheet" href="Assets/css/posts.css" />
+  <link rel="stylesheet" href="Assets/css/modal.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
 </head>
+</head>
 
 <body class="body-root">
   <div id="root">
-  <?php include_once('headerContainer.php');?>
-    
+    <?php include_once('headerContainer.php');?>
 
     <main class="container">
-      <!-- sidebar navigation -->
       <div class="sidebar-container">
         <div class="sidebar">
           <ul>
@@ -55,12 +51,8 @@
         </div>
       </div>
 
-      <!-- main content -->
       <div class="main-content">
-
-        <div class="gallery-section">
-
-          <!-- banner -->
+        <div class="posts-section">
           <div class="banner-container">
             <div class="banner-wrapper">
               <header class="banner">
@@ -73,8 +65,8 @@
                     </div>
 
                     <div class="posts-link">
-                        <a href="popularPost.php" class="links">Posts</a>
-                    </div>
+                        <a href="popularPostData.php" class="links">Posts</a>
+                    </div>              
                 </div>
               </header>
             </div>
@@ -87,22 +79,102 @@
 
           </div>
 
-          <!-- topics -->
+          
+          <div class="posts-container">
+              <div class="posts-wrapper">
+                <div class="posts-content">
+                    <div class="posts-area">
+                      <div class="post-ccx">
+                        <div class="post-cvx-grp">
+                          <div class="profile-img">
+                            <span class="material-icons"> account_box </span>
+                          </div>
+                          <div class="post-input">
+                            <input type="text" class="input-post-btn" onclick="statusModal()"placeholder="What's going on, <?php echo $fetch['username'] ?> ?" >
+                          </div>
+                        </div>
+                        <div class="post-btn-grp">
+                          <div class="btn-submit">
+                            <button class="btn-status" onclick="statusModal()">STATUS UPDATE</button>
+                          </div>
+                        </div>
+                      </div>
 
-         
-          <!-- gallery -->
-          <div class="gallery">
-            <ul class="gallery-wrapper">
-              <?php
-                include('phpFunc/loadAbyssalsPopular.php');
-              ?>
-            </ul>
+                        <div id="loadPostdata" class="post-data-wrapper">
+                          <?php
+                            include('popularPostData.php')
+                          ?>
+                        </div>
+
+
+                    </div>
+
+                    <div class="ads-area">
+                      <div class="events">
+                        <img src="assets/img/arts/img7.jpg" >
+                        <div class="events-title">
+                          <h1>Artist Feature: kristyglas</h1>
+                          <p>1 day ago</p>
+                        </div>
+                        <div class="events-btns">
+                          <div class="btns-left">
+                            <div>
+                              <img src="assets/logo.png" style="height: 22px; width:22px;"alt="">
+                              <span>team</span>
+                            </div>
+                          </div>
+                          <div class="btns-right">
+                            <div class="btns-count-comment">
+                              <span class="material-icons">chat_bubble_outline</span>
+                              <p>30</p>
+                            </div>
+                            <div class="btns-count-fav">
+                              <span class="material-icons">star_outline</span>
+                              <p>30</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="events">
+                        <img src="assets/asset_2___journal_header__5__by_team_dexn110-fullview.png" >
+                        <div class="events-title">
+                          <h1>Tutorial: Draw Pikachu with Ry-Spirit</h1>
+                          <p>1 day ago</p>
+                        </div>
+                        <div class="events-btns">
+                          <div class="btns-left">
+                            <div>
+                              <img src="assets/logo.png" style="height: 22px; width:22px;"alt="">
+                              <span>team</span>
+                            </div>
+                          </div>
+                          <div class="btns-right">
+                            <div class="btns-count-comment">
+                              <span class="material-icons">chat_bubble_outline</span>
+                              <p>30</p>
+                            </div>
+                            <div class="btns-count-fav">
+                              <span class="material-icons">star_outline</span>
+                              <p>30</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="events">
+                        <img src="assets/img/arts/img4.jpg" >
+                        <div class="events-title">
+                          <h1>Artist Feature: kristyglas</h1>
+                          <p>3 days ago</p>
+                        </div>
+                      </div>
+                    </div>
+
+                </div>
+              </div>
           </div>
-  
-        </div>
-      </div>  
 
-      <!-- footer section -->
+        </div>
+      </div>
       <footer class="footer">
         <div class="footer-container">
           <div class="row">
@@ -113,7 +185,7 @@
             </div>
             <div class="footer-col">
               <ul>
-                <li><a href="developer.html">ABOUT</a></li>
+                <li><a href="#">ABOUT</a></li>
                 <li><a href="#">CONTACT</a></li>
                 <li><a href="#">MEMBERSHIP</a></li>
               </ul>
@@ -137,10 +209,9 @@
             </div>
           </div>
         </div>
-      </footer>
-      
+     </footer>
     </main>
-    
+
     <!-- modal notif -->
     <div class="modal-post">
       <form method="post" enctype="multipart/form-data" id="uploadStatus">
@@ -211,29 +282,23 @@
                     <option value="only_me">Only me</option>
                   </select>
                 </div>
-                <div class = "headerInput">
-                  <div>
-                    <p>Category</p>                  
-                    <select id="category" name="category">
-                      <option value="3D">3D</option>
-                      <option value="Adoptables">Adoptables</option>
-                      <option value="Anime and Manga">Anime and Manga</option>
-                      <option value="Anthro">Anthro</option>
-                      <option value="Comics">Comics</option>
-                      <option value="Digital Art">Digital Art</option>
-                      <option value="Drawings and Paintings">Drawings and Paintings</option>
-                      <option value="Fan Art">Fan Art</option>
-                      <option value="Game Art">Game Art</option>
-                      <option value="Science Fiction">Science Fiction</option>
-                      <option value="Sculpture">Sculpture</option>
-                      <option value="Traditional Arts">Traditional Arts</option>
-                      <option value="Tutorials">Tutorials</option>
-                    </select>
-                  </div>
-                  <div class = "featContainer">             
-                    <input type="checkbox" name="featArt" value="feat">
-                    <label for="featArt">Featured</label>
-                  </div>
+                <div>
+                  <p>Category</p>                  
+                  <select id="category" name="category">
+                    <option value="3D">3D</option>
+                    <option value="Adoptables">Adoptables</option>
+                    <option value="Anime and Manga">Anime and Manga</option>
+                    <option value="Anthro">Anthro</option>
+                    <option value="Comics">Comics</option>
+                    <option value="Digital Art">Digital Art</option>
+                    <option value="Drawings and Paintings">Drawings and Paintings</option>
+                    <option value="Fan Art">Fan Art</option>
+                    <option value="Game Art">Game Art</option>
+                    <option value="Science Fiction">Science Fiction</option>
+                    <option value="Sculpture">Sculpture</option>
+                    <option value="Traditional Arts">Traditional Arts</option>
+                    <option value="Tutorials">Tutorials</option>
+                  </select>
                 </div>
               </div>
             </div>
@@ -272,30 +337,16 @@
         </div>
       </form>
     </div>
+    
   </div>
-  <div id="loader">
-        <svg width="140" height="140" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g>
-                <line x1="59.9833" y1="140.333" x2="219.978" y2="139" stroke="#7579ff" stroke-width="4"/>
-                <circle cx="60" cy="140" r="5" fill="#7579ff"/>
-                <circle cx="220" cy="139" r="5" fill="#7579ff"/>
-                </g>
-                <path class="circle" d="M109.957 122.655L140 105.309L170.043 122.655V157.345L140 174.691L109.957 157.345V122.655Z" stroke="#7579ff" stroke-width="4"/>
-                <circle class="circle" cx="140" cy="140" r="13" stroke="#f5d77b" stroke-width="4"/>
-                <circle class="circle" cx="110" cy="192" r="13" stroke="#f7a78f" stroke-width="4"/>
-                <circle class="circle circle_s" cx="85" cy="232" r="8" stroke="#7579ff" stroke-width="4"/>
-                <circle class="circle" cx="170" cy="88" r="13" stroke="#7579ff" stroke-width="4"/>
-                <circle class="circle circle_s" cx="110" cy="192" r="5" fill="#f7a78f"/>
-                <circle class="circle circle_s" cx="185" cy="61" r="5" fill="#f5d77b"/>
-        </svg>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="Assets/js/script.js"></script>
   <script src="Assets/js/search.js"></script>
-  <script src="Assets/js/search.js"></script>
+  <script src="Assets/js/commentPost.js"></script>
 </body>
 
 </html>

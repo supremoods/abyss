@@ -237,7 +237,7 @@
                   </div>
                 </div>
               </li>
-              <li data-id="Tutorials" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
+              <li data-id="tutorial" class="topic-gallery-item" onclick="topicGallery(this.dataset.id)">
                 <img src="assets/img/topics/tutorials.png" alt="" srcset="">
                 <div class="text">
                   <div>

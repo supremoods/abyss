@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2022 at 05:50 PM
+-- Generation Time: Feb 07, 2022 at 03:35 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -50,7 +50,9 @@ INSERT INTO `abyssal_comment` (`comment_ID`, `id`, `art_id`, `comment`) VALUES
 (75, 1, 46, 'sdsds\n'),
 (76, 1, 46, 's\n'),
 (77, 1, 46, 's\n'),
-(78, 1, 46, '\'\n');
+(78, 1, 46, '\'\n'),
+(79, 2, 222, 'NICE ARTWORK 😀😀😀😀😀!!!!\n'),
+(80, 1, 222, 'Thank you hehehehehe 😀\n');
 
 -- --------------------------------------------------------
 
@@ -69,14 +71,14 @@ CREATE TABLE `abyssal_favorite` (
 --
 
 INSERT INTO `abyssal_favorite` (`favID`, `id`, `art_id`) VALUES
-(2686, 2, 137),
-(2706, 2, 62),
-(2712, 2, 57),
 (2714, 2, 92),
 (2716, 2, 47),
 (2718, 2, 45),
 (2719, 2, 48),
-(2723, 2, 100);
+(2723, 2, 100),
+(2730, 1, 48),
+(2731, 1, 46),
+(2733, 2, 59);
 
 -- --------------------------------------------------------
 
@@ -105,8 +107,8 @@ INSERT INTO `abyss_post` (`id`, `post_id`, `cover_image`, `title`, `post_descrip
 (129, 40, 'deuqyj1-bbea172e-768f-428a-a949-416d41f5cf84 (COVER).png', 'NFT theft - Zelda artists', 'EDIT: Looks like we did it! 😄\r\nWhen clicking on the link there\'s no picture on display in this os account anymore! Nice work everyone!\r\n\r\nOld post:\r\n\r\nHello everyone!\r\n\r\nI don\'t know if it has been shared already, but we got this account selling a bunch of stolen Zelda art as NFTs: \r\n\r\nhttps://opensea.io/0xcfa655727c17607ac84e35d26805f2cc30e45213\r\n\r\nFeel free to spread the word and to report this opensea account. I\'m trying to gather a list of the artists that have been stolen too.\r\n\r\nStay safe and take care. ', 0, 0, 'everyone'),
 (128, 41, 'elvira_by_nkstudiodigital_dewualq-pre (COVER).jpg', 'CommissionIsNowOpen', '\r\nHi guys,\r\n\r\nIf u want to have your dream heroes, original characters, NFTs come true in high-quality with a good price! Don\'t hesitate to contact us via email: nkstudiodigital@gmail.com\r\n\r\nThe link below contains all information about our prices and rules of taking commission:\r\n\r\n    https://www.artstation.com/blogs/nk_art/6L0V/nk-studio-digital-commission-and-status-2022\r\n\r\nWe\'re opening for commission, there are some references of our commission pieces below:\r\n\r\n    https://www.deviantart.com/nkstudiodigital/art/Grandessa-Shantalla-Karinor-874656017\r\n\r\n    https://www.deviantart.com/nkstudiodigital/art/Glorious-836880199\r\n\r\n    https://www.deviantart.com/nkstudiodigital/art/Thorn-897618046\r\n\r\nIf you like my style, you can look for more of my illustrations in here:\r\n\r\n    https://www.deviantart.com/nkstudiodigital\r\n\r\n    https://www.artstation.com/nk_art\r\n\r\n    https://www.instagram.com/nk.studiodigital/\r\n\r\nThanks a lot for passing by and have a good day!', 0, 0, 'everyone'),
 (1, 45, 'kalachuchi.png', 'kalachuchi', 'NVM', 0, 2, 'everyone'),
-(1, 48, 'luna.png', 'Luna', 'this artwork is special for me', 0, 0, 'everyone'),
-(2, 51, '106794623_969803723473386_304610471820742651_n.jpg', 'Kaori', 'just a test', 0, 2, 'everyone');
+(1, 48, 'luna.png', 'Luna', 'this artwork is special for me', 0, 7, 'everyone'),
+(2, 51, '106794623_969803723473386_304610471820742651_n.jpg', 'Kaori', 'just a test', 0, 3, 'everyone');
 
 -- --------------------------------------------------------
 
@@ -131,7 +133,15 @@ INSERT INTO `abyss_post_comment` (`commentId`, `id`, `post_id`, `comment`) VALUE
 (71, 1, 51, 'hello\n'),
 (72, 2, 51, 'hi\n'),
 (73, 2, 35, 'nice \n'),
-(74, 1, 35, 'nice too\n');
+(74, 1, 35, 'nice too\n'),
+(75, 1, 48, 'hi\n'),
+(76, 1, 48, 'hello\n'),
+(77, 1, 48, 'A\n'),
+(78, 1, 48, '2\n'),
+(79, 1, 48, 'A\n'),
+(80, 1, 48, 'hi\n'),
+(81, 1, 51, 'he\n'),
+(82, 1, 48, 'qqq\n');
 
 -- --------------------------------------------------------
 
@@ -160,7 +170,7 @@ CREATE TABLE `abyss_user` (
 --
 
 INSERT INTO `abyss_user` (`id`, `username`, `email`, `password`, `profileImage`, `coverProfile`, `checkArtist`, `birthDay`, `Level`, `Location`, `Specialty`, `Pronouns`, `Status`) VALUES
-(1, 'supremood', 'lappay.john@gmail.com', 'supremo25', '86971185_2680674678717824_4104365190093471744_n.jpg', 'meteor_shower_by_t1na_denymcu-fullview.jpg', 'Artist', '2001-10-25', 'Student', 'Philippines', 'Artisan Crafts', 'He/Him', 'offline'),
+(1, 'supremood', 'lappay.john@gmail.com', 'supremo25', '86971185_2680674678717824_4104365190093471744_n.jpg', 'meteor_shower_by_t1na_denymcu-fullview.jpg', 'Artist', '2001-10-25', 'Student', 'Philippines', 'Artisan Crafts', 'He/Him', 'online'),
 (2, 'b1ngu', 'b1ngu@gmail.com', 'b1nguMachaLover', '6a391e2d188f5c4fe8973c248bb5e805.jpg', 'meteor_shower_by_t1na_denymcu-fullview.jpg', 'Artist', '2001-10-25', 'Student', 'Philippines', 'Traditional Art', 'She/Her', 'online'),
 (3, 'Laghrian', 'Laghrian@gmail.com', 'supremo25', 'avatar.png', 'sisu_bg-min.png', '', '', '', '', '', '', 'offline'),
 (4, 'tigaer', 'tigaer@gmail.com', 'tigaertigaer', 'avatar.png', 'sisu_bg-min.png', '', '', '', '', '', '', 'offline'),
@@ -319,8 +329,14 @@ CREATE TABLE `abyss_watcher` (
 --
 
 INSERT INTO `abyss_watcher` (`id`, `userID`, `watchId`) VALUES
-(18, 2, 1),
-(19, 2, 27);
+(19, 2, 27),
+(23, 1, 3),
+(24, 1, 2),
+(25, 2, 21),
+(26, 2, 20),
+(27, 2, 26),
+(28, 2, 38),
+(29, 2, 19);
 
 -- --------------------------------------------------------
 
@@ -348,14 +364,14 @@ CREATE TABLE `art_abyssals` (
 
 INSERT INTO `art_abyssals` (`id`, `art_id`, `abyssal_art`, `title`, `description`, `category`, `privacy`, `count_comment`, `count_fav`, `abyssals_date`, `featured_gallery`) VALUES
 (3, 45, 'flooded_and_forgotten___speedpaint_by_laghrian_derss1k-pre.jpg', 'Flooded and forgotten', 'Flooded and forgotten idols made in a honor of a god, represented as hare rabbit. Personal idea.\r\nProject for my portfolio. Has taken me a lot more time, because Ive made these stone statues in 3D in Blender Let me know what do you think!', '3D', 'everyone', 0, 2, 'January 29, 2022', NULL),
-(4, 46, 'another_morning_in_the_trenches_by_tigaer_depdyyv-pre.jpg', 'Another Morning in the Trenches', 'The only thing making me do graveyard shifts are these incredible sunrises in the Trenches and Calvin and Hobbes waiting for me. Jennas Diary  Calista  2733\r\n\r\nAfter getting inspired a decade ago I managed to turn said inspiration into a scene finally. Learning Blender on the way and ending up very happy with a result Im very happy with! Specific Info ', '3D', 'everyone', 9, 1, 'January 29, 2022', NULL),
+(4, 46, 'another_morning_in_the_trenches_by_tigaer_depdyyv-pre.jpg', 'Another Morning in the Trenches', 'The only thing making me do graveyard shifts are these incredible sunrises in the Trenches and Calvin and Hobbes waiting for me. Jennas Diary  Calista  2733\r\n\r\nAfter getting inspired a decade ago I managed to turn said inspiration into a scene finally. Learning Blender on the way and ending up very happy with a result Im very happy with! Specific Info ', '3D', 'everyone', 9, 2, 'January 29, 2022', NULL),
 (5, 47, '_daz3d____cyberpunk_by_psk_projekt4d_detrnxj-pre.jpg', '[DAZ3D]- Cyberpunk', 'Finally, after many months I have a new wallpaper on my smartphone, that looks really cool on it. :happybounce: \r\nOtherwise, I didn\'t think much of it, just wanted to combine the lady with the bike and somehow it came out.Sweating a little...  In the background is a police operation to bring more lights and life into the picture. Actually there was a police robot, but then I removed it again. The same is true for the light cone of the drone, which you can\'t really see anymore.:| (Blank Stare)', '3D', 'Everyone', 0, 2, 'January 29, 2022', NULL),
-(6, 48, 'autumn_by_pjacubinas_depeguu-pre.jpg', 'Autumn', 'I personally can\'t wait to have some cooler weather again. This 100+ degrees is getting on my nerves....\r\n\r\nSet up and rendered in Daz3D, Composited and Color Corrected in PS CC\r\n\r\nI hope you enjoy it and thanks for looking!', '3D', 'Everyone', 0, 2, 'January 29, 2022', NULL),
+(6, 48, 'autumn_by_pjacubinas_depeguu-pre.jpg', 'Autumn', 'I personally can\'t wait to have some cooler weather again. This 100+ degrees is getting on my nerves....\r\n\r\nSet up and rendered in Daz3D, Composited and Color Corrected in PS CC\r\n\r\nI hope you enjoy it and thanks for looking!', '3D', 'Everyone', 0, 3, 'January 29, 2022', NULL),
 (97, 50, 'portrait_jisoo_blackpink_by_tinytruc_dc5edj6-fullview.jpg', 'Portrait Jisoo Blackpink', '\"My page:\r\nDevianart: tinytruc.deviantart.com/\r\nIG: www.instagram.com/tinytruc_art\r\nArtStation: www.artstation.com/tinytruc\r\nFB: www.fb.com/tinytrucART/\r\nBehance: www.behance.net/tinytruc\r\nTwitter: twitter.com/TinyThanhTruc\r\nYoutube: www.youtube.com/tinytrucart\r\nEmail: TinyTrucART@gmail.com\"', 'Digital art', 'Everyone', 0, 0, 'January 30, 2022', NULL),
 (22, 55, 'lily_demon_oc_ayame_by_gisakura.jpg', 'Lily Demon - OC Ayame', '\r\nCOMMISSIONS OPEN \r\n\r\n\r\nTwitter  Instagram \r\n\r\n\r\n First drawing made with the ipad! Half done in procreate and the other half in clip studio xd And as a model my precious Ayame ', 'Anime and Manga', 'Everyone', 0, 1, 'January 30, 2022', NULL),
-(25, 57, '_prize__art_raffle_by_juukah.png', '[Prize] Art raffle', '\r\nArt raffle prize in my twitter ! \r\n\r\n\r\n─────────────────────────────────────────────\r\nCommission info (open)\r\n\r\nJuukah\'s Pixiv / twitter / Youtube  / Toy House ', 'Anime and Manga', 'Everyone', 0, 1, 'January 30, 2022', NULL),
-(21, 59, 'sakura_kinomoto_and_kerberos_by_gigiedt.jpg', 'Sakura Kinomomoto and Kerberos', '\r\nFanart from Card Captor Sakura I made on twitch as twitch subgoal\r\n\r\nIf you want to watch me when I\'m live subscribe to my channel:\r\nwww.twitch.tv/eudetenis', 'Anime and Manga', 'Everyone', 9, 1, 'January 30, 2022', NULL),
-(20, 62, 'autum_evening_by_fawnpetals.png', 'Autumn Evening', 'Gift for Fangeddoe on Twitter!', 'Anthro', 'Everyone', 4, 2, 'January 30, 2022', NULL),
+(25, 57, '_prize__art_raffle_by_juukah.png', '[Prize] Art raffle', '\r\nArt raffle prize in my twitter ! \r\n\r\n\r\n─────────────────────────────────────────────\r\nCommission info (open)\r\n\r\nJuukah\'s Pixiv / twitter / Youtube  / Toy House ', 'Anime and Manga', 'Everyone', 0, 0, 'January 30, 2022', NULL),
+(21, 59, 'sakura_kinomoto_and_kerberos_by_gigiedt.jpg', 'Sakura Kinomomoto and Kerberos', '\r\nFanart from Card Captor Sakura I made on twitch as twitch subgoal\r\n\r\nIf you want to watch me when I\'m live subscribe to my channel:\r\nwww.twitch.tv/eudetenis', 'Anime and Manga', 'Everyone', 9, 2, 'January 30, 2022', NULL),
+(20, 62, 'autum_evening_by_fawnpetals.png', 'Autumn Evening', 'Gift for Fangeddoe on Twitter!', 'Anthro', 'Everyone', 4, 1, 'January 30, 2022', NULL),
 (26, 92, 'megumi_by_mizorebusujima.jpg', 'Megumi', '\r\nCharacter  Megumi \r\nArt © @Lau._.Art / MizoreBusujima \r\nTools:   Tablet Wacom Cintiq 16 | CLIP STUDIO PAINT\r\nTime taken: ??\r\n\r\nDrawing of my OC and Live2d Megumi! \r\n\r\nwww.teepublic.com/user/lau_art\r\n\r\n\r\nThank you so much for all the support! It means a lot to me! <3\r\n\r\nFeel free to follow me! ♪\r\n\r\nTwitter:  twitter.com/Lau_Art01\r\nInstagram:  www.instagram.com/lau._.art/\r\nPixiv: www.pixiv.net/member.php?id=33…\r\nTwitch: www.twitch.tv/lauart \r\n\r\nPlease do not use, trace, alter, copy, claim, reupload as your own without my permission.\r\n', 'Anime and Manga', 'Everyone', 14, 2, 'January 30, 2022', NULL),
 (38, 99, '_cm__kristal_by_solchan.jpg', '[CM] Kristal', 'Commission for :iconshadastorm120: \r\nHer OC Kristal Heart \r\n\r\n---------------------------------------------------\r\nMy other art sites:\r\n\r\n Twitter\r\n Instagram\r\n Facebook', 'Anime and Manga', 'Everyone', 0, 1, 'January 30, 2022', NULL),
 (19, 100, 'zhong_li_by_ereyz.jpg', 'Zhong Li', 'Sun    \r\n--------------------------------------------------\r\nAttention (deviantart icon) DO NOT REPOST\r\n\r\nDiluc - Genshin Impact by Ereyz Childe - Genshin Impact by Ereyz Kaeya - Genshin by Ereyz Zhongli - Genshin by Ereyz\r\n\r\n:fire:  High-res PNG, steps tutorial and layered PSD on my Patreon.com/Ereyz\r\n:fire:  PRINTS Redbubble\r\n:fire:  Old Patreon rewards on Gumroad\r\n\r\nPatreon (2017, round) Icon mid  PATREON REWARDS \r\n\r\nlittle star Exclusive Sketches & WIPs little star High quality Images little star Step by Step Shots little star\r\nlittle star Photoshop PSDs with layers  little star Different variations of some illustrations little star', 'Anime and Manga', 'Everyone', 1, 1, 'January 30, 2022', NULL),
@@ -369,7 +385,7 @@ INSERT INTO `art_abyssals` (`id`, `art_id`, `abyssal_art`, `title`, `description
 (15, 134, 'eldridge_by_aspidal.png', 'Eldridge', 'commission', 'Anthro', 'Everyone', 0, 0, 'January 30, 2022', NULL),
 (37, 135, 'present_by_shwonky.jpg', 'Present', 'Older raffle prize for Echo_Sounding on Twitter. This character was (and is) truly lovely.', 'Anthro', 'Everyone', 0, 1, 'January 30, 2022', NULL),
 (31, 136, 'streets_of_mondstadt_by_rakimou.jpg', 'Streets of Mondstadt [COMM 20062021]', 'Commission for  pasterz, their fursona as Bennet (Genshin Impact) (＾▽＾)', 'Anthro', 'Everyone', 0, 2, 'January 30, 2022', NULL),
-(28, 137, 'ten_kodori_by_nat10730.jpg', 'Ten Kodori', 'Commission for rock_storage', 'Anthro', 'Everyone', 0, 3, 'January 30, 2022', NULL),
+(28, 137, 'ten_kodori_by_nat10730.jpg', 'Ten Kodori', 'Commission for rock_storage', 'Anthro', 'Everyone', 0, 2, 'January 30, 2022', NULL),
 (41, 138, 'the_bartender_com_by_yesterlove.jpg', 'the bartender', 'recent commission!', 'Anthro', 'Everyone', 0, 0, 'January 30, 2022', NULL),
 (23, 139, 'white_mage_by_goldendruid.jpg', 'White Mage', '✨Limited edition canvas-mounted prints: goldendruid.com/shop/canvas-wh…\r\n✨Prints Available: goldendruid.com/shop/print-whi…\r\n\r\nAnother mage added to the collection!\r\nThis portrait painting was commissioned by Kyree.\r\n\r\n©GoldenDruid2021', 'Anthro', 'Everyone', 0, 0, 'January 30, 2022', NULL),
 (93, 151, 'djdgxo-cefa282e-90b5-49ac-ba33-765dc251bd04.jpg', 'Digital Art Painting', '\"Digital Art Painting\"', 'Digital art', 'Everyone', 0, 2, 'January 30, 2022', NULL),
@@ -390,7 +406,7 @@ INSERT INTO `art_abyssals` (`id`, `art_id`, `abyssal_art`, `title`, `description
 (2, 167, 'FB_IMG_1620475416247.jpg', 'CAT', 'HSHHAOASDSDFSDF', 'Digital Art', 'everyone', 0, 0, 'February 1, 2022', 'NULL'),
 (2, 170, '173447618_101818625382992_4351907707049621771_n.jpg', 'LAPSY KNOWS', 'BLA BAL BLA BLA', 'Anime and Manga', 'everyone', 0, 1, 'February 1, 2022', NULL),
 (2, 173, '6a391e2d188f5c4fe8973c248bb5e805.jpg', 'IU baby', 'IU kyutiiiiii', 'Comics', 'everyone', 0, 0, 'February 1, 2022', 'feat'),
-(1, 222, '106794623_969803723473386_304610471820742651_n.jpg', 'KAORI OINUMA', 'CHARCOAL X GRAPHITE PAINTING', 'Traditional Arts', 'everyone', 0, 0, 'February 4, 2022', '');
+(1, 222, '106794623_969803723473386_304610471820742651_n.jpg', 'KAORI OINUMA', 'CHARCOAL X GRAPHITE PAINTING', 'Traditional Arts', 'everyone', 2, 0, 'February 4, 2022', '');
 
 -- --------------------------------------------------------
 
@@ -460,6 +476,7 @@ INSERT INTO `test_img` (`id`, `img`) VALUES
 --
 
 CREATE TABLE `topics` (
+  `id` int(11) NOT NULL,
   `category` varchar(255) NOT NULL,
   `img` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL
@@ -469,20 +486,20 @@ CREATE TABLE `topics` (
 -- Dumping data for table `topics`
 --
 
-INSERT INTO `topics` (`category`, `img`, `description`) VALUES
-('3D', '3d.jpg', 'Art made using 3D software like Maya, Cinema 4D, 3ds Max, and more.'),
-('Adoptables', 'adoptables.jpg', 'Explore the possibilities of character and species bases, adopted and brought to life here..'),
-('Anime and Manga', 'anime.jpg', 'Cartoons, graphic novels, and videos created in the popular Japanese style'),
-('Anthro', 'anthro.jpg', 'Your home for furry-related art and fiction. Fur, tails, scales, and wings are all welcome here.'),
-('Comics', 'comics.jpg', 'From superheroes to graphic novels, original characters to fan art, comics are both a style and a story.'),
-('Digital Art', 'digital art.jpg', 'Where talent meets tech. Using digital tools to create dazzling art: photographs, drawings, paintings, and 3D.'),
-('Drawings and Paintings', 'drawing and paintings.jpg', 'Hand drawn or digital, these drawings and paintings cover every style and genre.'),
-('Fan Art', 'fan art.jpg', 'Art inspired by movies, characters, books, comics, and more.'),
-('Game Art', 'game art.jpg', 'Concept art for video game worlds: immersive environments, characters, and objects'),
-('Science Fiction', 'science fiction.jpg', 'Visions of the future and technology taken to the extreme: space travel, mecha, dystopian cities, and more.'),
-('Sculpture', 'sculpture.jpg', 'Sculpted from clay, carved from wood, welded from metal—this is art in physical form.'),
-('Traditional Arts', 'traditional art.jpg', 'No computers allowed! Traditional, hand-made art in a wide range of mediums and genres.'),
-('Tutorials', 'tutorials.jpg', 'Step-by-step guides to help you become a better artist.');
+INSERT INTO `topics` (`id`, `category`, `img`, `description`) VALUES
+(1, '3D', '3d.jpg', 'Art made using 3D software like Maya, Cinema 4D, 3ds Max, and more.'),
+(2, 'Adoptables', 'adoptables.jpg', 'Explore the possibilities of character and species bases, adopted and brought to life here..'),
+(3, 'Anime and Manga', 'anime.jpg', 'Cartoons, graphic novels, and videos created in the popular Japanese style'),
+(4, 'Anthro', 'anthro.jpg', 'Your home for furry-related art and fiction. Fur, tails, scales, and wings are all welcome here.'),
+(5, 'Comics', 'comics.jpg', 'From superheroes to graphic novels, original characters to fan art, comics are both a style and a story.'),
+(6, 'Digital Art', 'digital art.jpg', 'Where talent meets tech. Using digital tools to create dazzling art: photographs, drawings, paintings, and 3D.'),
+(7, 'Drawings and Paintings', 'drawing and paintings.jpg', 'Hand drawn or digital, these drawings and paintings cover every style and genre.'),
+(8, 'Fan Art', 'fan art.jpg', 'Art inspired by movies, characters, books, comics, and more.'),
+(9, 'Game Art', 'game art.jpg', 'Concept art for video game worlds: immersive environments, characters, and objects'),
+(10, 'Science Fiction', 'science fiction.jpg', 'Visions of the future and technology taken to the extreme: space travel, mecha, dystopian cities, and more.'),
+(11, 'Sculpture', 'sculpture.jpg', 'Sculpted from clay, carved from wood, welded from metal—this is art in physical form.'),
+(12, 'Traditional Arts', 'traditional art.jpg', 'No computers allowed! Traditional, hand-made art in a wide range of mediums and genres.'),
+(13, 'tutorial', 'tutorials.png', 'Step-by-step guides to help you become a better artist.');
 
 --
 -- Indexes for dumped tables
@@ -543,6 +560,12 @@ ALTER TABLE `test_img`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `topics`
+--
+ALTER TABLE `topics`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -550,13 +573,13 @@ ALTER TABLE `test_img`
 -- AUTO_INCREMENT for table `abyssal_comment`
 --
 ALTER TABLE `abyssal_comment`
-  MODIFY `comment_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `comment_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `abyssal_favorite`
 --
 ALTER TABLE `abyssal_favorite`
-  MODIFY `favID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2730;
+  MODIFY `favID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2734;
 
 --
 -- AUTO_INCREMENT for table `abyss_post`
@@ -568,7 +591,7 @@ ALTER TABLE `abyss_post`
 -- AUTO_INCREMENT for table `abyss_post_comment`
 --
 ALTER TABLE `abyss_post_comment`
-  MODIFY `commentId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `commentId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `abyss_user`
@@ -580,7 +603,7 @@ ALTER TABLE `abyss_user`
 -- AUTO_INCREMENT for table `abyss_watcher`
 --
 ALTER TABLE `abyss_watcher`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `art_abyssals`
@@ -599,6 +622,12 @@ ALTER TABLE `messages`
 --
 ALTER TABLE `test_img`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `topics`
+--
+ALTER TABLE `topics`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
