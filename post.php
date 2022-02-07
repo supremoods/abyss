@@ -87,7 +87,8 @@
                       <div class="post-ccx">
                         <div class="post-cvx-grp">
                           <div class="profile-img">
-                            <span class="material-icons"> account_box </span>
+                            <img src="Assets/img/profile/<?php echo $fetch['profileImage'] ?>"
+                            style="height:40px; width:40px;" alt="">
                           </div>
                           <div class="post-input">
                             <input type="text" class="input-post-btn" onclick="statusModal()"placeholder="What's going on, <?php echo $fetch['username'] ?> ?" >

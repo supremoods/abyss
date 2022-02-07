@@ -82,7 +82,8 @@
 
                         <div class="profile-btn" onclick="modalCoverImage()">
                             <a href="#" class="btn">
-                                <i class="bx bx-image-add"></i>
+                                <img src="Assets/img/profile/<?php echo $fetch['profileImage'] ?>"
+                                style="height:40px; width:40px;" alt="">
                                 <h1 id="cover-text">ADD COVER IMAGE</h1>
                             </a>
                         </div>
