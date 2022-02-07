@@ -67,7 +67,7 @@
                                         <span class="textLable">Confirm email
                                         </span></label>
                                     <div class="fd-cont">
-                                        <input type="email" class="fd" id="email" pattern=".+@gmail\.com" size="30" value="" required>
+                                        <input type="email" class="fd" id="email" name="confirmEmail"pattern=".+@gmail\.com" size="30" value="" required>
                                     </div>
                                     <span class="space"></span>
                                 </div>
