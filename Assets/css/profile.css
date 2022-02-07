@@ -566,6 +566,21 @@
     padding-left:10px;
 }
 
+.watching-box{
+    
+    background: var(--L8--light);
+}
+.watching-box .list-watching {
+    padding:20px; 
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+.watching-box .list-watching .usersWatched{
+    display: flex;
+    align-items:center;
+    width: 100%;
+}
 
 .profile-col .profile-content .left-area .cards .box .feature-gallery-wrapper{
     display: inline-flex;

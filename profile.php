@@ -184,6 +184,30 @@
 
 
                                 </div>
+                                <div class="watching-box box">
+                                    <div class="list-watching">
+                                        <?php
+                                            $sql = mysqli_query($conn,"SELECT * FROM abyss_watcher LEFT JOIN abyss_user ON abyss_user.id = abyss_watcher.watchId WHERE userID = $id") or die (mysqli_error());
+                                           
+                                        ?>
+
+                                        <?php
+                                            if(mysqli_num_rows($sql) > 0){
+                                                while($fetchList = mysqli_fetch_array($sql)){
+                                        ?>
+                                            <div class="usersWatched" data-username="<?php echo $fetchList['username'] ?>" onclick="userProfile(this.dataset.username)">
+                                                <img src="./Assets/img/profile/<?php echo $fetchList['profileImage'] ?>" style="height:30px; width:30px;" alt="">
+                                                <h1><?php echo $fetchList['username'] ?></h1>
+                                            </div>
+                                        <?php 
+                                                }
+                                            }
+                                        
+                                        ?>
+
+
+                                    </div>
+                                </div>
                             </div>
 
 
