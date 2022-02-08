@@ -57,7 +57,7 @@
             <div class="banner-wrapper">
               <header class="banner">
                 <div>
-                  <h1>Home</h1>
+                  <h1>Popular</h1>
                 </div>
                 <div class="banner-links">
                     <div class="abyssals-link">
