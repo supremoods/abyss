@@ -26,7 +26,7 @@
   <div id="root">
     <div class="header-container">
       <div class="header">
-        <button class="deck-btn">
+        <button class="deck-btn" onclick="sidebarNav()">
           <i class='bx bx-grid-alt'></i>
         </button>
   
